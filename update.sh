@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONFIG_DIR="$HOME/.config/karabiner"
-DST_FILE="./tmp/personal_rules.json"
+DST_FILE="./personal_rules.json"
 
 if ! type jq >/dev/null 2>&1; then
   echo "jq command is required." 1>&2
