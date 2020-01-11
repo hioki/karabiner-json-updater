@@ -29,9 +29,7 @@ use value::Value;
 use virtual_key::VirtualKey;
 
 fn main() {
-    let mut rules = vec![];
-
-    rules.append(&mut vec![
+    let rules = vec![
         virtual_key_rule(
             "lang1 -> VK1",
             KeyCode::Lang1,
@@ -69,9 +67,6 @@ fn main() {
             VirtualKey::Vk4,
             Some(KeyCode::Tab),
         ),
-    ]);
-
-    rules.append(&mut vec![
         iterm2_vk4_rule("[Terminal][VK4] c -> control+t c", KeyCode::C),
         iterm2_vk4_rule("[Terminal][VK4] v -> control+t v", KeyCode::V),
         iterm2_vk4_rule("[Terminal][VK4] h -> control+t h", KeyCode::H),
@@ -80,9 +75,6 @@ fn main() {
         iterm2_vk4_rule("[Terminal][VK4] l -> control+t l", KeyCode::L),
         iterm2_vk4_rule("[Terminal][VK4] n -> control+t n", KeyCode::N),
         iterm2_vk4_rule("[Terminal][VK4] p -> control+t p", KeyCode::P),
-    ]);
-
-    rules.append(&mut vec![
         vscode_vk4_rule(
             "[VSCODE][VK4] 1 -> workbench.action.openSettingsJson",
             KeyCode::Key1,
@@ -158,9 +150,6 @@ fn main() {
             "[VSCODE][VK4] non_us_pound -> workbench.action.moveEditorRightInGroup",
             KeyCode::NonUsPound,
         ),
-    ]);
-
-    rules.append(&mut vec![
         Rule {
             description: "[Terminal] o/p -> control+t control+p / control+t control+n",
             manipulators: vec![
@@ -1962,7 +1951,7 @@ fn main() {
                 to_if_alone: None,
             }],
         },
-    ]);
+    ];
 
     let config = Config {
         title: "Personal rules",
