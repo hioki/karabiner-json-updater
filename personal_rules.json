@@ -2,7 +2,7 @@
   "title": "Personal rules",
   "rules": [
     {
-      "description": "lang1 -> VK1",
+      "description": "Virtual Keys",
       "manipulators": [
         {
           "type": "basic",
@@ -35,12 +35,7 @@
               "key_code": "japanese_kana"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "international4 -> VK1",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -72,12 +67,7 @@
               "key_code": "japanese_kana"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "lang2 -> VK2",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -109,12 +99,7 @@
               "key_code": "japanese_eisuu"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "international5 -> VK2",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -146,12 +131,7 @@
               "key_code": "japanese_eisuu"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "right_gui -> VK3",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -178,12 +158,7 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "international2 -> VK3",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -210,12 +185,7 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "tab -> VK4",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {

@@ -30,43 +30,58 @@ use virtual_key::VirtualKey;
 
 fn main() {
     let rules = vec![
-        virtual_key_rule(
-            "lang1 -> VK1",
-            KeyCode::Lang1,
-            VirtualKey::Vk1,
-            Some(KeyCode::JapaneseKana),
-        ),
-        virtual_key_rule(
-            "international4 -> VK1",
-            KeyCode::International4,
-            VirtualKey::Vk1,
-            Some(KeyCode::JapaneseKana),
-        ),
-        virtual_key_rule(
-            "lang2 -> VK2",
-            KeyCode::Lang2,
-            VirtualKey::Vk2,
-            Some(KeyCode::JapaneseEisuu),
-        ),
-        virtual_key_rule(
-            "international5 -> VK2",
-            KeyCode::International5,
-            VirtualKey::Vk2,
-            Some(KeyCode::JapaneseEisuu),
-        ),
-        virtual_key_rule("right_gui -> VK3", KeyCode::RightGui, VirtualKey::Vk3, None),
-        virtual_key_rule(
-            "international2 -> VK3",
-            KeyCode::International2,
-            VirtualKey::Vk3,
-            None,
-        ),
-        virtual_key_rule(
-            "tab -> VK4",
-            KeyCode::Tab,
-            VirtualKey::Vk4,
-            Some(KeyCode::Tab),
-        ),
+        Rule {
+            description: "Virtual Keys",
+            manipulators: vec![
+                (KeyCode::Lang1, VirtualKey::Vk1, Some(KeyCode::JapaneseKana)),
+                (
+                    KeyCode::International4,
+                    VirtualKey::Vk1,
+                    Some(KeyCode::JapaneseKana),
+                ),
+                (
+                    KeyCode::Lang2,
+                    VirtualKey::Vk2,
+                    Some(KeyCode::JapaneseEisuu),
+                ),
+                (
+                    KeyCode::International5,
+                    VirtualKey::Vk2,
+                    Some(KeyCode::JapaneseEisuu),
+                ),
+                (KeyCode::RightGui, VirtualKey::Vk3, None),
+                (KeyCode::International2, VirtualKey::Vk3, None),
+                (KeyCode::Tab, VirtualKey::Vk4, Some(KeyCode::Tab)),
+            ]
+            .into_iter()
+            .map(|(key_code, virtual_key, to_if_alone)| Manipulator {
+                r#type: ManipulatorType::default(),
+                conditions: None,
+                from: From {
+                    key_code,
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
+                },
+                to: vec![To {
+                    set_variable: Some(SetVariable {
+                        name: virtual_key.clone(),
+                        value: Value::On.value(),
+                    }),
+                    key_code: None,
+                    modifiers: None,
+                    mouse_key: None,
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                to_after_key_up: Some(vec![ToAfterKeyUp {
+                    set_variable: SetVariable {
+                        name: virtual_key,
+                        value: Value::Off.value(),
+                    },
+                }]),
+                to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
+            })
+            .collect::<Vec<Manipulator>>(),
+        },
         iterm2_vk4_rule("[Terminal][VK4] c -> control+t c", KeyCode::C),
         iterm2_vk4_rule("[Terminal][VK4] v -> control+t v", KeyCode::V),
         iterm2_vk4_rule("[Terminal][VK4] h -> control+t h", KeyCode::H),
@@ -1459,43 +1474,6 @@ fn main() {
     };
 
     println!("{}", serde_json::to_string(&config).unwrap());
-}
-
-fn virtual_key_rule(
-    description: &'static str,
-    key_code: KeyCode,
-    virtual_key: VirtualKey,
-    to_if_alone: Option<KeyCode>,
-) -> Rule {
-    Rule {
-        description,
-        manipulators: vec![Manipulator {
-            r#type: ManipulatorType::default(),
-            conditions: None,
-            from: From {
-                key_code,
-                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-            },
-            to: vec![To {
-                set_variable: Some(SetVariable {
-                    name: virtual_key.clone(),
-                    value: Value::On.value(),
-                }),
-                key_code: None,
-                modifiers: None,
-                mouse_key: None,
-                pointing_button: None,
-                shell_command: None,
-            }],
-            to_after_key_up: Some(vec![ToAfterKeyUp {
-                set_variable: SetVariable {
-                    name: virtual_key,
-                    value: Value::Off.value(),
-                },
-            }]),
-            to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
-        }],
-    }
 }
 
 fn iterm2_vk4_rule(description: &'static str, key_code: KeyCode) -> Rule {
