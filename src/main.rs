@@ -769,183 +769,59 @@ fn main() {
         Rule {
             description: "[VK1] n/m/comma/dot -> mouse move",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::N,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: Some(-1536),
-                            y: None,
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
+                (
+                    KeyCode::N,
+                    Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
+                    Some(-1536),
+                    None,
+                ),
+                (
+                    KeyCode::M,
+                    Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
+                    None,
+                    Some(1536),
+                ),
+                (
+                    KeyCode::Comma,
+                    Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
+                    None,
+                    Some(-1536),
+                ),
+                (
+                    KeyCode::Period,
+                    Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
+                    Some(1536),
+                    None,
+                ),
+                (KeyCode::N, None, Some(-3072), None),
+                (KeyCode::M, None, None, Some(3072)),
+                (KeyCode::Comma, None, None, Some(-3072)),
+                (KeyCode::Period, None, Some(3072), None),
+            ]
+            .into_iter()
+            .map(|(key_code, modifiers, x, y)| Manipulator {
+                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                from: From {
+                    key_code,
+                    modifiers,
                 },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::M,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: Some(1536),
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::Comma,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: Some(-1536),
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::Period,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: Some(1536),
-                            y: None,
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::N,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: Some(-3072),
-                            y: None,
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::M,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: Some(3072),
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::Comma,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: Some(-3072),
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::Period,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: Some(3072),
-                            y: None,
-                            vertical_wheel: None,
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-            ],
+                to: vec![To {
+                    key_code: None,
+                    modifiers: None,
+                    set_variable: None,
+                    mouse_key: Some(MouseKey {
+                        x,
+                        y,
+                        vertical_wheel: None,
+                    }),
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
         },
         Rule {
             description: "[VK1] / -> left click, _ -> right click",
