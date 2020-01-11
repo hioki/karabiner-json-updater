@@ -121,81 +121,60 @@ fn main() {
             })
             .collect::<Vec<Manipulator>>(),
         },
-        vscode_vk4_rule(
-            "[VSCODE][VK4] 1 -> workbench.action.openSettingsJson",
-            KeyCode::Key1,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] 2 -> workbench.action.openGlobalKeybindingsFile",
-            KeyCode::Key2,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] 3 -> workbench.action.openGlobalKeybindings",
-            KeyCode::Key3,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] 4 -> workbench.view.extensions",
-            KeyCode::Key4,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] a -> workbench.action.toggleActivityBarVisibility",
-            KeyCode::A,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] h -> workbench.action.toggleSidebarVisibility",
-            KeyCode::H,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] j -> workbench.action.togglePanel",
-            KeyCode::J,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] e -> workbench.files.action.focusFilesExplorer",
-            KeyCode::E,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] l -> workbench.action.focusFirstEditorGroup",
-            KeyCode::L,
-        ),
-        vscode_vk4_rule("[VSCODE][VK4] s -> workbench.view.search", KeyCode::S),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] p -> workbench.action.problems.focus",
-            KeyCode::P,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] o -> workbench.action.output.toggleOutput",
-            KeyCode::O,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] c -> workbench.debug.action.toggleRepl",
-            KeyCode::C,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] m -> workbench.action.terminal.focus",
-            KeyCode::M,
-        ),
-        vscode_vk4_rule("[VSCODE][VK4] k -> workbench.action.quickOpen", KeyCode::K),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] r -> References: Find All References",
-            KeyCode::R,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] x -> workbench.action.showCommands",
-            KeyCode::X,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] i -> workbench.action.switchWindow",
-            KeyCode::I,
-        ),
-        vscode_vk4_rule("[VSCODE][VK4] y -> copyFilePath", KeyCode::Y),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] close_bracket -> workbench.action.moveEditorLeftInGroup",
-            KeyCode::CloseBracket,
-        ),
-        vscode_vk4_rule(
-            "[VSCODE][VK4] non_us_pound -> workbench.action.moveEditorRightInGroup",
-            KeyCode::NonUsPound,
-        ),
+        Rule {
+            description: "VK4 on VSCode",
+            manipulators: vec![
+                KeyCode::Key1,
+                KeyCode::Key2,
+                KeyCode::Key3,
+                KeyCode::Key4,
+                KeyCode::A,
+                KeyCode::H,
+                KeyCode::J,
+                KeyCode::E,
+                KeyCode::L,
+                KeyCode::S,
+                KeyCode::P,
+                KeyCode::O,
+                KeyCode::C,
+                KeyCode::M,
+                KeyCode::K,
+                KeyCode::R,
+                KeyCode::X,
+                KeyCode::I,
+                KeyCode::Y,
+                KeyCode::CloseBracket,
+                KeyCode::NonUsPound,
+            ]
+            .into_iter()
+            .map(|key_code| Manipulator {
+                r#type: ManipulatorType::default(),
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_virtual_key(VirtualKey::Vk4),
+                ]),
+                from: From {
+                    key_code: key_code.clone(),
+                    modifiers: None,
+                },
+                to: vec![To {
+                    set_variable: None,
+                    key_code: Some(key_code),
+                    modifiers: Some(vec![
+                        ModifierKey::Control,
+                        ModifierKey::Shift,
+                        ModifierKey::Option,
+                        ModifierKey::Command,
+                    ]),
+                    mouse_key: None,
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
+        },
         Rule {
             description: "[Terminal] o/p -> control+t control+p / control+t control+n",
             manipulators: vec![
@@ -1515,38 +1494,6 @@ fn tmux_prefix() -> To {
         mouse_key: None,
         pointing_button: None,
         shell_command: None,
-    }
-}
-
-fn vscode_vk4_rule(description: &'static str, key_code: KeyCode) -> Rule {
-    Rule {
-        description,
-        manipulators: vec![Manipulator {
-            r#type: ManipulatorType::default(),
-            conditions: Some(vec![
-                Condition::on_app(BundleIdentifier::VSCode),
-                Condition::with_virtual_key(VirtualKey::Vk4),
-            ]),
-            from: From {
-                key_code: key_code.clone(),
-                modifiers: None,
-            },
-            to: vec![To {
-                set_variable: None,
-                key_code: Some(key_code),
-                modifiers: Some(vec![
-                    ModifierKey::Control,
-                    ModifierKey::Shift,
-                    ModifierKey::Option,
-                    ModifierKey::Command,
-                ]),
-                mouse_key: None,
-                pointing_button: None,
-                shell_command: None,
-            }],
-            to_after_key_up: None,
-            to_if_alone: None,
-        }],
     }
 }
 

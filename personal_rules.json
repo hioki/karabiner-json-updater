@@ -490,7 +490,7 @@
       ]
     },
     {
-      "description": "[VSCODE][VK4] 1 -> workbench.action.openSettingsJson",
+      "description": "VK4 on VSCode",
       "manipulators": [
         {
           "type": "basic",
@@ -521,12 +521,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] 2 -> workbench.action.openGlobalKeybindingsFile",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -556,12 +551,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] 3 -> workbench.action.openGlobalKeybindings",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -591,12 +581,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] 4 -> workbench.view.extensions",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -626,12 +611,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] a -> workbench.action.toggleActivityBarVisibility",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -661,12 +641,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] h -> workbench.action.toggleSidebarVisibility",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -696,12 +671,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] j -> workbench.action.togglePanel",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -731,12 +701,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] e -> workbench.files.action.focusFilesExplorer",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -766,12 +731,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] l -> workbench.action.focusFirstEditorGroup",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -801,12 +761,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] s -> workbench.view.search",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -836,12 +791,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] p -> workbench.action.problems.focus",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -871,12 +821,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] o -> workbench.action.output.toggleOutput",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -906,12 +851,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] c -> workbench.debug.action.toggleRepl",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -941,12 +881,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] m -> workbench.action.terminal.focus",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -976,12 +911,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] k -> workbench.action.quickOpen",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1011,12 +941,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] r -> References: Find All References",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1046,12 +971,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] x -> workbench.action.showCommands",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1081,12 +1001,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] i -> workbench.action.switchWindow",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1116,12 +1031,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] y -> copyFilePath",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1151,12 +1061,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] close_bracket -> workbench.action.moveEditorLeftInGroup",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1186,12 +1091,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCODE][VK4] non_us_pound -> workbench.action.moveEditorRightInGroup",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
