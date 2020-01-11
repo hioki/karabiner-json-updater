@@ -61,16 +61,11 @@ fn main() {
                     key_code,
                     modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
-                to: vec![To {
-                    set_variable: Some(SetVariable {
+                to: vec![To::Variable {
+                    set_variable: SetVariable {
                         name: virtual_key.clone(),
                         value: Value::On.value(),
-                    }),
-                    key_code: None,
-                    modifiers: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
+                    },
                 }],
                 to_after_key_up: Some(vec![ToAfterKeyUp {
                     set_variable: SetVariable {
@@ -107,13 +102,9 @@ fn main() {
                 },
                 to: vec![
                     tmux_prefix(),
-                    To {
-                        set_variable: None,
-                        key_code: Some(key_code),
+                    To::Key {
+                        key_code,
                         modifiers: Some(vec![ModifierKey::Control]),
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     },
                 ],
                 to_after_key_up: None,
@@ -157,18 +148,14 @@ fn main() {
                     key_code: key_code.clone(),
                     modifiers: None,
                 },
-                to: vec![To {
-                    set_variable: None,
-                    key_code: Some(key_code),
+                to: vec![To::Key {
+                    key_code,
                     modifiers: Some(vec![
                         ModifierKey::Control,
                         ModifierKey::Shift,
                         ModifierKey::Option,
                         ModifierKey::Command,
                     ]),
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
                 }],
                 to_after_key_up: None,
                 to_if_alone: None,
@@ -189,13 +176,9 @@ fn main() {
                     },
                     to: vec![
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::P),
+                        To::Key {
+                            key_code: KeyCode::P,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -213,13 +196,9 @@ fn main() {
                     },
                     to: vec![
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::N),
+                        To::Key {
+                            key_code: KeyCode::N,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -242,13 +221,9 @@ fn main() {
                     },
                     to: vec![
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::P),
+                        To::Key {
+                            key_code: KeyCode::P,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -266,13 +241,9 @@ fn main() {
                     },
                     to: vec![
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::N),
+                        To::Key {
+                            key_code: KeyCode::N,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -289,13 +260,9 @@ fn main() {
                     key_code: KeyCode::H,
                     modifiers: None,
                 },
-                to: vec![To {
-                    key_code: Some(KeyCode::DeleteOrBackspace),
+                to: vec![To::Key {
+                    key_code: KeyCode::DeleteOrBackspace,
                     modifiers: None,
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
                 }],
                 r#type: ManipulatorType::default(),
                 to_after_key_up: None,
@@ -316,13 +283,9 @@ fn main() {
                     },
                     to: vec![
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::CloseBracket),
+                        To::Key {
+                            key_code: KeyCode::CloseBracket,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -339,22 +302,14 @@ fn main() {
                         modifiers: None,
                     },
                     to: vec![
-                        To {
-                            key_code: Some(KeyCode::ReturnOrEnter),
+                        To::Key {
+                            key_code: KeyCode::ReturnOrEnter,
                             modifiers: None,
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                         tmux_prefix(),
-                        To {
-                            key_code: Some(KeyCode::M),
+                        To::Key {
+                            key_code: KeyCode::M,
                             modifiers: Some(vec![ModifierKey::Control]),
-                            set_variable: None,
-                            mouse_key: None,
-                            pointing_button: None,
-                            shell_command: None,
                         },
                     ],
                     r#type: ManipulatorType::default(),
@@ -375,13 +330,9 @@ fn main() {
                         key_code: KeyCode::U,
                         modifiers: None,
                     },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key0),
+                    to: vec![To::Key {
+                        key_code: KeyCode::Key0,
                         modifiers: Some(vec![ModifierKey::Shift]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     }],
                     r#type: ManipulatorType::default(),
                     to_after_key_up: None,
@@ -396,13 +347,9 @@ fn main() {
                         key_code: KeyCode::I,
                         modifiers: None,
                     },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key4),
+                    to: vec![To::Key {
+                        key_code: KeyCode::Key4,
                         modifiers: Some(vec![ModifierKey::Shift]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     }],
                     r#type: ManipulatorType::default(),
                     to_after_key_up: None,
@@ -622,17 +569,12 @@ fn main() {
                     key_code,
                     modifiers,
                 },
-                to: vec![To {
-                    key_code: None,
-                    modifiers: None,
-                    set_variable: None,
-                    mouse_key: Some(MouseKey {
+                to: vec![To::Mouse {
+                    mouse_key: MouseKey {
                         x,
                         y,
                         vertical_wheel: None,
-                    }),
-                    pointing_button: None,
-                    shell_command: None,
+                    },
                 }],
                 r#type: ManipulatorType::default(),
                 to_after_key_up: None,
@@ -649,13 +591,8 @@ fn main() {
                         key_code: KeyCode::Slash,
                         modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: Some(PointingButton::Button1),
-                        shell_command: None,
+                    to: vec![To::Click {
+                        pointing_button: PointingButton::Button1,
                     }],
                     r#type: ManipulatorType::default(),
                     to_after_key_up: None,
@@ -667,13 +604,8 @@ fn main() {
                         key_code: KeyCode::International1,
                         modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: Some(PointingButton::Button2),
-                        shell_command: None,
+                    to: vec![To::Click {
+                        pointing_button: PointingButton::Button2,
                     }],
                     r#type: ManipulatorType::default(),
                     to_after_key_up: None,
@@ -695,17 +627,12 @@ fn main() {
                     key_code,
                     modifiers: None,
                 },
-                to: vec![To {
-                    key_code: None,
-                    modifiers: None,
-                    set_variable: None,
-                    mouse_key: Some(MouseKey {
+                to: vec![To::Mouse {
+                    mouse_key: MouseKey {
                         x: None,
                         y: None,
                         vertical_wheel: Some(vertical_wheel),
-                    }),
-                    pointing_button: None,
-                    shell_command: None,
+                    },
                 }],
                 r#type: ManipulatorType::default(),
                 to_after_key_up: None,
@@ -909,14 +836,7 @@ fn main() {
                     key_code,
                     modifiers: None,
                 },
-                to: vec![To {
-                    key_code: None,
-                    modifiers: None,
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: Some(shell_command),
-                }],
+                to: vec![To::Command { shell_command }],
                 r#type: ManipulatorType::default(),
                 to_after_key_up: None,
                 to_if_alone: None,
@@ -960,13 +880,9 @@ fn main() {
                         key_code: KeyCode::Semicolon,
                         modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
-                    to: vec![To {
-                        set_variable: None,
-                        key_code: Some(KeyCode::Semicolon),
+                    to: vec![To::Key {
+                        key_code: KeyCode::Semicolon,
                         modifiers: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     }],
                     to_after_key_up: None,
                     to_if_alone: None,
@@ -978,13 +894,9 @@ fn main() {
                         key_code: KeyCode::Semicolon,
                         modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
-                    to: vec![To {
-                        set_variable: None,
-                        key_code: Some(KeyCode::Semicolon),
+                    to: vec![To::Key {
+                        key_code: KeyCode::Semicolon,
                         modifiers: Some(vec![ModifierKey::Shift]),
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     }],
                     to_after_key_up: None,
                     to_if_alone: None,
@@ -996,13 +908,9 @@ fn main() {
                         key_code: KeyCode::Semicolon,
                         modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
-                    to: vec![To {
-                        set_variable: None,
-                        key_code: Some(KeyCode::ReturnOrEnter),
+                    to: vec![To::Key {
+                        key_code: KeyCode::ReturnOrEnter,
                         modifiers: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
                     }],
                     to_after_key_up: None,
                     to_if_alone: None,
@@ -1018,13 +926,9 @@ fn main() {
                     key_code: KeyCode::Quote,
                     modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                 },
-                to: vec![To {
-                    set_variable: None,
-                    key_code: Some(KeyCode::Key7),
+                to: vec![To::Key {
+                    key_code: KeyCode::Key7,
                     modifiers: Some(vec![ModifierKey::Shift]),
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
                 }],
                 to_after_key_up: None,
                 to_if_alone: None,
@@ -1039,13 +943,9 @@ fn main() {
                     key_code: KeyCode::CapsLock,
                     modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
-                to: vec![To {
-                    set_variable: None,
-                    key_code: Some(KeyCode::VkNone),
+                to: vec![To::Key {
+                    key_code: KeyCode::VkNone,
                     modifiers: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
                 }],
                 to_after_key_up: None,
                 to_if_alone: None,
@@ -1062,13 +962,9 @@ fn main() {
 }
 
 fn tmux_prefix() -> To {
-    To {
-        set_variable: None,
-        key_code: Some(KeyCode::T),
+    To::Key {
+        key_code: KeyCode::T,
         modifiers: Some(vec![ModifierKey::Control]),
-        mouse_key: None,
-        pointing_button: None,
-        shell_command: None,
     }
 }
 
@@ -1085,13 +981,9 @@ fn build_manipulator(
             key_code: from,
             modifiers: from_modifiers,
         },
-        to: vec![To {
-            key_code: Some(to),
+        to: vec![To::Key {
+            key_code: to,
             modifiers: to_modifiers,
-            set_variable: None,
-            mouse_key: None,
-            pointing_button: None,
-            shell_command: None,
         }],
         r#type: ManipulatorType::default(),
         to_after_key_up: None,

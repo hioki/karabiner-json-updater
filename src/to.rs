@@ -5,24 +5,25 @@ use crate::set_variable::SetVariable;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
-pub struct To {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub set_variable: Option<SetVariable>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub key_code: Option<KeyCode>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub modifiers: Option<Vec<ModifierKey>>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub mouse_key: Option<MouseKey>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub pointing_button: Option<PointingButton>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub shell_command: Option<&'static str>,
+#[serde(untagged, rename_all = "snake_case")]
+pub enum To {
+    Variable {
+        set_variable: SetVariable,
+    },
+    Key {
+        key_code: KeyCode,
+        #[serde(skip_serializing_if = "Option::is_none")]
+        modifiers: Option<Vec<ModifierKey>>,
+    },
+    Mouse {
+        mouse_key: MouseKey,
+    },
+    Click {
+        pointing_button: PointingButton,
+    },
+    Command {
+        shell_command: &'static str,
+    },
 }
 
 #[derive(Debug, Serialize)]
