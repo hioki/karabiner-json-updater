@@ -684,73 +684,34 @@ fn main() {
         Rule {
             description: "[VK1] @/] -> scroll",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::OpenBracket,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: None,
-                            vertical_wheel: Some(-64),
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
+                (KeyCode::OpenBracket, -64),
+                (KeyCode::NonUsPound, 64),
+                (KeyCode::Backslash, 64),
+            ]
+            .into_iter()
+            .map(|(key_code, vertical_wheel)| Manipulator {
+                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                from: From {
+                    key_code,
+                    modifiers: None,
                 },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::NonUsPound,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: None,
-                            vertical_wheel: Some(64),
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::Backslash,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: None,
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: Some(MouseKey {
-                            x: None,
-                            y: None,
-                            vertical_wheel: Some(64),
-                        }),
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-            ],
+                to: vec![To {
+                    key_code: None,
+                    modifiers: None,
+                    set_variable: None,
+                    mouse_key: Some(MouseKey {
+                        x: None,
+                        y: None,
+                        vertical_wheel: Some(vertical_wheel),
+                    }),
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect(),
         },
         Rule {
             description: "[VK1] numbers -> function keys",
