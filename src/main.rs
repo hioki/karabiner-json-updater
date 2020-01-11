@@ -730,275 +730,126 @@ fn main() {
                 (KeyCode::EqualSign, KeyCode::F12),
             ]
             .into_iter()
-            .map(|(from, to)| Manipulator {
-                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                from: From {
-                    key_code: from,
-                    modifiers: None,
-                },
-                to: vec![To {
-                    key_code: Some(to),
-                    modifiers: None,
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                }],
-                r#type: ManipulatorType::default(),
-                to_after_key_up: None,
-                to_if_alone: None,
-            })
+            .map(|(from, to)| build_manipulator(VirtualKey::Vk1, from, None, to, None))
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
             description: "[VK1] b -> window maximize (ShiftIt)",
-            manipulators: vec![Manipulator {
-                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                from: From {
-                    key_code: KeyCode::B,
-                    modifiers: None,
-                },
-                to: vec![To {
-                    key_code: Some(KeyCode::M),
-                    modifiers: Some(vec![
-                        ModifierKey::Control,
-                        ModifierKey::Option,
-                        ModifierKey::Command,
-                    ]),
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                }],
-                r#type: ManipulatorType::default(),
-                to_after_key_up: None,
-                to_if_alone: None,
-            }],
+            manipulators: vec![build_manipulator(
+                VirtualKey::Vk1,
+                KeyCode::B,
+                None,
+                KeyCode::M,
+                Some(vec![
+                    ModifierKey::Control,
+                    ModifierKey::Option,
+                    ModifierKey::Command,
+                ]),
+            )],
         },
         Rule {
             description: "[VK1] \\ -> command+option+d (Hide the Dock)",
-            manipulators: vec![Manipulator {
-                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                from: From {
-                    key_code: KeyCode::International3,
-                    modifiers: None,
-                },
-                to: vec![To {
-                    key_code: Some(KeyCode::D),
-                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Option]),
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                }],
-                r#type: ManipulatorType::default(),
-                to_after_key_up: None,
-                to_if_alone: None,
-            }],
+            manipulators: vec![build_manipulator(
+                VirtualKey::Vk1,
+                KeyCode::International3,
+                None,
+                KeyCode::D,
+                Some(vec![ModifierKey::Command, ModifierKey::Option]),
+            )],
         },
         Rule {
             description: "[VK2] f/d -> command+tab/command+shift+tab",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::F,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Tab),
-                        modifiers: Some(vec![ModifierKey::Command]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::D,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Tab),
-                        modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::F,
+                    None,
+                    KeyCode::Tab,
+                    Some(vec![ModifierKey::Command]),
+                ),
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::D,
+                    None,
+                    KeyCode::Tab,
+                    Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                ),
             ],
         },
         Rule {
             description: "[VK2] s/a -> control+tab/control+shift+tab",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::S,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Tab),
-                        modifiers: Some(vec![ModifierKey::Control]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::A,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Tab),
-                        modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::S,
+                    None,
+                    KeyCode::Tab,
+                    Some(vec![ModifierKey::Control]),
+                ),
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::A,
+                    None,
+                    KeyCode::Tab,
+                    Some(vec![ModifierKey::Control, ModifierKey::Shift]),
+                ),
             ],
         },
         Rule {
             description: "[VK2] 9/0 -> command+shift+;/command+hyphen",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key9,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Semicolon),
-                        modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key0,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Hyphen),
-                        modifiers: Some(vec![ModifierKey::Command]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key9,
+                    None,
+                    KeyCode::Semicolon,
+                    Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                ),
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key0,
+                    None,
+                    KeyCode::Hyphen,
+                    Some(vec![ModifierKey::Command]),
+                ),
             ],
         },
         Rule {
             description: "[VK2] 1/2 -> volume decrement/increment",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key1,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::VolumeDecrement),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key2,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::VolumeIncrement),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key1,
+                    None,
+                    KeyCode::VolumeDecrement,
+                    None,
+                ),
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key2,
+                    None,
+                    KeyCode::VolumeIncrement,
+                    None,
+                ),
             ],
         },
         Rule {
             description: "[VK2] 3/4 -> display brightness decrement/increment",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key3,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::DisplayBrightnessDecrement),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Key4,
-                        modifiers: None,
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::DisplayBrightnessIncrement),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key3,
+                    None,
+                    KeyCode::DisplayBrightnessDecrement,
+                    None,
+                ),
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    KeyCode::Key4,
+                    None,
+                    KeyCode::DisplayBrightnessIncrement,
+                    None,
+                ),
             ],
         },
         Rule {
@@ -1014,27 +865,18 @@ fn main() {
                 (KeyCode::Comma, KeyCode::Key4),
             ]
             .into_iter()
-            .map(|(from, to)| Manipulator {
-                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                from: From {
-                    key_code: from,
-                    modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                },
-                to: vec![To {
-                    key_code: Some(to),
-                    modifiers: Some(vec![
+            .map(|(from, to)| {
+                build_manipulator(
+                    VirtualKey::Vk2,
+                    from,
+                    Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
+                    to,
+                    Some(vec![
                         ModifierKey::Command,
                         ModifierKey::Control,
                         ModifierKey::Option,
                     ]),
-                    set_variable: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                }],
-                r#type: ManipulatorType::default(),
-                to_after_key_up: None,
-                to_if_alone: None,
+                )
             })
             .collect::<Vec<Manipulator>>(),
         },
@@ -1097,23 +939,14 @@ fn main() {
                 (KeyCode::Quote, KeyCode::Hyphen),
             ]
             .into_iter()
-            .map(|(from, to)| Manipulator {
-                r#type: ManipulatorType::default(),
-                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk3)]),
-                from: From {
-                    key_code: from,
-                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                },
-                to: vec![To {
-                    set_variable: None,
-                    key_code: Some(to),
-                    modifiers: None,
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                }],
-                to_after_key_up: None,
-                to_if_alone: None,
+            .map(|(from, to)| {
+                build_manipulator(
+                    VirtualKey::Vk3,
+                    from,
+                    Some(FromModifier::Optional(vec![ModifierKey::Any])),
+                    to,
+                    None,
+                )
             })
             .collect::<Vec<Manipulator>>(),
         },
