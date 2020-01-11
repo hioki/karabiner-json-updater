@@ -2971,7 +2971,7 @@
       ]
     },
     {
-      "description": "[VK2] j -> Google Chrome.app",
+      "description": "Open apps",
       "manipulators": [
         {
           "type": "basic",
@@ -2990,35 +2990,7 @@
               "shell_command": "open -a 'Google Chrome.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] k -> iTerm.app",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "k"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'iTerm.app'"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] l -> Alfred 4.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3036,12 +3008,43 @@
               "shell_command": "open -a 'Alfred 4.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] i -> IntelliJ IDEA.app",
-      "manipulators": [
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'iTerm.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Alfred 4.app'"
+            }
+          ]
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3059,12 +3062,7 @@
               "shell_command": "open -a 'IntelliJ IDEA.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] e -> snip search by Alfred 4",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3082,12 +3080,7 @@
               "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"snip \\\"\""
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] / -> Slack.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3105,12 +3098,7 @@
               "shell_command": "open -a 'Slack.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] @ -> Mail.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3128,12 +3116,7 @@
               "shell_command": "open -a 'Mail.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] t -> Microsoft To Do.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3151,12 +3134,7 @@
               "shell_command": "open -a 'Microsoft To Do.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] g -> Atom.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3174,12 +3152,7 @@
               "shell_command": "open -a 'Atom.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] b -> Tweetbot.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3197,12 +3170,7 @@
               "shell_command": "open -a 'Tweetbot.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] m -> Skim.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3220,12 +3188,7 @@
               "shell_command": "open -a 'Skim.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] r -> Notes.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3243,12 +3206,7 @@
               "shell_command": "open -a 'Notes.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] v -> Visual Studio Code.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3266,12 +3224,7 @@
               "shell_command": "open -a 'Visual Studio Code.app'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VK2] w -> 1Password.app",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [

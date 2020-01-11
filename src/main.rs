@@ -1285,60 +1285,49 @@ fn main() {
             })
             .collect::<Vec<Manipulator>>(),
         },
-        open_app_rule(
-            "[VK2] j -> Google Chrome.app",
-            KeyCode::J,
-            "open -a 'Google Chrome.app'",
-        ),
-        open_app_rule("[VK2] k -> iTerm.app", KeyCode::K, "open -a 'iTerm.app'"),
-        open_app_rule(
-            "[VK2] l -> Alfred 4.app",
-            KeyCode::L,
-            "open -a 'Alfred 4.app'",
-        ),
-        open_app_rule(
-            "[VK2] i -> IntelliJ IDEA.app",
-            KeyCode::I,
-            "open -a 'IntelliJ IDEA.app'",
-        ),
-        open_app_rule(
-            "[VK2] e -> snip search by Alfred 4",
-            KeyCode::E,
-            r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
-        ),
-        open_app_rule(
-            "[VK2] / -> Slack.app",
-            KeyCode::Slash,
-            "open -a 'Slack.app'",
-        ),
-        open_app_rule(
-            "[VK2] @ -> Mail.app",
-            KeyCode::OpenBracket,
-            "open -a 'Mail.app'",
-        ),
-        open_app_rule(
-            "[VK2] t -> Microsoft To Do.app",
-            KeyCode::T,
-            "open -a 'Microsoft To Do.app'",
-        ),
-        open_app_rule("[VK2] g -> Atom.app", KeyCode::G, "open -a 'Atom.app'"),
-        open_app_rule(
-            "[VK2] b -> Tweetbot.app",
-            KeyCode::B,
-            "open -a 'Tweetbot.app'",
-        ),
-        open_app_rule("[VK2] m -> Skim.app", KeyCode::M, "open -a 'Skim.app'"),
-        open_app_rule("[VK2] r -> Notes.app", KeyCode::R, "open -a 'Notes.app'"),
-        open_app_rule(
-            "[VK2] v -> Visual Studio Code.app",
-            KeyCode::V,
-            "open -a 'Visual Studio Code.app'",
-        ),
-        open_app_rule(
-            "[VK2] w -> 1Password.app",
-            KeyCode::W,
-            "open -a '1Password.app'",
-        ),
+        Rule {
+            description: "Open apps",
+            manipulators: vec![
+                (KeyCode::J, "open -a 'Google Chrome.app'"),
+                (KeyCode::L, "open -a 'Alfred 4.app'"),
+                (KeyCode::K, "open -a 'iTerm.app'"),
+                (KeyCode::L, "open -a 'Alfred 4.app'"),
+                (KeyCode::I, "open -a 'IntelliJ IDEA.app'"),
+                (
+                    KeyCode::E,
+                    r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
+                ),
+                (KeyCode::Slash, "open -a 'Slack.app'"),
+                (KeyCode::OpenBracket, "open -a 'Mail.app'"),
+                (KeyCode::T, "open -a 'Microsoft To Do.app'"),
+                (KeyCode::G, "open -a 'Atom.app'"),
+                (KeyCode::B, "open -a 'Tweetbot.app'"),
+                (KeyCode::M, "open -a 'Skim.app'"),
+                (KeyCode::R, "open -a 'Notes.app'"),
+                (KeyCode::V, "open -a 'Visual Studio Code.app'"),
+                (KeyCode::W, "open -a '1Password.app'"),
+            ]
+            .into_iter()
+            .map(|(key_code, shell_command)| Manipulator {
+                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
+                from: From {
+                    key_code,
+                    modifiers: None,
+                },
+                to: vec![To {
+                    key_code: None,
+                    modifiers: None,
+                    set_variable: None,
+                    mouse_key: None,
+                    pointing_button: None,
+                    shell_command: Some(shell_command),
+                }],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
+        },
         Rule {
             description: "[VK3] a..: -> 1..-",
             manipulators: vec![
@@ -1494,33 +1483,5 @@ fn tmux_prefix() -> To {
         mouse_key: None,
         pointing_button: None,
         shell_command: None,
-    }
-}
-
-fn open_app_rule(
-    description: &'static str,
-    key_code: KeyCode,
-    shell_command: &'static str,
-) -> Rule {
-    Rule {
-        description,
-        manipulators: vec![Manipulator {
-            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-            from: From {
-                key_code,
-                modifiers: None,
-            },
-            to: vec![To {
-                key_code: None,
-                modifiers: None,
-                set_variable: None,
-                mouse_key: None,
-                pointing_button: None,
-                shell_command: Some(shell_command),
-            }],
-            r#type: ManipulatorType::default(),
-            to_after_key_up: None,
-            to_if_alone: None,
-        }],
     }
 }
