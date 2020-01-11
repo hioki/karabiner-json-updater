@@ -388,79 +388,31 @@ fn main() {
         Rule {
             description: "[VK1] h/j/k/l -> cursor move",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::H,
-                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::LeftArrow),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
+                (KeyCode::H, KeyCode::LeftArrow),
+                (KeyCode::J, KeyCode::DownArrow),
+                (KeyCode::K, KeyCode::UpArrow),
+                (KeyCode::L, KeyCode::RightArrow),
+            ]
+            .into_iter()
+            .map(|(from, to)| Manipulator {
+                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                from: From {
+                    key_code: from,
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::J,
-                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::DownArrow),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::K,
-                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::UpArrow),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                    from: From {
-                        key_code: KeyCode::L,
-                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::RightArrow),
-                        modifiers: None,
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-            ],
+                to: vec![To {
+                    key_code: Some(to),
+                    modifiers: None,
+                    set_variable: None,
+                    mouse_key: None,
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
         },
         Rule {
             description: "[VK1] f -> escape",
