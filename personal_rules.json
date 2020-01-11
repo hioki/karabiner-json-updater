@@ -221,7 +221,7 @@
       ]
     },
     {
-      "description": "[Terminal][VK4] c -> control+t c",
+      "description": "Substitute TMUX prefix with VK4 on iTerm2",
       "manipulators": [
         {
           "type": "basic",
@@ -255,12 +255,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] v -> control+t v",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -293,12 +288,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] h -> control+t h",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -331,12 +321,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] j -> control+t j",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -369,12 +354,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] k -> control+t k",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -407,12 +387,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] l -> control+t l",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -445,12 +420,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] n -> control+t n",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -483,12 +453,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Terminal][VK4] p -> control+t p",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [

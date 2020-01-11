@@ -82,14 +82,45 @@ fn main() {
             })
             .collect::<Vec<Manipulator>>(),
         },
-        iterm2_vk4_rule("[Terminal][VK4] c -> control+t c", KeyCode::C),
-        iterm2_vk4_rule("[Terminal][VK4] v -> control+t v", KeyCode::V),
-        iterm2_vk4_rule("[Terminal][VK4] h -> control+t h", KeyCode::H),
-        iterm2_vk4_rule("[Terminal][VK4] j -> control+t j", KeyCode::J),
-        iterm2_vk4_rule("[Terminal][VK4] k -> control+t k", KeyCode::K),
-        iterm2_vk4_rule("[Terminal][VK4] l -> control+t l", KeyCode::L),
-        iterm2_vk4_rule("[Terminal][VK4] n -> control+t n", KeyCode::N),
-        iterm2_vk4_rule("[Terminal][VK4] p -> control+t p", KeyCode::P),
+        Rule {
+            description: "Substitute TMUX prefix with VK4 on iTerm2",
+            manipulators: vec![
+                KeyCode::C,
+                KeyCode::V,
+                KeyCode::H,
+                KeyCode::J,
+                KeyCode::K,
+                KeyCode::L,
+                KeyCode::N,
+                KeyCode::P,
+            ]
+            .into_iter()
+            .map(|key_code| Manipulator {
+                r#type: ManipulatorType::default(),
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_virtual_key(VirtualKey::Vk4),
+                ]),
+                from: From {
+                    key_code: key_code.clone(),
+                    modifiers: None,
+                },
+                to: vec![
+                    tmux_prefix(),
+                    To {
+                        set_variable: None,
+                        key_code: Some(key_code),
+                        modifiers: Some(vec![ModifierKey::Control]),
+                        mouse_key: None,
+                        pointing_button: None,
+                        shell_command: None,
+                    },
+                ],
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
+        },
         vscode_vk4_rule(
             "[VSCODE][VK4] 1 -> workbench.action.openSettingsJson",
             KeyCode::Key1,
@@ -1474,36 +1505,6 @@ fn main() {
     };
 
     println!("{}", serde_json::to_string(&config).unwrap());
-}
-
-fn iterm2_vk4_rule(description: &'static str, key_code: KeyCode) -> Rule {
-    Rule {
-        description,
-        manipulators: vec![Manipulator {
-            r#type: ManipulatorType::default(),
-            conditions: Some(vec![
-                Condition::on_app(BundleIdentifier::ITerm2),
-                Condition::with_virtual_key(VirtualKey::Vk4),
-            ]),
-            from: From {
-                key_code: key_code.clone(),
-                modifiers: None,
-            },
-            to: vec![
-                tmux_prefix(),
-                To {
-                    set_variable: None,
-                    key_code: Some(key_code),
-                    modifiers: Some(vec![ModifierKey::Control]),
-                    mouse_key: None,
-                    pointing_button: None,
-                    shell_command: None,
-                },
-            ],
-            to_after_key_up: None,
-            to_if_alone: None,
-        }],
-    }
 }
 
 fn tmux_prefix() -> To {
