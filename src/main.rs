@@ -1226,183 +1226,39 @@ fn main() {
         Rule {
             description: "[VK2] ShiftIt",
             manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::H,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::LeftArrow),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
+                (KeyCode::H, KeyCode::LeftArrow),
+                (KeyCode::O, KeyCode::RightArrow),
+                (KeyCode::N, KeyCode::DownArrow),
+                (KeyCode::P, KeyCode::UpArrow),
+                (KeyCode::U, KeyCode::Key1),
+                (KeyCode::I, KeyCode::Key2),
+                (KeyCode::M, KeyCode::Key3),
+                (KeyCode::Comma, KeyCode::Key4),
+            ]
+            .into_iter()
+            .map(|(from, to)| Manipulator {
+                conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
+                from: From {
+                    key_code: from,
+                    modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                 },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::O,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::RightArrow),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::N,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::DownArrow),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::P,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::UpArrow),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::U,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key1),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::I,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key2),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::M,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key3),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-                Manipulator {
-                    conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                    from: From {
-                        key_code: KeyCode::Comma,
-                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                    },
-                    to: vec![To {
-                        key_code: Some(KeyCode::Key4),
-                        modifiers: Some(vec![
-                            ModifierKey::Command,
-                            ModifierKey::Control,
-                            ModifierKey::Option,
-                        ]),
-                        set_variable: None,
-                        mouse_key: None,
-                        pointing_button: None,
-                        shell_command: None,
-                    }],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-            ],
+                to: vec![To {
+                    key_code: Some(to),
+                    modifiers: Some(vec![
+                        ModifierKey::Command,
+                        ModifierKey::Control,
+                        ModifierKey::Option,
+                    ]),
+                    set_variable: None,
+                    mouse_key: None,
+                    pointing_button: None,
+                    shell_command: None,
+                }],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            })
+            .collect::<Vec<Manipulator>>(),
         },
         open_app_rule(
             "[VK2] j -> Google Chrome.app",
