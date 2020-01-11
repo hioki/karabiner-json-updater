@@ -11,10 +11,8 @@ pub struct From {
 }
 
 #[derive(Debug, Serialize)]
-pub struct FromModifier {
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub optional: Option<Vec<ModifierKey>>,
-
-    #[serde(skip_serializing_if = "Option::is_none")]
-    pub mandatory: Option<Vec<ModifierKey>>,
+#[serde(rename_all = "snake_case")]
+pub enum FromModifier {
+    Optional(Vec<ModifierKey>),
+    Mandatory(Vec<ModifierKey>),
 }

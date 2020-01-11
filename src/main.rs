@@ -403,10 +403,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::H,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::LeftArrow),
@@ -424,10 +421,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::J,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::DownArrow),
@@ -445,10 +439,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::K,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::UpArrow),
@@ -466,10 +457,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::L,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::RightArrow),
@@ -491,10 +479,7 @@ fn main() {
                 conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                 from: From {
                     key_code: KeyCode::F,
-                    modifiers: Some(FromModifier {
-                        optional: Some(vec![ModifierKey::Any]),
-                        mandatory: None,
-                    }),
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
                 to: vec![To {
                     key_code: Some(KeyCode::Escape),
@@ -598,10 +583,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::U,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::LeftArrow),
@@ -619,10 +601,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::I,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::RightArrow),
@@ -644,10 +623,7 @@ fn main() {
                 conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                 from: From {
                     key_code: KeyCode::G,
-                    modifiers: Some(FromModifier {
-                        optional: Some(vec![ModifierKey::Any]),
-                        mandatory: None,
-                    }),
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
                 to: vec![To {
                     key_code: Some(KeyCode::Tab),
@@ -813,10 +789,7 @@ fn main() {
                 conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                 from: From {
                     key_code: KeyCode::CloseBracket,
-                    modifiers: Some(FromModifier {
-                        optional: Some(vec![ModifierKey::Any]),
-                        mandatory: None,
-                    }),
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
                 to: vec![To {
                     key_code: Some(KeyCode::Z),
@@ -859,10 +832,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::N,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Shift]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -884,10 +854,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::M,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Shift]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -909,10 +876,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::Comma,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Shift]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -934,10 +898,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::Period,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Shift]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -1052,10 +1013,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::Slash,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -1073,10 +1031,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                     from: From {
                         key_code: KeyCode::International1,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         key_code: None,
@@ -1642,10 +1597,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::H,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::LeftArrow),
@@ -1667,10 +1619,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::O,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::RightArrow),
@@ -1692,10 +1641,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::N,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::DownArrow),
@@ -1717,10 +1663,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::P,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::UpArrow),
@@ -1742,10 +1685,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::U,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::Key1),
@@ -1767,10 +1707,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::I,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::Key2),
@@ -1792,10 +1729,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::M,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::Key3),
@@ -1817,10 +1751,7 @@ fn main() {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                     from: From {
                         key_code: KeyCode::Comma,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         key_code: Some(KeyCode::Key4),
@@ -1915,10 +1846,7 @@ fn main() {
                 conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk3)]),
                 from: From {
                     key_code: from,
-                    modifiers: Some(FromModifier {
-                        optional: Some(vec![ModifierKey::Any]),
-                        mandatory: None,
-                    }),
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
                 to: vec![To {
                     set_variable: None,
@@ -1941,10 +1869,7 @@ fn main() {
                     conditions: None,
                     from: From {
                         key_code: KeyCode::Semicolon,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Control]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                     },
                     to: vec![To {
                         set_variable: None,
@@ -1962,10 +1887,7 @@ fn main() {
                     conditions: None,
                     from: From {
                         key_code: KeyCode::Semicolon,
-                        modifiers: Some(FromModifier {
-                            optional: None,
-                            mandatory: Some(vec![ModifierKey::Shift]),
-                        }),
+                        modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
                     },
                     to: vec![To {
                         set_variable: None,
@@ -1983,10 +1905,7 @@ fn main() {
                     conditions: None,
                     from: From {
                         key_code: KeyCode::Semicolon,
-                        modifiers: Some(FromModifier {
-                            optional: Some(vec![ModifierKey::Any]),
-                            mandatory: None,
-                        }),
+                        modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                     },
                     to: vec![To {
                         set_variable: None,
@@ -2008,10 +1927,7 @@ fn main() {
                 conditions: None,
                 from: From {
                     key_code: KeyCode::Quote,
-                    modifiers: Some(FromModifier {
-                        optional: None,
-                        mandatory: Some(vec![ModifierKey::Control]),
-                    }),
+                    modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
                 },
                 to: vec![To {
                     set_variable: None,
@@ -2032,10 +1948,7 @@ fn main() {
                 conditions: None,
                 from: From {
                     key_code: KeyCode::CapsLock,
-                    modifiers: Some(FromModifier {
-                        optional: Some(vec![ModifierKey::Any]),
-                        mandatory: None,
-                    }),
+                    modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                 },
                 to: vec![To {
                     set_variable: None,
@@ -2072,10 +1985,7 @@ fn virtual_key_rule(
             conditions: None,
             from: From {
                 key_code,
-                modifiers: Some(FromModifier {
-                    optional: Some(vec![ModifierKey::Any]),
-                    mandatory: None,
-                }),
+                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
             },
             to: vec![To {
                 set_variable: Some(SetVariable {
