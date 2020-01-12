@@ -163,7 +163,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "[Terminal] o/p -> control+t control+p / control+t control+n",
+            description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
             manipulators: vec![
                 Manipulator {
                     conditions: Some(vec![
@@ -208,7 +208,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[Terminal] VK2 + a/s -> control+t control+p / control+t control+n",
+            description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
             manipulators: vec![
                 Manipulator {
                     conditions: Some(vec![
@@ -253,7 +253,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[Terminal] VK2 + h -> backspace",
+            description: "[iTerm2] VK2+H -> Backspace",
             manipulators: vec![Manipulator {
                 conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                 from: From {
@@ -270,56 +270,30 @@ fn main() {
             }],
         },
         Rule {
-            description: "[Terminal] z/y -> copy",
-            manipulators: vec![
-                Manipulator {
-                    conditions: Some(vec![
-                        Condition::on_app(BundleIdentifier::ITerm2),
-                        Condition::with_virtual_key(VirtualKey::Vk1),
-                    ]),
-                    from: From {
-                        key_code: KeyCode::Z,
-                        modifiers: None,
-                    },
-                    to: vec![
-                        tmux_prefix(),
-                        To::Key {
-                            key_code: KeyCode::CloseBracket,
-                            modifiers: Some(vec![ModifierKey::Control]),
-                        },
-                    ],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
+            description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
+            manipulators: vec![Manipulator {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_virtual_key(VirtualKey::Vk1),
+                ]),
+                from: From {
+                    key_code: KeyCode::Z,
+                    modifiers: None,
                 },
-                Manipulator {
-                    conditions: Some(vec![
-                        Condition::on_app(BundleIdentifier::ITerm2),
-                        Condition::with_virtual_key(VirtualKey::Vk1),
-                    ]),
-                    from: From {
-                        key_code: KeyCode::Y,
-                        modifiers: None,
+                to: vec![
+                    tmux_prefix(),
+                    To::Key {
+                        key_code: KeyCode::CloseBracket,
+                        modifiers: Some(vec![ModifierKey::Control]),
                     },
-                    to: vec![
-                        To::Key {
-                            key_code: KeyCode::ReturnOrEnter,
-                            modifiers: None,
-                        },
-                        tmux_prefix(),
-                        To::Key {
-                            key_code: KeyCode::M,
-                            modifiers: Some(vec![ModifierKey::Control]),
-                        },
-                    ],
-                    r#type: ManipulatorType::default(),
-                    to_after_key_up: None,
-                    to_if_alone: None,
-                },
-            ],
+                ],
+                r#type: ManipulatorType::default(),
+                to_after_key_up: None,
+                to_if_alone: None,
+            }],
         },
         Rule {
-            description: "[Terminal] u/i -> shift+0 / shift+4",
+            description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
             manipulators: vec![
                 Manipulator {
                     conditions: Some(vec![
@@ -358,7 +332,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] h/j/k/l -> cursor move",
+            description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
             manipulators: vec![
                 (KeyCode::H, KeyCode::LeftArrow),
                 (KeyCode::J, KeyCode::DownArrow),
@@ -378,7 +352,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "[VK1] f -> escape",
+            description: "VK1+F -> Escape",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::F,
@@ -388,7 +362,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK1] s/d -> shift+control+j/shift+control+; (Google Japanese Input)",
+            description: "VK1+S -> Shift+Ctrl+J / VK1+D -> Shift+Ctrl+Semicolon (IME Switching of Google Japanese Input)",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk1,
@@ -407,14 +381,14 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] a/z -> f10/f7",
+            description: "VK1+A -> F10 / VK1+Z -> F7",
             manipulators: vec![
                 build_manipulator(VirtualKey::Vk1, KeyCode::A, None, KeyCode::F10, None),
                 build_manipulator(VirtualKey::Vk1, KeyCode::Z, None, KeyCode::F7, None),
             ],
         },
         Rule {
-            description: "[VK1] u/i -> command+left/command+right",
+            description: "VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk1,
@@ -433,7 +407,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] g -> tab",
+            description: "VK1+G -> Tab",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::G,
@@ -443,7 +417,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK1] o/p -> control+shift+tab/control+tab",
+            description: "VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk1,
@@ -462,7 +436,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] y/t/x -> command+c/command+x/command+shift+v",
+            description: "VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk1,
@@ -492,7 +466,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] c/e -> backspace/delete",
+            description: "VK1+C -> Backspace / VK1+E -> Delete",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk1,
@@ -511,7 +485,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] [ -> command+z",
+            description: "VK1+[ -> Cmd+Z",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::CloseBracket,
@@ -521,7 +495,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK1] colon -> command+h",
+            description: "VK1+Colon -> Cmd+H",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::Quote,
@@ -531,7 +505,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK1] n/m/comma/dot -> mouse move",
+            description: "VK1+{N,M,Comma,Period} -> Mouse{Left,Down,Up,Right}",
             manipulators: vec![
                 (
                     KeyCode::N,
@@ -583,7 +557,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "[VK1] / -> left click, _ -> right click",
+            description: "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
             manipulators: vec![
                 Manipulator {
                     conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
@@ -614,7 +588,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK1] @/] -> scroll",
+            description: "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
             manipulators: vec![
                 (KeyCode::OpenBracket, -64),
                 (KeyCode::NonUsPound, 64),
@@ -641,7 +615,7 @@ fn main() {
             .collect(),
         },
         Rule {
-            description: "[VK1] numbers -> function keys",
+            description: "VK1+{1,2,3,4,5,6,7,8,9,0,-,^} -> F{1,2,3,4,5,6,7,8,9,10,11,12}",
             manipulators: vec![
                 (KeyCode::Key1, KeyCode::F1),
                 (KeyCode::Key2, KeyCode::F2),
@@ -661,7 +635,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "[VK1] b -> window maximize (ShiftIt)",
+            description: "VK1+B -> Ctrl+Opt+Cmd+M (Maximize window size with ShiftIt)",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::B,
@@ -675,7 +649,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK1] \\ -> command+option+d (Hide the Dock)",
+            description: "VK1+Backslash -> Cmd+Opt+D (Hide the Dock)",
             manipulators: vec![build_manipulator(
                 VirtualKey::Vk1,
                 KeyCode::International3,
@@ -685,7 +659,7 @@ fn main() {
             )],
         },
         Rule {
-            description: "[VK2] f/d -> command+tab/command+shift+tab",
+            description: "VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk2,
@@ -704,7 +678,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK2] s/a -> control+tab/control+shift+tab",
+            description: "VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk2,
@@ -723,7 +697,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK2] 9/0 -> command+shift+;/command+hyphen",
+            description: "VK2+9 -> Cmd+Shift+Semicolon / VK2+0 -> Cmd+Hyphen",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk2,
@@ -742,7 +716,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK2] 1/2 -> volume decrement/increment",
+            description: "VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk2,
@@ -761,7 +735,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK2] 3/4 -> display brightness decrement/increment",
+            description: "VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement",
             manipulators: vec![
                 build_manipulator(
                     VirtualKey::Vk2,
@@ -780,7 +754,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "[VK2] ShiftIt",
+            description: "VK2+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
             manipulators: vec![
                 (KeyCode::H, KeyCode::LeftArrow),
                 (KeyCode::O, KeyCode::RightArrow),
@@ -844,7 +818,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "[VK3] a..: -> 1..-",
+            description: "VK3+{A,S,D,F,G,H,J,K,L,Semicolon,Quote} -> {1,2,3,4,5,6,7,8,9,0,-}",
             manipulators: vec![
                 (KeyCode::A, KeyCode::Key1),
                 (KeyCode::S, KeyCode::Key2),
@@ -871,7 +845,7 @@ fn main() {
             .collect::<Vec<Manipulator>>(),
         },
         Rule {
-            description: "; -> enter",
+            description: "Ctrl+Semicolon -> Semicolon / Shift+Semicolon -> Shift+Semicolon / Semicolon -> Enter",
             manipulators: vec![
                 Manipulator {
                     r#type: ManipulatorType::default(),
@@ -918,7 +892,7 @@ fn main() {
             ],
         },
         Rule {
-            description: "control+: -> '",
+            description: "Ctrl+Colon -> SingleQuote",
             manipulators: vec![Manipulator {
                 r#type: ManipulatorType::default(),
                 conditions: None,
@@ -935,7 +909,7 @@ fn main() {
             }],
         },
         Rule {
-            description: "caps_lock -> vk_none",
+            description: "Disable CapsLock",
             manipulators: vec![Manipulator {
                 r#type: ManipulatorType::default(),
                 conditions: None,
