@@ -13,7 +13,7 @@ pub enum Condition {
     WithVirtualKey {
         r#type: ConditionType,
         name: VirtualKey,
-        value: u8,
+        value: Value,
     },
 }
 
@@ -29,7 +29,7 @@ impl Condition {
         Condition::WithVirtualKey {
             r#type: ConditionType::VariableIf,
             name: virtual_key,
-            value: Value::On.value(),
+            value: Value::On,
         }
     }
 }

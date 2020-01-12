@@ -64,13 +64,13 @@ fn main() {
                 to: vec![To::Variable {
                     set_variable: SetVariable {
                         name: virtual_key.clone(),
-                        value: Value::On.value(),
+                        value: Value::On,
                     },
                 }],
                 to_after_key_up: Some(vec![ToAfterKeyUp {
                     set_variable: SetVariable {
                         name: virtual_key,
-                        value: Value::Off.value(),
+                        value: Value::Off,
                     },
                 }]),
                 to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
