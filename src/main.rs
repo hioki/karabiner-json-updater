@@ -24,7 +24,7 @@ use modifier_key::ModifierKey;
 use mouse_key::MouseKey;
 use rule::Rule;
 use set_variable::SetVariable;
-use to::{PointingButton, To};
+use to::{tmux_prefix, PointingButton, To};
 use value::Value;
 use virtual_key::VirtualKey;
 
@@ -933,13 +933,6 @@ fn main() {
     };
 
     println!("{}", serde_json::to_string(&config).unwrap());
-}
-
-fn tmux_prefix() -> To {
-    To::Key {
-        key_code: KeyCode::T,
-        modifiers: Some(vec![ModifierKey::Control]),
-    }
 }
 
 fn build_manipulator(
