@@ -19,7 +19,7 @@ use condition::Condition;
 use config::Config;
 use from::{From, FromModifier};
 use key_code::*;
-use manipulator::{Manipulator, ManipulatorType, ToAfterKeyUp, ToIfAlone};
+use manipulator::{Manipulator, ToAfterKeyUp, ToIfAlone};
 use modifier_key::ModifierKey;
 use mouse_key::MouseKey;
 use rule::Rule;
@@ -57,7 +57,7 @@ fn main() {
                 ]
                     .into_iter()
                     .map(|(key_code, virtual_key, to_if_alone)| Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: None,
                         from: From {
                             key_code,
@@ -93,7 +93,7 @@ fn main() {
                 ]
                     .into_iter()
                     .map(|key_code| Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: Some(vec![
                             Condition::on_app(BundleIdentifier::ITerm2),
                             Condition::with_virtual_key(VirtualKey::Vk4),
@@ -141,7 +141,7 @@ fn main() {
                 ]
                     .into_iter()
                     .map(|key_code| Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: Some(vec![
                             Condition::on_app(BundleIdentifier::VSCode),
                             Condition::with_virtual_key(VirtualKey::Vk4),
@@ -183,7 +183,7 @@ fn main() {
                                 modifiers: Some(vec![ModifierKey::Control]),
                             },
                         ],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -203,7 +203,7 @@ fn main() {
                                 modifiers: Some(vec![ModifierKey::Control]),
                             },
                         ],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -228,7 +228,7 @@ fn main() {
                                 modifiers: Some(vec![ModifierKey::Control]),
                             },
                         ],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -248,7 +248,7 @@ fn main() {
                                 modifiers: Some(vec![ModifierKey::Control]),
                             },
                         ],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -266,7 +266,7 @@ fn main() {
                         key_code: KeyCode::DeleteOrBackspace,
                         modifiers: None,
                     }],
-                    r#type: ManipulatorType::default(),
+                    r#type: Default::default(),
                     to_after_key_up: None,
                     to_if_alone: None,
                 }],
@@ -289,7 +289,7 @@ fn main() {
                             modifiers: Some(vec![ModifierKey::Control]),
                         },
                     ],
-                    r#type: ManipulatorType::default(),
+                    r#type: Default::default(),
                     to_after_key_up: None,
                     to_if_alone: None,
                 }],
@@ -310,7 +310,7 @@ fn main() {
                             key_code: KeyCode::Key0,
                             modifiers: Some(vec![ModifierKey::Shift]),
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -327,7 +327,7 @@ fn main() {
                             key_code: KeyCode::Key4,
                             modifiers: Some(vec![ModifierKey::Shift]),
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -552,7 +552,7 @@ fn main() {
                                 vertical_wheel: None,
                             },
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     })
@@ -570,7 +570,7 @@ fn main() {
                         to: vec![To::Click {
                             pointing_button: PointingButton::Button1,
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -583,7 +583,7 @@ fn main() {
                         to: vec![To::Click {
                             pointing_button: PointingButton::Button2,
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     },
@@ -610,7 +610,7 @@ fn main() {
                                 vertical_wheel: Some(vertical_wheel),
                             },
                         }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     })
@@ -813,7 +813,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![To::Command { shell_command }],
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         to_after_key_up: None,
                         to_if_alone: None,
                     })
@@ -850,7 +850,7 @@ fn main() {
                 description: "Ctrl+Semicolon -> Semicolon / Shift+Semicolon -> Shift+Semicolon / Semicolon -> Enter",
                 manipulators: vec![
                     Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: None,
                         from: From {
                             key_code: KeyCode::Semicolon,
@@ -864,7 +864,7 @@ fn main() {
                         to_if_alone: None,
                     },
                     Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: None,
                         from: From {
                             key_code: KeyCode::Semicolon,
@@ -878,7 +878,7 @@ fn main() {
                         to_if_alone: None,
                     },
                     Manipulator {
-                        r#type: ManipulatorType::default(),
+                        r#type: Default::default(),
                         conditions: None,
                         from: From {
                             key_code: KeyCode::Semicolon,
@@ -896,7 +896,7 @@ fn main() {
             Rule {
                 description: "Ctrl+Colon -> SingleQuote",
                 manipulators: vec![Manipulator {
-                    r#type: ManipulatorType::default(),
+                    r#type: Default::default(),
                     conditions: None,
                     from: From {
                         key_code: KeyCode::Quote,
@@ -913,7 +913,7 @@ fn main() {
             Rule {
                 description: "Disable CapsLock",
                 manipulators: vec![Manipulator {
-                    r#type: ManipulatorType::default(),
+                    r#type: Default::default(),
                     conditions: None,
                     from: From {
                         key_code: KeyCode::CapsLock,
