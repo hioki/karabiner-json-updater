@@ -24,7 +24,7 @@ use modifier_key::ModifierKey;
 use mouse_key::MouseKey;
 use rule::Rule;
 use set_variable::SetVariable;
-use to::{tmux_prefix, PointingButton, To};
+use to::{PointingButton, To};
 use value::Value;
 use virtual_key::VirtualKey;
 
@@ -103,7 +103,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![
-                            tmux_prefix(),
+                            To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code,
                                 modifiers: Some(vec![ModifierKey::Control]),
@@ -177,7 +177,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![
-                            tmux_prefix(),
+                            To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code: KeyCode::P,
                                 modifiers: Some(vec![ModifierKey::Control]),
@@ -197,7 +197,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![
-                            tmux_prefix(),
+                            To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code: KeyCode::N,
                                 modifiers: Some(vec![ModifierKey::Control]),
@@ -222,7 +222,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![
-                            tmux_prefix(),
+                            To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code: KeyCode::P,
                                 modifiers: Some(vec![ModifierKey::Control]),
@@ -242,7 +242,7 @@ fn main() {
                             modifiers: None,
                         },
                         to: vec![
-                            tmux_prefix(),
+                            To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code: KeyCode::N,
                                 modifiers: Some(vec![ModifierKey::Control]),
@@ -283,7 +283,7 @@ fn main() {
                         modifiers: None,
                     },
                     to: vec![
-                        tmux_prefix(),
+                        To::new_tmux_prefix_key(),
                         To::Key {
                             key_code: KeyCode::CloseBracket,
                             modifiers: Some(vec![ModifierKey::Control]),

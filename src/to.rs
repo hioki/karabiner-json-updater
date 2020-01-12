@@ -4,13 +4,6 @@ use crate::mouse_key::MouseKey;
 use crate::set_variable::SetVariable;
 use serde::Serialize;
 
-pub fn tmux_prefix() -> To {
-    To::Key {
-        key_code: KeyCode::T,
-        modifiers: Some(vec![ModifierKey::Control]),
-    }
-}
-
 #[derive(Debug, Serialize)]
 #[serde(untagged, rename_all = "snake_case")]
 pub enum To {
@@ -31,6 +24,15 @@ pub enum To {
     Command {
         shell_command: &'static str,
     },
+}
+
+impl To {
+    pub fn new_tmux_prefix_key() -> To {
+        To::Key {
+            key_code: KeyCode::T,
+            modifiers: Some(vec![ModifierKey::Control]),
+        }
+    }
 }
 
 #[derive(Debug, Serialize)]
