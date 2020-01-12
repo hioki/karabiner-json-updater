@@ -1,10 +1,10 @@
-use crate::condition::Condition;
-use crate::from::{From, FromModifier};
-use crate::key_code::KeyCode;
-use crate::modifier_key::ModifierKey;
-use crate::set_variable::SetVariable;
-use crate::to::To;
-use crate::virtual_key::VirtualKey;
+use crate::config::condition::Condition;
+use crate::config::from::{From, FromModifier};
+use crate::config::key_code::KeyCode;
+use crate::config::modifier_key::ModifierKey;
+use crate::config::set_variable::SetVariable;
+use crate::config::to::To;
+use crate::config::virtual_key::VirtualKey;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]

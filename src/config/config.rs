@@ -1,4 +1,4 @@
-use crate::rule::Rule;
+use crate::config::rule::Rule;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]

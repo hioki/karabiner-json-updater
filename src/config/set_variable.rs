@@ -1,5 +1,5 @@
-use crate::value::Value;
-use crate::virtual_key::VirtualKey;
+use crate::config::value::Value;
+use crate::config::virtual_key::VirtualKey;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]

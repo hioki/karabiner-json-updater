@@ -1,5 +1,5 @@
-use crate::key_code::KeyCode;
-use crate::modifier_key::ModifierKey;
+use crate::config::key_code::KeyCode;
+use crate::config::modifier_key::ModifierKey;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]

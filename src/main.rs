@@ -1,32 +1,20 @@
-mod bundle_identifier;
-mod condition;
 mod config;
-mod from;
-mod key_code;
-mod manipulator;
-mod modifier_key;
-mod mouse_key;
-mod rule;
-mod set_variable;
-mod to;
-mod value;
-mod virtual_key;
 
 use serde_json;
 
-use bundle_identifier::BundleIdentifier;
-use condition::Condition;
-use config::Config;
-use from::{From, FromModifier};
-use key_code::*;
-use manipulator::{Manipulator, ToAfterKeyUp, ToIfAlone};
-use modifier_key::ModifierKey;
-use mouse_key::MouseKey;
-use rule::Rule;
-use set_variable::SetVariable;
-use to::{PointingButton, To};
-use value::Value;
-use virtual_key::VirtualKey;
+use config::bundle_identifier::BundleIdentifier;
+use config::condition::Condition;
+use config::config::Config;
+use config::from::{From, FromModifier};
+use config::key_code::*;
+use config::manipulator::{Manipulator, ToAfterKeyUp, ToIfAlone};
+use config::modifier_key::ModifierKey;
+use config::mouse_key::MouseKey;
+use config::rule::Rule;
+use config::set_variable::SetVariable;
+use config::to::{PointingButton, To};
+use config::value::Value;
+use config::virtual_key::VirtualKey;
 
 fn main() {
     let config = Config {

@@ -1,4 +1,4 @@
-use crate::manipulator::Manipulator;
+use crate::config::manipulator::Manipulator;
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
