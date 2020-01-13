@@ -12,7 +12,6 @@ use crate::config::value::Value;
 use crate::config::virtual_key::VirtualKey;
 
 use serde::Serialize;
-use serde_json;
 
 #[derive(Debug, Serialize)]
 pub struct Config {
@@ -21,10 +20,6 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn to_json(&self) -> String {
-        serde_json::to_string_pretty(self).unwrap()
-    }
-
     pub fn my_config() -> Config {
         Config {
             title: "Personal rules",
