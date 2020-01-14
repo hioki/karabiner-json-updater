@@ -29,14 +29,18 @@ impl Updater {
             return Err("Create `$HOME/.config/karabiner/` via Karabiner-Elements".to_owned());
         }
 
-        let personal_rule_path = format!(
-            "{}/assets/complex_modifications/personal_rules.json",
-            config_dir,
-        );
+        serde_json::to_writer_pretty(File::create("./personal_rules.json").unwrap(), &self.config)
+            .unwrap();
 
-        let personal_rule_file = File::create(personal_rule_path).unwrap();
-
-        serde_json::to_writer_pretty(personal_rule_file, &self.config).unwrap();
+        serde_json::to_writer_pretty(
+            File::create(format!(
+                "{}/assets/complex_modifications/personal_rules.json",
+                config_dir,
+            ))
+            .unwrap(),
+            &self.config,
+        )
+        .unwrap();
 
         let karabiner_json_path = format!("{}/karabiner.json", config_dir);
 
