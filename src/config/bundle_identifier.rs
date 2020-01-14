@@ -6,4 +6,6 @@ pub enum BundleIdentifier {
     ITerm2,
     #[serde(rename = "com.microsoft.VSCode")]
     VSCode,
+    #[serde(rename = "com.jetbrains.CLion")]
+    CLion,
 }

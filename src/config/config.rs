@@ -157,6 +157,29 @@ impl Config {
                         .collect::<Vec<Manipulator>>(),
                 },
                 Rule {
+                    description: "[CLion] ¥ -> \\",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::International3,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::International3,
+                                    modifiers: Some(vec![ModifierKey::Option]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
                         Manipulator {
