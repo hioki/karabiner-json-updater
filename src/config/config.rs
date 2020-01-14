@@ -782,7 +782,7 @@ impl Config {
                         (KeyCode::L, "open -a 'Alfred 4.app'"),
                         (KeyCode::K, "open -a 'iTerm.app'"),
                         (KeyCode::L, "open -a 'Alfred 4.app'"),
-                        (KeyCode::I, "open -a 'IntelliJ IDEA.app'"),
+                        (KeyCode::I, "open -a 'CLion.app'"),
                         (
                             KeyCode::E,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
