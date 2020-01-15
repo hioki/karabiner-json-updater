@@ -778,6 +778,8 @@ impl Config {
                 Rule {
                     description: "Semicolon -> Enter",
                     manipulators: vec![
+                        Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, Some(FromModifier::Mandatory(vec![ModifierKey::Control])), KeyCode::Semicolon, None),
+                        Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, Some(FromModifier::Mandatory(vec![ModifierKey::Command, ModifierKey::Shift])), KeyCode::KeypadPlus, Some(vec![ModifierKey::Command])),
                         Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, None, KeyCode::ReturnOrEnter, None),
                     ],
                 },
