@@ -778,20 +778,7 @@ impl Config {
                 Rule {
                     description: "Semicolon -> Enter",
                     manipulators: vec![
-                        Manipulator {
-                            r#type: Default::default(),
-                            conditions: None,
-                            from: From {
-                                key_code: KeyCode::Semicolon,
-                                modifiers: None,
-                            },
-                            to: vec![To::Key {
-                                key_code: KeyCode::ReturnOrEnter,
-                                modifiers: None,
-                            }],
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                        Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, None, KeyCode::ReturnOrEnter, None),
                     ],
                 },
                 Rule {
