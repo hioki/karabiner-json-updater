@@ -648,7 +648,7 @@ impl Config {
                         (KeyCode::EqualSign, KeyCode::F12),
                     ]
                         .into_iter()
-                        .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, from, None, to, None))
+                        .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, from, Some(FromModifier::Optional(vec![ModifierKey::Any])), to, None))
                         .collect::<Vec<Manipulator>>(),
                 },
                 Rule {
