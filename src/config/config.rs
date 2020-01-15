@@ -225,51 +225,6 @@ impl Config {
                     ],
                 },
                 Rule {
-                    description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
-                    manipulators: vec![
-                        Manipulator {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk2),
-                            ]),
-                            from: From {
-                                key_code: KeyCode::A,
-                                modifiers: None,
-                            },
-                            to: vec![
-                                To::new_tmux_prefix_key(),
-                                To::Key {
-                                    key_code: KeyCode::P,
-                                    modifiers: Some(vec![ModifierKey::Control]),
-                                },
-                            ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                        Manipulator {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk2),
-                            ]),
-                            from: From {
-                                key_code: KeyCode::S,
-                                modifiers: None,
-                            },
-                            to: vec![
-                                To::new_tmux_prefix_key(),
-                                To::Key {
-                                    key_code: KeyCode::N,
-                                    modifiers: Some(vec![ModifierKey::Control]),
-                                },
-                            ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                    ],
-                },
-                Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
                     manipulators: vec![Manipulator {
                         conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
