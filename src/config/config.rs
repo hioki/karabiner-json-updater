@@ -182,47 +182,30 @@ impl Config {
                 Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
+                        (KeyCode::O, KeyCode::P),
+                        (KeyCode::P, KeyCode::N),
+                    ].into_iter().map(|(from, to)| {
                         Manipulator {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
                             ]),
                             from: From {
-                                key_code: KeyCode::O,
+                                key_code: from,
                                 modifiers: None,
                             },
                             to: vec![
                                 To::new_tmux_prefix_key(),
                                 To::Key {
-                                    key_code: KeyCode::P,
+                                    key_code: to,
                                     modifiers: Some(vec![ModifierKey::Control]),
                                 },
                             ],
                             r#type: Default::default(),
                             to_after_key_up: None,
                             to_if_alone: None,
-                        },
-                        Manipulator {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk1),
-                            ]),
-                            from: From {
-                                key_code: KeyCode::P,
-                                modifiers: None,
-                            },
-                            to: vec![
-                                To::new_tmux_prefix_key(),
-                                To::Key {
-                                    key_code: KeyCode::N,
-                                    modifiers: Some(vec![ModifierKey::Control]),
-                                },
-                            ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                    ],
+                        }
+                    }).collect::<Vec<Manipulator>>(),
                 },
                 Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
@@ -267,41 +250,27 @@ impl Config {
                 Rule {
                     description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
                     manipulators: vec![
+                        (KeyCode::U, KeyCode::Key0),
+                        (KeyCode::I, KeyCode::Key4),
+                    ].into_iter().map(|(from, to)| {
                         Manipulator {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
                             ]),
                             from: From {
-                                key_code: KeyCode::U,
+                                key_code: from,
                                 modifiers: None,
                             },
                             to: vec![To::Key {
-                                key_code: KeyCode::Key0,
+                                key_code: to,
                                 modifiers: Some(vec![ModifierKey::Shift]),
                             }],
                             r#type: Default::default(),
                             to_after_key_up: None,
                             to_if_alone: None,
-                        },
-                        Manipulator {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk1),
-                            ]),
-                            from: From {
-                                key_code: KeyCode::I,
-                                modifiers: None,
-                            },
-                            to: vec![To::Key {
-                                key_code: KeyCode::Key4,
-                                modifiers: Some(vec![ModifierKey::Shift]),
-                            }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                    ],
+                        }
+                    }).collect::<Vec<Manipulator>>()
                 },
                 Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
@@ -531,33 +500,23 @@ impl Config {
                 Rule {
                     description: "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
                     manipulators: vec![
+                        (KeyCode::Slash, PointingButton::Button1),
+                        (KeyCode::International1, PointingButton::Button2),
+                    ].into_iter().map(|(from, to)|{
                         Manipulator {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                             from: From {
-                                key_code: KeyCode::Slash,
+                                key_code: from,
                                 modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                             },
                             to: vec![To::Click {
-                                pointing_button: PointingButton::Button1,
+                                pointing_button: to,
                             }],
                             r#type: Default::default(),
                             to_after_key_up: None,
                             to_if_alone: None,
-                        },
-                        Manipulator {
-                            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                            from: From {
-                                key_code: KeyCode::International1,
-                                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
-                            },
-                            to: vec![To::Click {
-                                pointing_button: PointingButton::Button2,
-                            }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                    ],
+                        }
+                    }).collect::<Vec<Manipulator>>(),
                 },
                 Rule {
                     description: "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
