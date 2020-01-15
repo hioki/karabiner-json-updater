@@ -862,42 +862,14 @@ impl Config {
                         .collect::<Vec<Manipulator>>(),
                 },
                 Rule {
-                    description: "Ctrl+Semicolon -> Semicolon / Shift+Semicolon -> Shift+Semicolon / Semicolon -> Enter",
+                    description: "Semicolon -> Enter",
                     manipulators: vec![
                         Manipulator {
                             r#type: Default::default(),
                             conditions: None,
                             from: From {
                                 key_code: KeyCode::Semicolon,
-                                modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
-                            },
-                            to: vec![To::Key {
-                                key_code: KeyCode::Semicolon,
                                 modifiers: None,
-                            }],
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                        Manipulator {
-                            r#type: Default::default(),
-                            conditions: None,
-                            from: From {
-                                key_code: KeyCode::Semicolon,
-                                modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Shift])),
-                            },
-                            to: vec![To::Key {
-                                key_code: KeyCode::Semicolon,
-                                modifiers: Some(vec![ModifierKey::Shift]),
-                            }],
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
-                        Manipulator {
-                            r#type: Default::default(),
-                            conditions: None,
-                            from: From {
-                                key_code: KeyCode::Semicolon,
-                                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
                             },
                             to: vec![To::Key {
                                 key_code: KeyCode::ReturnOrEnter,

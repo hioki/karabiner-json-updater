@@ -3555,52 +3555,12 @@
       ]
     },
     {
-      "description": "Ctrl+Semicolon -> Semicolon / Shift+Semicolon -> Shift+Semicolon / Semicolon -> Enter",
+      "description": "Semicolon -> Enter",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "control"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "semicolon"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": [
-                "shift"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "semicolon",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
+            "key_code": "semicolon"
           },
           "to": [
             {
