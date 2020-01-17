@@ -3,8 +3,9 @@ mod updater;
 
 use crate::config::config::Config;
 use crate::updater::updater::Updater;
+use anyhow::Result;
 
-fn main() -> Result<(), String> {
+fn main() -> Result<()> {
     let config = Config::my_config();
     let updater = Updater { config };
 
