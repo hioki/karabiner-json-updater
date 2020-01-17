@@ -10,14 +10,7 @@ pub struct Updater {
 
 impl Updater {
     pub fn update(&self) -> Result<(), String> {
-        let is_jq_installed = Command::new("type")
-            .arg("jq")
-            .stdout(Stdio::null())
-            .status()
-            .unwrap()
-            .success();
-
-        if !is_jq_installed {
+        if !is_jq_installed() {
             return Err("jq must be installed".to_owned());
         }
 
@@ -61,4 +54,16 @@ impl Updater {
 
         Ok(())
     }
+}
+
+fn is_jq_installed() -> bool {
+    let command = "type";
+    let arg = "jq";
+
+    Command::new(command)
+        .arg(arg)
+        .stdout(Stdio::null())
+        .status()
+        .unwrap()
+        .success()
 }
