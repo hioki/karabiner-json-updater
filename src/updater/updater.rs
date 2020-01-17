@@ -8,34 +8,35 @@ pub struct Updater {
     pub config: Config,
 }
 
+const PERSONAL_RULES_JSON_PATH: &str = "./personal_rules.json";
+
 impl Updater {
     pub fn update(&self) -> Result<(), String> {
         if !is_jq_installed() {
             return Err("jq must be installed".to_owned());
         }
 
-        let config_dir = concat!(env!("HOME"), "/.config/karabiner");
+        let config_karabiner_path = Path::new(env!("HOME")).join(".config/karabiner");
 
-        if !Path::new(config_dir).is_dir() {
+        if !config_karabiner_path.is_dir() {
             return Err(format!(
                 "{} must be created via Karabiner-Elements",
-                config_dir
+                config_karabiner_path.to_str().unwrap()
             ));
         }
 
-        let personal_rules_file = File::create("./personal_rules.json").unwrap();
+        let personal_rules_file = File::create(PERSONAL_RULES_JSON_PATH).unwrap();
 
         serde_json::to_writer_pretty(personal_rules_file, &self.config).unwrap();
 
-        let complex_modification_file = File::create(format!(
-            "{}/assets/complex_modifications/personal_rules.json",
-            config_dir,
-        ))
-        .unwrap();
+        let complex_modification_file_path =
+            config_karabiner_path.join("assets/complex_modifications/personal_rules.json");
+
+        let complex_modification_file = File::create(complex_modification_file_path).unwrap();
 
         serde_json::to_writer_pretty(complex_modification_file, &self.config).unwrap();
 
-        let karabiner_json_path = format!("{}/karabiner.json", config_dir);
+        let karabiner_json_path = config_karabiner_path.join("karabiner.json");
 
         let rules_json = serde_json::to_string_pretty(&self.config.rules).unwrap();
 
