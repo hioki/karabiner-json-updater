@@ -27,23 +27,24 @@ impl Updater {
 
         let personal_rules_file = File::create(PERSONAL_RULES_JSON_PATH).unwrap();
 
-        serde_json::to_writer_pretty(personal_rules_file, &self.config).unwrap();
+        serde_json::to_writer_pretty(&personal_rules_file, &self.config).unwrap();
 
-        let complex_modification_file_path =
-            config_karabiner_path.join("assets/complex_modifications/personal_rules.json");
+        let complex_modification_file = File::create(
+            config_karabiner_path.join("assets/complex_modifications/personal_rules.json"),
+        )
+        .unwrap();
 
-        let complex_modification_file = File::create(complex_modification_file_path).unwrap();
-
-        serde_json::to_writer_pretty(complex_modification_file, &self.config).unwrap();
+        serde_json::to_writer_pretty(&complex_modification_file, &self.config).unwrap();
 
         let karabiner_json_path = config_karabiner_path.join("karabiner.json");
 
         let rules_json = serde_json::to_string_pretty(&self.config.rules).unwrap();
 
-        let query = format!(".profiles[0].complex_modifications.rules = {}", rules_json);
-
         let new_json = Command::new("jq")
-            .arg(query)
+            .arg(format!(
+                ".profiles[0].complex_modifications.rules = {}",
+                rules_json
+            ))
             .arg(&karabiner_json_path)
             .output()
             .unwrap()
