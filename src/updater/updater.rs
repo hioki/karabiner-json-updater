@@ -16,24 +16,24 @@ impl Updater {
 
         let config_dir = concat!(env!("HOME"), "/.config/karabiner");
 
-        let config_dir_exists = Path::new(config_dir).is_dir();
-
-        if !config_dir_exists {
-            return Err("Create `$HOME/.config/karabiner/` via Karabiner-Elements".to_owned());
+        if !Path::new(config_dir).is_dir() {
+            return Err(format!(
+                "{} must be created via Karabiner-Elements",
+                config_dir
+            ));
         }
 
-        serde_json::to_writer_pretty(File::create("./personal_rules.json").unwrap(), &self.config)
-            .unwrap();
+        let personal_rules_file = File::create("./personal_rules.json").unwrap();
 
-        serde_json::to_writer_pretty(
-            File::create(format!(
-                "{}/assets/complex_modifications/personal_rules.json",
-                config_dir,
-            ))
-            .unwrap(),
-            &self.config,
-        )
+        serde_json::to_writer_pretty(personal_rules_file, &self.config).unwrap();
+
+        let complex_modification_file = File::create(format!(
+            "{}/assets/complex_modifications/personal_rules.json",
+            config_dir,
+        ))
         .unwrap();
+
+        serde_json::to_writer_pretty(complex_modification_file, &self.config).unwrap();
 
         let karabiner_json_path = format!("{}/karabiner.json", config_dir);
 
