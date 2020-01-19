@@ -1,7 +1,7 @@
 use crate::config::config::Config;
 use anyhow::{anyhow, Result};
-use std::fs::File;
-use std::io::Write;
+use std::fs::{File, OpenOptions};
+use std::io::{copy, Seek as _, SeekFrom, Write as _};
 use std::path::Path;
 use std::process::{Command, Stdio};
 
@@ -26,15 +26,22 @@ impl Updater {
             )));
         }
 
-        let personal_rules_file = File::create(PERSONAL_RULES_JSON_PATH)?;
+        let mut personal_rules_file = OpenOptions::new()
+            .write(true)
+            .create(true)
+            .truncate(true)
+            .read(true)
+            .open(PERSONAL_RULES_JSON_PATH)?;
 
         serde_json::to_writer_pretty(&personal_rules_file, &self.config)?;
 
-        let complex_modification_file = File::create(
+        personal_rules_file.seek(SeekFrom::Start(0))?;
+
+        let mut complex_modification_file = File::create(
             config_karabiner_path.join("assets/complex_modifications/personal_rules.json"),
         )?;
 
-        serde_json::to_writer_pretty(&complex_modification_file, &self.config)?;
+        let _written = copy(&mut personal_rules_file, &mut complex_modification_file)?;
 
         let karabiner_json_path = config_karabiner_path.join("karabiner.json");
 
