@@ -713,6 +713,18 @@ impl Config {
                         .collect::<Vec<Manipulator>>(),
                 },
                 Rule {
+                    description: "VK2+C -> Dictionary",
+                    manipulators: vec![
+                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                            VirtualKey::Vk2,
+                            KeyCode::C,
+                            None,
+                            KeyCode::D,
+                            Some(vec![ModifierKey::Command, ModifierKey::Control])
+                        )
+                    ]
+                },
+                Rule {
                     description: "Open apps",
                     manipulators: vec![
                         (KeyCode::J, "open -a 'Google Chrome.app'"),
