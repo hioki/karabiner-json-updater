@@ -752,6 +752,10 @@ impl Config {
                         (KeyCode::M, "open -a 'Skim.app'"),
                         (KeyCode::N, "open -a 'Notes.app'"),
                         (KeyCode::P, "open -a '1Password.app'"),
+                        (
+                            KeyCode::R,
+                            r#"osascript -e "tell application \"Alfred 4\" to search \"docsrs \"""#,
+                        ),
                         (KeyCode::T, "open -a 'Microsoft To Do.app'"),
                         (KeyCode::V, "open -a 'Visual Studio Code.app'"),
                         (KeyCode::Slash, "open -a 'Slack.app'"),

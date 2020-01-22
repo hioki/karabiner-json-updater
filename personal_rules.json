@@ -3199,6 +3199,24 @@
             }
           ],
           "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"docsrs \\\"\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "t"
           },
           "to": [
