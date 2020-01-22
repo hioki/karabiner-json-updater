@@ -725,6 +725,18 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)", // https://github.com/pddg/alfred-google-translate-formatter-workflow
+                    manipulators: vec![
+                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                            VirtualKey::Vk2,
+                            KeyCode::Z,
+                            None,
+                            KeyCode::T,
+                            Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Command, ModifierKey::Option])
+                        )
+                    ]
+                },
+                Rule {
                     description: "Open apps",
                     manipulators: vec![
                         (KeyCode::J, "open -a 'Google Chrome.app'"),
