@@ -2722,7 +2722,7 @@
       ]
     },
     {
-      "description": "VK2+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
       "manipulators": [
         {
           "type": "basic",

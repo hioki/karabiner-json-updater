@@ -685,7 +685,7 @@ impl Config {
                     ],
                 },
                 Rule {
-                    description: "VK2+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+                    description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
                     manipulators: vec![
                         (KeyCode::H, KeyCode::LeftArrow),
                         (KeyCode::O, KeyCode::RightArrow),
