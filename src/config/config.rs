@@ -10,6 +10,7 @@ use crate::config::set_variable::SetVariable;
 use crate::config::to::{PointingButton, To};
 use crate::config::value::Value;
 use crate::config::virtual_key::VirtualKey;
+use itertools::Itertools;
 
 use serde::Serialize;
 
@@ -69,7 +70,7 @@ impl Config {
                             }]),
                             to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "Substitute TMUX prefix with VK4 on iTerm2",
@@ -104,7 +105,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK4 on VSCode",
@@ -154,7 +155,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "[CLion] ¥ -> \\",
@@ -205,7 +206,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         }
-                    }).collect::<Vec<Manipulator>>(),
+                    }).collect_vec(),
                 },
                 Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
@@ -270,7 +271,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         }
-                    }).collect::<Vec<Manipulator>>()
+                    }).collect_vec()
                 },
                 Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
@@ -290,7 +291,7 @@ impl Config {
                                 None,
                             )
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK1+F -> Escape",
@@ -495,7 +496,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
@@ -516,7 +517,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         }
-                    }).collect::<Vec<Manipulator>>(),
+                    }).collect_vec(),
                 },
                 Rule {
                     description: "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
@@ -563,7 +564,7 @@ impl Config {
                     ]
                         .into_iter()
                         .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, from, Some(FromModifier::Optional(vec![ModifierKey::Any])), to, None))
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK1+B -> Ctrl+Opt+Cmd+M (Maximize window size with ShiftIt)",
@@ -710,7 +711,7 @@ impl Config {
                                 ]),
                             )
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK2+C -> Dictionary",
@@ -773,7 +774,7 @@ impl Config {
                             to_after_key_up: None,
                             to_if_alone: None,
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK3+{A,S,D,F,G,H,J,K,L,Semicolon,Quote} -> {1,2,3,4,5,6,7,8,9,0,-}",
@@ -800,7 +801,7 @@ impl Config {
                                 None,
                             )
                         })
-                        .collect::<Vec<Manipulator>>(),
+                        .collect_vec(),
                 },
                 Rule {
                     description: "Semicolon -> Enter",
