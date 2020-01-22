@@ -739,24 +739,23 @@ impl Config {
                 Rule {
                     description: "Open apps",
                     manipulators: vec![
-                        (KeyCode::J, "open -a 'Google Chrome.app'"),
-                        (KeyCode::L, "open -a 'Alfred 4.app'"),
-                        (KeyCode::K, "open -a 'iTerm.app'"),
-                        (KeyCode::L, "open -a 'Alfred 4.app'"),
-                        (KeyCode::I, "open -a 'CLion.app'"),
+                        (KeyCode::B, "open -a 'Tweetbot.app'"),
                         (
                             KeyCode::E,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
                         ),
+                        (KeyCode::G, "open -a 'Atom.app'"),
+                        (KeyCode::I, "open -a 'CLion.app'"),
+                        (KeyCode::J, "open -a 'Google Chrome.app'"),
+                        (KeyCode::K, "open -a 'iTerm.app'"),
+                        (KeyCode::L, "open -a 'Alfred 4.app'"),
+                        (KeyCode::M, "open -a 'Skim.app'"),
+                        (KeyCode::N, "open -a 'Notes.app'"),
+                        (KeyCode::P, "open -a '1Password.app'"),
+                        (KeyCode::T, "open -a 'Microsoft To Do.app'"),
+                        (KeyCode::V, "open -a 'Visual Studio Code.app'"),
                         (KeyCode::Slash, "open -a 'Slack.app'"),
                         (KeyCode::OpenBracket, "open -a 'Mail.app'"),
-                        (KeyCode::T, "open -a 'Microsoft To Do.app'"),
-                        (KeyCode::G, "open -a 'Atom.app'"),
-                        (KeyCode::B, "open -a 'Tweetbot.app'"),
-                        (KeyCode::M, "open -a 'Skim.app'"),
-                        (KeyCode::R, "open -a 'Notes.app'"),
-                        (KeyCode::V, "open -a 'Visual Studio Code.app'"),
-                        (KeyCode::W, "open -a '1Password.app'"),
                     ]
                         .into_iter()
                         .map(|(key_code, shell_command)| Manipulator {

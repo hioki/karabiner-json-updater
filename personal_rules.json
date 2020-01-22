@@ -3019,11 +3019,11 @@
             }
           ],
           "from": {
-            "key_code": "j"
+            "key_code": "b"
           },
           "to": [
             {
-              "shell_command": "open -a 'Google Chrome.app'"
+              "shell_command": "open -a 'Tweetbot.app'"
             }
           ]
         },
@@ -3037,11 +3037,65 @@
             }
           ],
           "from": {
-            "key_code": "l"
+            "key_code": "e"
           },
           "to": [
             {
-              "shell_command": "open -a 'Alfred 4.app'"
+              "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"snip \\\"\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Atom.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'CLion.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Google Chrome.app'"
             }
           ]
         },
@@ -3091,11 +3145,11 @@
             }
           ],
           "from": {
-            "key_code": "i"
+            "key_code": "m"
           },
           "to": [
             {
-              "shell_command": "open -a 'CLion.app'"
+              "shell_command": "open -a 'Skim.app'"
             }
           ]
         },
@@ -3109,11 +3163,65 @@
             }
           ],
           "from": {
-            "key_code": "e"
+            "key_code": "n"
           },
           "to": [
             {
-              "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"snip \\\"\""
+              "shell_command": "open -a 'Notes.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "shell_command": "open -a '1Password.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Microsoft To Do.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'Visual Studio Code.app'"
             }
           ]
         },
@@ -3150,132 +3258,6 @@
           "to": [
             {
               "shell_command": "open -a 'Mail.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "t"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Microsoft To Do.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "g"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Atom.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "b"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Tweetbot.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "m"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Skim.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "r"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Notes.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "v"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Visual Studio Code.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "w"
-          },
-          "to": [
-            {
-              "shell_command": "open -a '1Password.app'"
             }
           ]
         }
