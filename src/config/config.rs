@@ -759,6 +759,7 @@ impl Config {
                         ),
                         (KeyCode::T, "open -a 'Microsoft To Do.app'"),
                         (KeyCode::V, "open -a 'Visual Studio Code.app'"),
+                        (KeyCode::Y, "open -a 'Spotify.app'"),
                         (KeyCode::Slash, "open -a 'Slack.app'"),
                         (KeyCode::OpenBracket, "open -a 'Mail.app'"),
                     ]
