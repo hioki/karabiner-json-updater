@@ -3,7 +3,7 @@ use anyhow::{anyhow, Result};
 use std::fs::{File, OpenOptions};
 use std::io::{copy, Seek as _, SeekFrom, Write as _};
 use std::path::Path;
-use std::process::{Command, Stdio};
+use std::process::Command;
 
 pub struct Updater {
     pub config: Config,
@@ -13,10 +13,6 @@ const PERSONAL_RULES_JSON_PATH: &str = "./personal_rules.json";
 
 impl Updater {
     pub fn update(&self) -> Result<()> {
-        if !is_jq_installed()? {
-            return Err(anyhow!("jq must be installed"));
-        }
-
         let config_karabiner_path = Path::new(env!("HOME")).join(".config/karabiner");
 
         if !config_karabiner_path.is_dir() {
@@ -62,16 +58,4 @@ impl Updater {
 
         Ok(())
     }
-}
-
-fn is_jq_installed() -> Result<bool> {
-    let command = "type";
-    let arg = "jq";
-
-    let exit_status = Command::new(command)
-        .arg(arg)
-        .stdout(Stdio::null())
-        .status()?;
-
-    Ok(exit_status.success())
 }
