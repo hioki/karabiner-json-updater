@@ -750,7 +750,7 @@ impl Config {
                         (KeyCode::J, "open -a 'Google Chrome.app'"),
                         (KeyCode::K, "open -a 'iTerm.app'"),
                         (KeyCode::L, "open -a 'Alfred 4.app'"),
-                        (KeyCode::M, "open -a 'Skim.app'"),
+                        (KeyCode::M, "open -a 'Dynalist.app'"),
                         (KeyCode::N, "open -a 'Notes.app'"),
                         (KeyCode::P, "open -a '1Password.app'"),
                         (

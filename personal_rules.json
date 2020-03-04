@@ -3149,7 +3149,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Skim.app'"
+              "shell_command": "open -a 'Dynalist.app'"
             }
           ]
         },
