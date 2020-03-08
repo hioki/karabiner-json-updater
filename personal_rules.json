@@ -1152,6 +1152,38 @@
       ]
     },
     {
+      "description": "[CLion] VK4+Semicolon -> Option+Enter",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
       "manipulators": [
         {

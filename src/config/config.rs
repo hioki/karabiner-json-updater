@@ -181,6 +181,30 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+Semicolon -> Option+Enter",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_virtual_key(VirtualKey::Vk4),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::Semicolon,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::ReturnOrEnter,
+                                    modifiers: Some(vec![ModifierKey::Option]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
                         (KeyCode::O, KeyCode::P),
