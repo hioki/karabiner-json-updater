@@ -8,4 +8,6 @@ pub enum BundleIdentifier {
     VSCode,
     #[serde(rename = "com.jetbrains.CLion")]
     CLion,
+    #[serde(rename = "io.dynalist")]
+    Dynalist,
 }
