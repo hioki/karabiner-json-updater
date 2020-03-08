@@ -205,6 +205,35 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Dynalist] VK4+@ -> Input codeblocks",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_virtual_key(VirtualKey::Vk4),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::OpenBracket,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::ReturnOrEnter, modifiers: None },
+                                To::Key { key_code: KeyCode::ReturnOrEnter, modifiers: None },
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
+                                To::Key { key_code: KeyCode::UpArrow, modifiers: None },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
                         (KeyCode::O, KeyCode::P),
