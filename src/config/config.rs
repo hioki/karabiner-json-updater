@@ -205,7 +205,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+Semicolon -> Option+Enter",
+                    description: "[CLion] VK4+O -> Cmd+Shift+O",
                     manipulators: vec![
                         Manipulator {
                             conditions: Some(vec![
@@ -213,7 +213,55 @@ impl Config {
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
                             from: From {
-                                key_code: KeyCode::Semicolon,
+                                key_code: KeyCode::O,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::O,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+K -> Cmd+Shift+F",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_virtual_key(VirtualKey::Vk4),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::K,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
+                    description: "[CLion] F3 -> Opt+Enter",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_virtual_key(VirtualKey::Vk1),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::Key3,
                                 modifiers: None,
                             },
                             to: vec![

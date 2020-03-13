@@ -1184,7 +1184,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+Semicolon -> Option+Enter",
+      "description": "[CLion] VK4+O -> Cmd+Shift+O",
       "manipulators": [
         {
           "type": "basic",
@@ -1202,7 +1202,73 @@
             }
           ],
           "from": {
-            "key_code": "semicolon"
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+K -> Cmd+Shift+F",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] F3 -> Opt+Enter",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "3"
           },
           "to": [
             {
