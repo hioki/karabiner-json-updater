@@ -205,7 +205,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Dynalist] VK4+@ -> Input codeblocks",
+                    description: "[Dynalist] VK4+@ -> Paste as codeblocks",
                     manipulators: vec![
                         Manipulator {
                             conditions: Some(vec![
@@ -221,11 +221,10 @@ impl Config {
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::ReturnOrEnter, modifiers: None },
-                                To::Key { key_code: KeyCode::ReturnOrEnter, modifiers: None },
+                                To::Key { key_code: KeyCode::V, modifiers: Some(vec![ModifierKey::Command]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::UpArrow, modifiers: None },
                             ],
                             r#type: Default::default(),
                             to_after_key_up: None,
