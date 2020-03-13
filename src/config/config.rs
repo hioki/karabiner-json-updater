@@ -181,6 +181,30 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+J -> Cmd+1",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_virtual_key(VirtualKey::Vk4),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::J,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Key1,
+                                    modifiers: Some(vec![ModifierKey::Command]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
                     description: "[CLion] VK4+Semicolon -> Option+Enter",
                     manipulators: vec![
                         Manipulator {
