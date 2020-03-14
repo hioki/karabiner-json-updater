@@ -1,6 +1,6 @@
 use crate::config::bundle_identifier::BundleIdentifier;
 use crate::config::condition::Condition;
-use crate::config::from::{From, FromModifier};
+use crate::config::from::{From, FromInit, FromModifier};
 use crate::config::key_code::*;
 use crate::config::manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone};
 use crate::config::modifier_key::ModifierKey;
@@ -89,10 +89,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: key_code.clone(),
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::new_tmux_prefix_key(),
                                 To::Key {
@@ -135,10 +135,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::VSCode),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: key_code.clone(),
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![To::Key {
                                 key_code,
                                 modifiers: Some(vec![
@@ -159,10 +159,10 @@ impl Config {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::International3,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::International3,
@@ -181,10 +181,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::J,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::Key1,
@@ -203,10 +203,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::O,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::O,
@@ -225,10 +225,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::K,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::F,
@@ -247,10 +247,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::Key3,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::ReturnOrEnter,
@@ -269,10 +269,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::R,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::Y,
@@ -291,10 +291,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::Dynalist),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: KeyCode::OpenBracket,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
@@ -320,10 +320,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: from,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![
                                 To::new_tmux_prefix_key(),
                                 To::Key {
@@ -339,10 +339,10 @@ impl Config {
                     description: "[iTerm2] VK2+H -> Backspace",
                     manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                        from: From {
+                        from: FromInit {
                             key_code: KeyCode::H,
-                            modifiers: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                         to: vec![To::Key {
                             key_code: KeyCode::DeleteOrBackspace,
                             modifiers: None,
@@ -357,10 +357,10 @@ impl Config {
                             Condition::on_app(BundleIdentifier::ITerm2),
                             Condition::with_virtual_key(VirtualKey::Vk1),
                         ]),
-                        from: From {
+                        from: FromInit {
                             key_code: KeyCode::Z,
-                            modifiers: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                         to: vec![
                             To::new_tmux_prefix_key(),
                             To::Key {
@@ -382,10 +382,10 @@ impl Config {
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
                             ]),
-                            from: From {
+                            from: FromInit {
                                 key_code: from,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![To::Key {
                                 key_code: to,
                                 modifiers: Some(vec![ModifierKey::Shift]),
@@ -646,10 +646,10 @@ impl Config {
                         .into_iter()
                         .map(|(key_code, vertical_wheel)| ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
-                            from: From {
+                            from: FromInit {
                                 key_code,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![To::Mouse {
                                 mouse_key: MouseKey {
                                     x: None,
@@ -882,10 +882,10 @@ impl Config {
                         .into_iter()
                         .map(|(key_code, shell_command)| ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
-                            from: From {
+                            from: FromInit {
                                 key_code,
-                                modifiers: None,
-                            },
+                                ..Default::default()
+                            }.init(),
                             to: vec![To::Command { shell_command }],
                             ..Default::default()
                         }.init())

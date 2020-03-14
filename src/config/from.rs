@@ -2,6 +2,29 @@ use crate::config::key_code::KeyCode;
 use crate::config::modifier_key::ModifierKey;
 use serde::Serialize;
 
+pub struct FromInit {
+    pub key_code: KeyCode,
+    pub modifiers: Option<FromModifier>,
+}
+
+impl Default for FromInit {
+    fn default() -> Self {
+        Self {
+            key_code: KeyCode::Escape,
+            modifiers: None,
+        }
+    }
+}
+
+impl FromInit {
+    pub fn init(self) -> From {
+        From {
+            key_code: self.key_code,
+            modifiers: self.modifiers,
+        }
+    }
+}
+
 #[derive(Debug, Serialize)]
 pub struct From {
     pub key_code: KeyCode,
