@@ -1282,6 +1282,39 @@
       ]
     },
     {
+      "description": "[CLion] VK4+R -> Opt+Cmd+Y",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "y",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Dynalist] VK4+@ -> Paste as codeblocks",
       "manipulators": [
         {

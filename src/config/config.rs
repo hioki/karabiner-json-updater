@@ -277,6 +277,30 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+R -> Opt+Cmd+Y",
+                    manipulators: vec![
+                        Manipulator {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_virtual_key(VirtualKey::Vk4),
+                            ]),
+                            from: From {
+                                key_code: KeyCode::R,
+                                modifiers: None,
+                            },
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Y,
+                                    modifiers: Some(vec![ModifierKey::Option, ModifierKey::Command]),
+                                },
+                            ],
+                            r#type: Default::default(),
+                            to_after_key_up: None,
+                            to_if_alone: None,
+                        },
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK4+@ -> Paste as codeblocks",
                     manipulators: vec![
                         Manipulator {
