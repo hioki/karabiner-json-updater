@@ -7,6 +7,42 @@ use crate::config::to::To;
 use crate::config::virtual_key::VirtualKey;
 use serde::Serialize;
 
+pub struct ManipulatorInit {
+    pub conditions: Option<Vec<Condition>>,
+    pub from: From,
+    pub to: Vec<To>,
+    pub to_after_key_up: Option<Vec<ToAfterKeyUp>>,
+    pub to_if_alone: Option<Vec<ToIfAlone>>,
+}
+
+impl Default for ManipulatorInit {
+    fn default() -> Self {
+        Self {
+            conditions: None,
+            from: From {
+                key_code: KeyCode::Escape,
+                modifiers: None,
+            },
+            to: vec![],
+            to_after_key_up: None,
+            to_if_alone: None,
+        }
+    }
+}
+
+impl ManipulatorInit {
+    pub fn init(self) -> Manipulator {
+        Manipulator {
+            r#type: Default::default(),
+            conditions: self.conditions,
+            from: self.from,
+            to: self.to,
+            to_after_key_up: self.to_after_key_up,
+            to_if_alone: self.to_if_alone,
+        }
+    }
+}
+
 #[derive(Debug, Serialize)]
 pub struct Manipulator {
     pub r#type: ManipulatorType,
@@ -31,8 +67,7 @@ impl Manipulator {
         to: KeyCode,
         to_modifiers: Option<Vec<ModifierKey>>,
     ) -> Manipulator {
-        Manipulator {
-            conditions: None,
+        ManipulatorInit {
             from: From {
                 key_code: from,
                 modifiers: from_modifiers,
@@ -41,10 +76,9 @@ impl Manipulator {
                 key_code: to,
                 modifiers: to_modifiers,
             }],
-            r#type: ManipulatorType::default(),
-            to_after_key_up: None,
-            to_if_alone: None,
+            ..Default::default()
         }
+        .init()
     }
 
     pub fn new_for_key_to_key_mapping_with_single_virtual_key(
@@ -54,7 +88,7 @@ impl Manipulator {
         to: KeyCode,
         to_modifiers: Option<Vec<ModifierKey>>,
     ) -> Manipulator {
-        Manipulator {
+        ManipulatorInit {
             conditions: Some(vec![Condition::with_virtual_key(virtual_key)]),
             from: From {
                 key_code: from,
@@ -64,10 +98,9 @@ impl Manipulator {
                 key_code: to,
                 modifiers: to_modifiers,
             }],
-            r#type: ManipulatorType::default(),
-            to_after_key_up: None,
-            to_if_alone: None,
+            ..Default::default()
         }
+        .init()
     }
 }
 

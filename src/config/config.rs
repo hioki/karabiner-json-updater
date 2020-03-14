@@ -2,7 +2,7 @@ use crate::config::bundle_identifier::BundleIdentifier;
 use crate::config::condition::Condition;
 use crate::config::from::{From, FromModifier};
 use crate::config::key_code::*;
-use crate::config::manipulator::{Manipulator, ToAfterKeyUp, ToIfAlone};
+use crate::config::manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone};
 use crate::config::modifier_key::ModifierKey;
 use crate::config::mouse_key::MouseKey;
 use crate::config::rule::Rule;
@@ -49,9 +49,7 @@ impl Config {
                         (KeyCode::Tab, VirtualKey::Vk4, Some(KeyCode::Tab)),
                     ]
                         .into_iter()
-                        .map(|(key_code, virtual_key, to_if_alone)| Manipulator {
-                            r#type: Default::default(),
-                            conditions: None,
+                        .map(|(key_code, virtual_key, to_if_alone)| ManipulatorInit {
                             from: From {
                                 key_code,
                                 modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
@@ -69,7 +67,8 @@ impl Config {
                                 },
                             }]),
                             to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect_vec(),
                 },
                 Rule {
@@ -85,8 +84,7 @@ impl Config {
                         KeyCode::P,
                     ]
                         .into_iter()
-                        .map(|key_code| Manipulator {
-                            r#type: Default::default(),
+                        .map(|key_code| ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -102,9 +100,8 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Control]),
                                 },
                             ],
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect_vec(),
                 },
                 Rule {
@@ -133,8 +130,7 @@ impl Config {
                         KeyCode::NonUsPound,
                     ]
                         .into_iter()
-                        .map(|key_code| Manipulator {
-                            r#type: Default::default(),
+                        .map(|key_code| ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::VSCode),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -152,15 +148,14 @@ impl Config {
                                     ModifierKey::Command,
                                 ]),
                             }],
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect_vec(),
                 },
                 Rule {
                     description: "[CLion] ¥ -> \\",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                             ]),
@@ -174,16 +169,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Option]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[CLion] VK4+J -> Cmd+1",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -198,16 +191,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Command]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[CLion] VK4+O -> Cmd+Shift+O",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -222,16 +213,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[CLion] VK4+K -> Cmd+Shift+F",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -246,16 +235,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[CLion] F3 -> Opt+Enter",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
@@ -270,16 +257,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Option]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[CLion] VK4+R -> Opt+Cmd+Y",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -294,16 +279,14 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Option, ModifierKey::Command]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
                     description: "[Dynalist] VK4+@ -> Paste as codeblocks",
                     manipulators: vec![
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::Dynalist),
                                 Condition::with_virtual_key(VirtualKey::Vk4),
@@ -322,10 +305,8 @@ impl Config {
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                                 To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        },
+                            ..Default::default()
+                        }.init(),
                     ]
                 },
                 Rule {
@@ -334,7 +315,7 @@ impl Config {
                         (KeyCode::O, KeyCode::P),
                         (KeyCode::P, KeyCode::N),
                     ].into_iter().map(|(from, to)| {
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
@@ -350,15 +331,13 @@ impl Config {
                                     modifiers: Some(vec![ModifierKey::Control]),
                                 },
                             ],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        }
+                            ..Default::default()
+                        }.init()
                     }).collect_vec(),
                 },
                 Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
-                    manipulators: vec![Manipulator {
+                    manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                         from: From {
                             key_code: KeyCode::H,
@@ -368,14 +347,12 @@ impl Config {
                             key_code: KeyCode::DeleteOrBackspace,
                             modifiers: None,
                         }],
-                        r#type: Default::default(),
-                        to_after_key_up: None,
-                        to_if_alone: None,
-                    }],
+                        ..Default::default()
+                    }.init()],
                 },
                 Rule {
                     description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
-                    manipulators: vec![Manipulator {
+                    manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![
                             Condition::on_app(BundleIdentifier::ITerm2),
                             Condition::with_virtual_key(VirtualKey::Vk1),
@@ -391,10 +368,8 @@ impl Config {
                                 modifiers: Some(vec![ModifierKey::Control]),
                             },
                         ],
-                        r#type: Default::default(),
-                        to_after_key_up: None,
-                        to_if_alone: None,
-                    }],
+                        ..Default::default()
+                    }.init()],
                 },
                 Rule {
                     description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
@@ -402,7 +377,7 @@ impl Config {
                         (KeyCode::U, KeyCode::Key0),
                         (KeyCode::I, KeyCode::Key4),
                     ].into_iter().map(|(from, to)| {
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
                                 Condition::with_virtual_key(VirtualKey::Vk1),
@@ -415,10 +390,8 @@ impl Config {
                                 key_code: to,
                                 modifiers: Some(vec![ModifierKey::Shift]),
                             }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        }
+                            ..Default::default()
+                        }.init()
                     }).collect_vec()
                 },
                 Rule {
@@ -627,7 +600,7 @@ impl Config {
                         (KeyCode::Period, None, Some(3072), None),
                     ]
                         .into_iter()
-                        .map(|(key_code, modifiers, x, y)| Manipulator {
+                        .map(|(key_code, modifiers, x, y)| ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                             from: From {
                                 key_code,
@@ -640,10 +613,8 @@ impl Config {
                                     vertical_wheel: None,
                                 },
                             }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect_vec(),
                 },
                 Rule {
@@ -652,7 +623,7 @@ impl Config {
                         (KeyCode::Slash, PointingButton::Button1),
                         (KeyCode::International1, PointingButton::Button2),
                     ].into_iter().map(|(from, to)|{
-                        Manipulator {
+                        ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                             from: From {
                                 key_code: from,
@@ -661,10 +632,8 @@ impl Config {
                             to: vec![To::Click {
                                 pointing_button: to,
                             }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        }
+                            ..Default::default()
+                        }.init()
                     }).collect_vec(),
                 },
                 Rule {
@@ -675,7 +644,7 @@ impl Config {
                         (KeyCode::Backslash, 64),
                     ]
                         .into_iter()
-                        .map(|(key_code, vertical_wheel)| Manipulator {
+                        .map(|(key_code, vertical_wheel)| ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
                             from: From {
                                 key_code,
@@ -688,10 +657,8 @@ impl Config {
                                     vertical_wheel: Some(vertical_wheel),
                                 },
                             }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect(),
                 },
                 Rule {
@@ -913,17 +880,15 @@ impl Config {
                         (KeyCode::OpenBracket, "open -a 'Mail.app'"),
                     ]
                         .into_iter()
-                        .map(|(key_code, shell_command)| Manipulator {
+                        .map(|(key_code, shell_command)| ManipulatorInit {
                             conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
                             from: From {
                                 key_code,
                                 modifiers: None,
                             },
                             to: vec![To::Command { shell_command }],
-                            r#type: Default::default(),
-                            to_after_key_up: None,
-                            to_if_alone: None,
-                        })
+                            ..Default::default()
+                        }.init())
                         .collect_vec(),
                 },
                 Rule {
@@ -963,9 +928,7 @@ impl Config {
                 },
                 Rule {
                     description: "Ctrl+Colon -> SingleQuote",
-                    manipulators: vec![Manipulator {
-                        r#type: Default::default(),
-                        conditions: None,
+                    manipulators: vec![ManipulatorInit {
                         from: From {
                             key_code: KeyCode::Quote,
                             modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
@@ -974,15 +937,12 @@ impl Config {
                             key_code: KeyCode::Key7,
                             modifiers: Some(vec![ModifierKey::Shift]),
                         }],
-                        to_after_key_up: None,
-                        to_if_alone: None,
-                    }],
+                        ..Default::default()
+                    }.init()],
                 },
                 Rule {
                     description: "Disable CapsLock",
-                    manipulators: vec![Manipulator {
-                        r#type: Default::default(),
-                        conditions: None,
+                    manipulators: vec![ManipulatorInit {
                         from: From {
                             key_code: KeyCode::CapsLock,
                             modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
@@ -991,9 +951,8 @@ impl Config {
                             key_code: KeyCode::VkNone,
                             modifiers: None,
                         }],
-                        to_after_key_up: None,
-                        to_if_alone: None,
-                    }],
+                        ..Default::default()
+                    }.init()],
                 },
             ],
         }
