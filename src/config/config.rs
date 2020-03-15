@@ -87,7 +87,7 @@ impl Config {
                         .map(|key_code| ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: key_code.clone(),
@@ -133,7 +133,7 @@ impl Config {
                         .map(|key_code| ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::VSCode),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: key_code.clone(),
@@ -179,7 +179,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::J,
@@ -201,7 +201,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::O,
@@ -223,7 +223,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::K,
@@ -245,7 +245,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_virtual_key(VirtualKey::Vk1),
+                                Condition::with_vk1(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::Key3,
@@ -267,7 +267,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::R,
@@ -289,7 +289,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::Dynalist),
-                                Condition::with_virtual_key(VirtualKey::Vk4),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
                                 key_code: KeyCode::OpenBracket,
@@ -318,7 +318,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk1),
+                                Condition::with_vk1(),
                             ]),
                             from: FromInit {
                                 key_code: from,
@@ -338,7 +338,7 @@ impl Config {
                 Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
                     manipulators: vec![ManipulatorInit {
-                        conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
+                        conditions: Some(vec![Condition::with_vk2()]),
                         from: FromInit {
                             key_code: KeyCode::H,
                             ..Default::default()
@@ -355,7 +355,7 @@ impl Config {
                     manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![
                             Condition::on_app(BundleIdentifier::ITerm2),
-                            Condition::with_virtual_key(VirtualKey::Vk1),
+                            Condition::with_vk1(),
                         ]),
                         from: FromInit {
                             key_code: KeyCode::Z,
@@ -380,7 +380,7 @@ impl Config {
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_virtual_key(VirtualKey::Vk1),
+                                Condition::with_vk1(),
                             ]),
                             from: FromInit {
                                 key_code: from,
@@ -601,7 +601,7 @@ impl Config {
                     ]
                         .into_iter()
                         .map(|(key_code, modifiers, x, y)| ManipulatorInit {
-                            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                            conditions: Some(vec![Condition::with_vk1()]),
                             from: From {
                                 key_code,
                                 modifiers,
@@ -624,7 +624,7 @@ impl Config {
                         (KeyCode::International1, PointingButton::Button2),
                     ].into_iter().map(|(from, to)|{
                         ManipulatorInit {
-                            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                            conditions: Some(vec![Condition::with_vk1()]),
                             from: From {
                                 key_code: from,
                                 modifiers: Some(FromModifier::Optional(vec![ModifierKey::Any])),
@@ -645,7 +645,7 @@ impl Config {
                     ]
                         .into_iter()
                         .map(|(key_code, vertical_wheel)| ManipulatorInit {
-                            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk1)]),
+                            conditions: Some(vec![Condition::with_vk1()]),
                             from: FromInit {
                                 key_code,
                                 ..Default::default()
@@ -880,7 +880,7 @@ impl Config {
                     ]
                         .into_iter()
                         .map(|(key_code, shell_command)| ManipulatorInit {
-                            conditions: Some(vec![Condition::with_virtual_key(VirtualKey::Vk2)]),
+                            conditions: Some(vec![Condition::with_vk2()]),
                             from: FromInit {
                                 key_code,
                                 ..Default::default()
