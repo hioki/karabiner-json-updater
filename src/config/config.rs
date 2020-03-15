@@ -4,7 +4,7 @@ use crate::config::from::{From, FromInit, FromModifier};
 use crate::config::key_code::*;
 use crate::config::manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone};
 use crate::config::modifier_key::ModifierKey;
-use crate::config::mouse_key::MouseKey;
+use crate::config::mouse_key::MouseKeyInit;
 use crate::config::rule::Rule;
 use crate::config::set_variable::SetVariable;
 use crate::config::to::{PointingButton, To};
@@ -607,11 +607,11 @@ impl Config {
                                 modifiers,
                             },
                             to: vec![To::Mouse {
-                                mouse_key: MouseKey {
+                                mouse_key: MouseKeyInit {
                                     x,
                                     y,
-                                    vertical_wheel: None,
-                                },
+                                    ..Default::default()
+                                }.init(),
                             }],
                             ..Default::default()
                         }.init())
@@ -651,11 +651,10 @@ impl Config {
                                 ..Default::default()
                             }.init(),
                             to: vec![To::Mouse {
-                                mouse_key: MouseKey {
-                                    x: None,
-                                    y: None,
+                                mouse_key: MouseKeyInit {
                                     vertical_wheel: Some(vertical_wheel),
-                                },
+                                    ..Default::default()
+                                }.init(),
                             }],
                             ..Default::default()
                         }.init())
