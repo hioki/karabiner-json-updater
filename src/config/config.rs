@@ -284,6 +284,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Atom] VK4+O -> Cmd+T",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Atom),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::O,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::T,
+                                    modifiers: Some(vec![ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK4+@ -> Paste as codeblocks",
                     manipulators: vec![
                         ManipulatorInit {
