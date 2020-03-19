@@ -10,4 +10,6 @@ pub enum BundleIdentifier {
     CLion,
     #[serde(rename = "io.dynalist")]
     Dynalist,
+    #[serde(rename = "com.github.atom")]
+    Atom,
 }
