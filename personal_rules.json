@@ -1347,6 +1347,104 @@
       ]
     },
     {
+      "description": "[Atom] VK4+J -> Ctrl+O",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.github.atom"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "0",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Atom] VK4+K -> Cmd+Shift+F",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.github.atom"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Atom] VK4+A -> Cmd+Shift+P",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.github.atom"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Dynalist] VK4+@ -> Paste as codeblocks",
       "manipulators": [
         {

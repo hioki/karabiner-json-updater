@@ -306,6 +306,72 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Atom] VK4+J -> Ctrl+O",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Atom),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Key0,
+                                    modifiers: Some(vec![ModifierKey::Control]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[Atom] VK4+K -> Cmd+Shift+F",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Atom),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::K,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[Atom] VK4+A -> Cmd+Shift+P",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Atom),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::A,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::P,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK4+@ -> Paste as codeblocks",
                     manipulators: vec![
                         ManipulatorInit {
