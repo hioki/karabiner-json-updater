@@ -372,32 +372,6 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Dynalist] VK4+@ -> Paste as codeblocks",
-                    manipulators: vec![
-                        ManipulatorInit {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::Dynalist),
-                                Condition::with_vk4(),
-                            ]),
-                            from: FromInit {
-                                key_code: KeyCode::OpenBracket,
-                                ..Default::default()
-                            }.init(),
-                            to: vec![
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::ReturnOrEnter, modifiers: None },
-                                To::Key { key_code: KeyCode::V, modifiers: Some(vec![ModifierKey::Command]) },
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                                To::Key { key_code: KeyCode::OpenBracket, modifiers: Some(vec![ModifierKey::Shift]) },
-                            ],
-                            ..Default::default()
-                        }.init(),
-                    ]
-                },
-                Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
                         (KeyCode::O, KeyCode::P),
@@ -961,6 +935,10 @@ impl Config {
                         ),
                         (KeyCode::T, "open -a 'Microsoft To Do.app'"),
                         (KeyCode::V, "open -a 'Visual Studio Code.app'"),
+                        (
+                            KeyCode::X,
+                            r#"osascript -e "tell application \"Alfred 4\" to search \"snip codeblocks\"""#,
+                        ),
                         (KeyCode::Y, "open -a 'Spotify.app'"),
                         (KeyCode::Comma, "open -a 'System Preferences.app'"),
                         (KeyCode::Slash, "open -a 'Slack.app'"),

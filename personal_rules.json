@@ -1445,77 +1445,6 @@
       ]
     },
     {
-      "description": "[Dynalist] VK4+@ -> Paste as codeblocks",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "io.dynalist"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "open_bracket"
-          },
-          "to": [
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            },
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            },
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            },
-            {
-              "key_code": "return_or_enter"
-            },
-            {
-              "key_code": "v",
-              "modifiers": [
-                "command"
-              ]
-            },
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            },
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            },
-            {
-              "key_code": "open_bracket",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
       "manipulators": [
         {
@@ -3604,6 +3533,24 @@
           "to": [
             {
               "shell_command": "open -a 'Visual Studio Code.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"snip codeblocks\\\"\""
             }
           ]
         },
