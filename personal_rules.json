@@ -1348,6 +1348,39 @@
       ]
     },
     {
+      "description": "[CLion] VK4+S -> Opt+Cmd+O",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Dynalist] VK1+U/I -> Ctrl+A/E",
       "manipulators": [
         {

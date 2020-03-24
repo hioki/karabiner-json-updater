@@ -306,6 +306,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+S -> Opt+Cmd+O",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::S,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::O,
+                                    modifiers: Some(vec![ModifierKey::Option, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![
                         ManipulatorInit {
