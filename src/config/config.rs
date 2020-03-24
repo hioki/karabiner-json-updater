@@ -284,6 +284,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+T -> Opt+Cmd+B",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::T,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::B,
+                                    modifiers: Some(vec![ModifierKey::Option, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Atom] VK4+O -> Cmd+T",
                     manipulators: vec![
                         ManipulatorInit {
