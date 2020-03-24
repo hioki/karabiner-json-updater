@@ -306,6 +306,45 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk1(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::U,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::A,
+                                    modifiers: Some(vec![ModifierKey::Control]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk1(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::I,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::E,
+                                    modifiers: Some(vec![ModifierKey::Control]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Atom] VK4+O -> Cmd+T",
                     manipulators: vec![
                         ManipulatorInit {
