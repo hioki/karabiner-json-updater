@@ -6,6 +6,7 @@ pub enum ModifierKey {
     Any,
     Control,
     Shift,
-    Option,
+    #[serde(rename = "option")]
+    Opt,
     Command,
 }
