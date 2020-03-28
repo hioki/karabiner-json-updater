@@ -1152,7 +1152,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+J -> Cmd+1",
+      "description": "[CLion] VK4+E -> Cmd+1 (Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -1170,7 +1170,7 @@
             }
           ],
           "from": {
-            "key_code": "j"
+            "key_code": "e"
           },
           "to": [
             {
@@ -1184,7 +1184,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+O -> Cmd+Shift+O",
+      "description": "[CLion] VK4+F -> Cmd+Shift+O (Files)",
       "manipulators": [
         {
           "type": "basic",
@@ -1202,7 +1202,7 @@
             }
           ],
           "from": {
-            "key_code": "o"
+            "key_code": "f"
           },
           "to": [
             {
@@ -1217,7 +1217,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+K -> Cmd+Shift+F",
+      "description": "[CLion] VK4+K -> Cmd+Shift+F (Find in Path)",
       "manipulators": [
         {
           "type": "basic",
@@ -1250,7 +1250,7 @@
       ]
     },
     {
-      "description": "[CLion] F3 -> Opt+Enter",
+      "description": "[CLion] VK4+N -> F2 (Next Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -1263,12 +1263,73 @@
             },
             {
               "type": "variable_if",
-              "name": "vk1",
+              "name": "vk4",
               "value": 1
             }
           ],
           "from": {
-            "key_code": "3"
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+P -> Shift+F2 (Previous Problems)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "f2",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+; -> Opt+Enter (More Actions)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon"
           },
           "to": [
             {
@@ -1282,7 +1343,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+R -> Opt+Cmd+Y",
+      "description": "[CLion] VK4+R -> Opt+Cmd+Y (File Reload)",
       "manipulators": [
         {
           "type": "basic",
@@ -1315,7 +1376,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+T -> Opt+Cmd+B",
+      "description": "[CLion] VK4+T -> Opt+Cmd+B (Type)",
       "manipulators": [
         {
           "type": "basic",
@@ -1348,7 +1409,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+S -> Opt+Cmd+O",
+      "description": "[CLion] VK4+S -> Opt+Cmd+O (Symbols)",
       "manipulators": [
         {
           "type": "basic",
@@ -1373,6 +1434,511 @@
               "key_code": "o",
               "modifiers": [
                 "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+C -> Cmd+O (Classes)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": [
+                "shift",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+H -> Ctrl+Opt+UpArrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "control",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+L -> Ctrl+Opt+DownArrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "control",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+[ -> Opt+Cmd+[",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "command",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+] -> Opt+Cmd+]",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "backslash",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "modifiers": [
+                "command",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+M -> F3 (Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "key_code": "f3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "comma",
+              "modifiers": [
+                "control",
+                "shift",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "period",
+              "modifiers": [
+                "control",
+                "shift",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+B -> Cmd+F3 (Show Bookmarks)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "f3",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+J -> Cmd+S (Save All)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+@ -> F1 (Quick Documentation)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "slash"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+: -> Cmd+Shift+E (Recent Locations)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "shift",
                 "command"
               ]
             }
@@ -1440,7 +2006,7 @@
       ]
     },
     {
-      "description": "[Atom] VK4+O -> Cmd+T",
+      "description": "[Atom] VK4+F -> Cmd+T",
       "manipulators": [
         {
           "type": "basic",
@@ -1458,7 +2024,7 @@
             }
           ],
           "from": {
-            "key_code": "o"
+            "key_code": "f"
           },
           "to": [
             {
@@ -1472,7 +2038,7 @@
       ]
     },
     {
-      "description": "[Atom] VK4+J -> Ctrl+O",
+      "description": "[Atom] VK4+E -> Ctrl+O",
       "manipulators": [
         {
           "type": "basic",
@@ -1490,7 +2056,7 @@
             }
           ],
           "from": {
-            "key_code": "j"
+            "key_code": "e"
           },
           "to": [
             {

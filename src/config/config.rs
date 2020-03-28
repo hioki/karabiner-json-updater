@@ -174,7 +174,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+J -> Cmd+1",
+                    description: "[CLion] VK4+E -> Cmd+1 (Project)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -182,7 +182,7 @@ impl Config {
                                 Condition::with_vk4(),
                             ]),
                             from: FromInit {
-                                key_code: KeyCode::J,
+                                key_code: KeyCode::E,
                                 ..Default::default()
                             }.init(),
                             to: vec![
@@ -196,7 +196,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+O -> Cmd+Shift+O",
+                    description: "[CLion] VK4+F -> Cmd+Shift+O (Files)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -204,7 +204,7 @@ impl Config {
                                 Condition::with_vk4(),
                             ]),
                             from: FromInit {
-                                key_code: KeyCode::O,
+                                key_code: KeyCode::F,
                                 ..Default::default()
                             }.init(),
                             to: vec![
@@ -218,7 +218,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+K -> Cmd+Shift+F",
+                    description: "[CLion] VK4+K -> Cmd+Shift+F (Find in Path)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -240,15 +240,59 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] F3 -> Opt+Enter",
+                    description: "[CLion] VK4+N -> F2 (Next Problems)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
                                 Condition::on_app(BundleIdentifier::CLion),
-                                Condition::with_vk1(),
+                                Condition::with_vk4(),
                             ]),
                             from: FromInit {
-                                key_code: KeyCode::Key3,
+                                key_code: KeyCode::N,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F2,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+P -> Shift+F2 (Previous Problems)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::P,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F2,
+                                    modifiers: Some(vec![ModifierKey::Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+; -> Opt+Enter (More Actions)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Semicolon,
                                 ..Default::default()
                             }.init(),
                             to: vec![
@@ -262,7 +306,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+R -> Opt+Cmd+Y",
+                    description: "[CLion] VK4+R -> Opt+Cmd+Y (File Reload)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -284,7 +328,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+T -> Opt+Cmd+B",
+                    description: "[CLion] VK4+T -> Opt+Cmd+B (Type)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -306,7 +350,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[CLion] VK4+S -> Opt+Cmd+O",
+                    description: "[CLion] VK4+S -> Opt+Cmd+O (Symbols)",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -327,6 +371,340 @@ impl Config {
                         }.init(),
                     ]
                 },
+                Rule {
+                    description: "[CLion] VK4+C -> Cmd+O (Classes)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::C,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::O,
+                                    modifiers: Some(vec![ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::A,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::A,
+                                    modifiers: Some(vec![ModifierKey::Shift, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+H -> Ctrl+Opt+UpArrow",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::H,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::UpArrow,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+L -> Ctrl+Opt+DownArrow",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::L,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::DownArrow,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+[ -> Opt+Cmd+[",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::CloseBracket,
+                                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Shift])),
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::CloseBracket,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+] -> Opt+Cmd+]",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Backslash,
+                                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Shift])),
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Backslash,
+                                    modifiers: Some(vec![ModifierKey::Command, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+M -> F3 (Bookmark)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::M,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F3,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Comma,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Comma,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Period,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::Period,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Option]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+B -> Cmd+F3 (Show Bookmarks)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::B,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F3,
+                                    modifiers: Some(vec![ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::O,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::O,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Option, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+J -> Cmd+S (Save All)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::S,
+                                    modifiers: Some(vec![ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+@ -> F1 (Quick Documentation)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::OpenBracket,
+                                modifiers: Some(FromModifier::Optional(vec![ModifierKey::Shift])),
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::F1,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Slash,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::S,
+                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Option, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+: -> Cmd+Shift+E (Recent Locations)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: KeyCode::Quote,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: KeyCode::E,
+                                    modifiers: Some(vec![ModifierKey::Shift, ModifierKey::Command]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                // CLion unassigned: U I
                 Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![
@@ -367,7 +745,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Atom] VK4+O -> Cmd+T",
+                    description: "[Atom] VK4+F -> Cmd+T",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -375,7 +753,7 @@ impl Config {
                                 Condition::with_vk4(),
                             ]),
                             from: FromInit {
-                                key_code: KeyCode::O,
+                                key_code: KeyCode::F,
                                 ..Default::default()
                             }.init(),
                             to: vec![
@@ -389,7 +767,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Atom] VK4+J -> Ctrl+O",
+                    description: "[Atom] VK4+E -> Ctrl+O",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -397,7 +775,7 @@ impl Config {
                                 Condition::with_vk4(),
                             ]),
                             from: FromInit {
-                                key_code: KeyCode::J,
+                                key_code: KeyCode::E,
                                 ..Default::default()
                             }.init(),
                             to: vec![
