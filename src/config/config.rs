@@ -9,7 +9,7 @@ use crate::config::rule::Rule;
 use crate::config::set_variable::SetVariable;
 use crate::config::to::{PointingButton, To};
 use crate::config::value::Value;
-use crate::config::virtual_key::VirtualKey;
+use crate::config::virtual_key::VirtualKey as VK;
 use itertools::Itertools;
 
 use serde::Serialize;
@@ -28,25 +28,25 @@ impl Config {
                 Rule {
                     description: "Virtual Keys",
                     manipulators: vec![
-                        (K::Lang1, VirtualKey::Vk1, Some(K::JapaneseKana)),
+                        (K::Lang1, VK::Vk1, Some(K::JapaneseKana)),
                         (
                             K::International4,
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             Some(K::JapaneseKana),
                         ),
                         (
                             K::Lang2,
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             Some(K::JapaneseEisuu),
                         ),
                         (
                             K::International5,
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             Some(K::JapaneseEisuu),
                         ),
-                        (K::RightGui, VirtualKey::Vk3, None),
-                        (K::International2, VirtualKey::Vk3, None),
-                        (K::Tab, VirtualKey::Vk4, Some(K::Tab)),
+                        (K::RightGui, VK::Vk3, None),
+                        (K::International2, VK::Vk3, None),
+                        (K::Tab, VK::Vk4, Some(K::Tab)),
                     ]
                         .into_iter()
                         .map(|(key_code, virtual_key, to_if_alone)| ManipulatorInit {
@@ -928,7 +928,7 @@ impl Config {
                         .into_iter()
                         .map(|(from, to)| {
                             Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                                VirtualKey::Vk1,
+                                VK::Vk1,
                                 from,
                                 Some(FromModifier::Optional(vec![Any])),
                                 to,
@@ -940,7 +940,7 @@ impl Config {
                 Rule {
                     description: "VK1+F -> Escape",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::F,
                         Some(FromModifier::Optional(vec![Any])),
                         K::Escape,
@@ -951,14 +951,14 @@ impl Config {
                     description: "VK1+S -> Shift+Ctrl+J / VK1+D -> Shift+Ctrl+Semicolon (IME Switching of Google Japanese Input)",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::S,
                             None,
                             K::J,
                             Some(vec![Shift, Ctrl]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::D,
                             None,
                             K::Semicolon,
@@ -969,22 +969,22 @@ impl Config {
                 Rule {
                     description: "VK1+A -> F10 / VK1+Z -> F7",
                     manipulators: vec![
-                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, K::A, None, K::F10, None),
-                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, K::Z, None, K::F7, None),
+                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, K::A, None, K::F10, None),
+                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, K::Z, None, K::F7, None),
                     ],
                 },
                 Rule {
                     description: "VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::U,
                             Some(FromModifier::Optional(vec![Any])),
                             K::LeftArrow,
                             Some(vec![Cmd]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::I,
                             Some(FromModifier::Optional(vec![Any])),
                             K::RightArrow,
@@ -995,7 +995,7 @@ impl Config {
                 Rule {
                     description: "VK1+G -> Tab",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::G,
                         Some(FromModifier::Optional(vec![Any])),
                         K::Tab,
@@ -1006,14 +1006,14 @@ impl Config {
                     description: "VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::O,
                             None,
                             K::Tab,
                             Some(vec![Ctrl, Shift]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::P,
                             None,
                             K::Tab,
@@ -1025,21 +1025,21 @@ impl Config {
                     description: "VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::Y,
                             None,
                             K::C,
                             Some(vec![Cmd]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::T,
                             None,
                             K::X,
                             Some(vec![Cmd]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::X,
                             None,
                             K::V,
@@ -1055,14 +1055,14 @@ impl Config {
                     description: "VK1+C -> Backspace / VK1+E -> Delete",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::C,
                             None,
                             K::DeleteOrBackspace,
                             None,
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk1,
+                            VK::Vk1,
                             K::E,
                             None,
                             K::DeleteForward,
@@ -1073,7 +1073,7 @@ impl Config {
                 Rule {
                     description: "VK1+[ -> Cmd+Z",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::CloseBracket,
                         Some(FromModifier::Optional(vec![Any])),
                         K::Z,
@@ -1083,7 +1083,7 @@ impl Config {
                 Rule {
                     description: "VK1+Colon -> Cmd+H",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::Quote,
                         None,
                         K::H,
@@ -1200,13 +1200,13 @@ impl Config {
                         (K::EqualSign, K::F12),
                     ]
                         .into_iter()
-                        .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VirtualKey::Vk1, from, Some(FromModifier::Optional(vec![Any])), to, None))
+                        .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, from, Some(FromModifier::Optional(vec![Any])), to, None))
                         .collect_vec(),
                 },
                 Rule {
                     description: "VK1+B -> Ctrl+Opt+Cmd+M (Maximize window size with ShiftIt)",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::B,
                         None,
                         K::M,
@@ -1220,7 +1220,7 @@ impl Config {
                 Rule {
                     description: "VK1+Backslash -> Cmd+Opt+D (Hide the Dock)",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VirtualKey::Vk1,
+                        VK::Vk1,
                         K::International3,
                         None,
                         K::D,
@@ -1231,14 +1231,14 @@ impl Config {
                     description: "VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::F,
                             None,
                             K::Tab,
                             Some(vec![Cmd]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::D,
                             None,
                             K::Tab,
@@ -1250,14 +1250,14 @@ impl Config {
                     description: "VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::S,
                             None,
                             K::Tab,
                             Some(vec![Ctrl]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::A,
                             None,
                             K::Tab,
@@ -1269,14 +1269,14 @@ impl Config {
                     description: "VK2+9 -> Cmd+Shift+Semicolon / VK2+0 -> Cmd+Hyphen",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key9,
                             None,
                             K::Semicolon,
                             Some(vec![Cmd, Shift]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key0,
                             None,
                             K::Hyphen,
@@ -1288,14 +1288,14 @@ impl Config {
                     description: "VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key1,
                             None,
                             K::VolumeDecrement,
                             None,
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key2,
                             None,
                             K::VolumeIncrement,
@@ -1307,14 +1307,14 @@ impl Config {
                     description: "VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key3,
                             None,
                             K::DisplayBrightnessDecrement,
                             None,
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Key4,
                             None,
                             K::DisplayBrightnessIncrement,
@@ -1337,7 +1337,7 @@ impl Config {
                         .into_iter()
                         .map(|(from, to)| {
                             Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                                VirtualKey::Vk2,
+                                VK::Vk2,
                                 from,
                                 Some(FromModifier::Mandatory(vec![Ctrl])),
                                 to,
@@ -1354,7 +1354,7 @@ impl Config {
                     description: "VK2+C -> Dictionary",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::C,
                             None,
                             K::D,
@@ -1366,7 +1366,7 @@ impl Config {
                     description: "VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)", // https://github.com/pddg/alfred-google-translate-formatter-workflow
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VirtualKey::Vk2,
+                            VK::Vk2,
                             K::Z,
                             None,
                             K::T,
@@ -1435,7 +1435,7 @@ impl Config {
                         .into_iter()
                         .map(|(from, to)| {
                             Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                                VirtualKey::Vk3,
+                                VK::Vk3,
                                 from,
                                 Some(FromModifier::Optional(vec![Any])),
                                 to,
