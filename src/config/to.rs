@@ -30,7 +30,7 @@ impl To {
     pub fn new_tmux_prefix_key() -> To {
         To::Key {
             key_code: KeyCode::T,
-            modifiers: Some(vec![ModifierKey::Control]),
+            modifiers: Some(vec![ModifierKey::Ctrl]),
         }
     }
 }

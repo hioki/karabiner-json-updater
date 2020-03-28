@@ -97,7 +97,7 @@ impl Config {
                                 To::new_tmux_prefix_key(),
                                 To::Key {
                                     key_code,
-                                    modifiers: Some(vec![ModifierKey::Control]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl]),
                                 },
                             ],
                             ..Default::default()
@@ -142,7 +142,7 @@ impl Config {
                             to: vec![To::Key {
                                 key_code,
                                 modifiers: Some(vec![
-                                    ModifierKey::Control,
+                                    ModifierKey::Ctrl,
                                     ModifierKey::Shift,
                                     ModifierKey::Opt,
                                     ModifierKey::Command,
@@ -430,7 +430,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::UpArrow,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Opt]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Opt]),
                                 },
                             ],
                             ..Default::default()
@@ -452,7 +452,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::DownArrow,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Opt]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Opt]),
                                 },
                             ],
                             ..Default::default()
@@ -542,7 +542,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::Comma,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Opt]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Shift, ModifierKey::Opt]),
                                 },
                             ],
                             ..Default::default()
@@ -564,7 +564,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::Period,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Opt]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Shift, ModifierKey::Opt]),
                                 },
                             ],
                             ..Default::default()
@@ -608,7 +608,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::O,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Opt, ModifierKey::Command]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Shift, ModifierKey::Opt, ModifierKey::Command]),
                                 },
                             ],
                             ..Default::default()
@@ -675,7 +675,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::S,
-                                    modifiers: Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Opt, ModifierKey::Command]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl, ModifierKey::Shift, ModifierKey::Opt, ModifierKey::Command]),
                                 },
                             ],
                             ..Default::default()
@@ -720,7 +720,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::A,
-                                    modifiers: Some(vec![ModifierKey::Control]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl]),
                                 },
                             ],
                             ..Default::default()
@@ -737,7 +737,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::E,
-                                    modifiers: Some(vec![ModifierKey::Control]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl]),
                                 },
                             ],
                             ..Default::default()
@@ -781,7 +781,7 @@ impl Config {
                             to: vec![
                                 To::Key {
                                     key_code: KeyCode::Key0,
-                                    modifiers: Some(vec![ModifierKey::Control]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl]),
                                 },
                             ],
                             ..Default::default()
@@ -851,7 +851,7 @@ impl Config {
                                 To::new_tmux_prefix_key(),
                                 To::Key {
                                     key_code: to,
-                                    modifiers: Some(vec![ModifierKey::Control]),
+                                    modifiers: Some(vec![ModifierKey::Ctrl]),
                                 },
                             ],
                             ..Default::default()
@@ -888,7 +888,7 @@ impl Config {
                             To::new_tmux_prefix_key(),
                             To::Key {
                                 key_code: KeyCode::CloseBracket,
-                                modifiers: Some(vec![ModifierKey::Control]),
+                                modifiers: Some(vec![ModifierKey::Ctrl]),
                             },
                         ],
                         ..Default::default()
@@ -955,14 +955,14 @@ impl Config {
                             KeyCode::S,
                             None,
                             KeyCode::J,
-                            Some(vec![ModifierKey::Shift, ModifierKey::Control]),
+                            Some(vec![ModifierKey::Shift, ModifierKey::Ctrl]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VirtualKey::Vk1,
                             KeyCode::D,
                             None,
                             KeyCode::Semicolon,
-                            Some(vec![ModifierKey::Shift, ModifierKey::Control]),
+                            Some(vec![ModifierKey::Shift, ModifierKey::Ctrl]),
                         ),
                     ],
                 },
@@ -1010,14 +1010,14 @@ impl Config {
                             KeyCode::O,
                             None,
                             KeyCode::Tab,
-                            Some(vec![ModifierKey::Control, ModifierKey::Shift]),
+                            Some(vec![ModifierKey::Ctrl, ModifierKey::Shift]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VirtualKey::Vk1,
                             KeyCode::P,
                             None,
                             KeyCode::Tab,
-                            Some(vec![ModifierKey::Control]),
+                            Some(vec![ModifierKey::Ctrl]),
                         ),
                     ],
                 },
@@ -1211,7 +1211,7 @@ impl Config {
                         None,
                         KeyCode::M,
                         Some(vec![
-                            ModifierKey::Control,
+                            ModifierKey::Ctrl,
                             ModifierKey::Opt,
                             ModifierKey::Command,
                         ]),
@@ -1254,14 +1254,14 @@ impl Config {
                             KeyCode::S,
                             None,
                             KeyCode::Tab,
-                            Some(vec![ModifierKey::Control]),
+                            Some(vec![ModifierKey::Ctrl]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VirtualKey::Vk2,
                             KeyCode::A,
                             None,
                             KeyCode::Tab,
-                            Some(vec![ModifierKey::Control, ModifierKey::Shift]),
+                            Some(vec![ModifierKey::Ctrl, ModifierKey::Shift]),
                         ),
                     ],
                 },
@@ -1339,11 +1339,11 @@ impl Config {
                             Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                                 VirtualKey::Vk2,
                                 from,
-                                Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
+                                Some(FromModifier::Mandatory(vec![ModifierKey::Ctrl])),
                                 to,
                                 Some(vec![
                                     ModifierKey::Command,
-                                    ModifierKey::Control,
+                                    ModifierKey::Ctrl,
                                     ModifierKey::Opt,
                                 ]),
                             )
@@ -1358,7 +1358,7 @@ impl Config {
                             KeyCode::C,
                             None,
                             KeyCode::D,
-                            Some(vec![ModifierKey::Command, ModifierKey::Control])
+                            Some(vec![ModifierKey::Command, ModifierKey::Ctrl])
                         )
                     ]
                 },
@@ -1370,7 +1370,7 @@ impl Config {
                             KeyCode::Z,
                             None,
                             KeyCode::T,
-                            Some(vec![ModifierKey::Control, ModifierKey::Shift, ModifierKey::Command, ModifierKey::Opt])
+                            Some(vec![ModifierKey::Ctrl, ModifierKey::Shift, ModifierKey::Command, ModifierKey::Opt])
                         )
                     ]
                 },
@@ -1447,7 +1447,7 @@ impl Config {
                 Rule {
                     description: "Semicolon -> Enter",
                     manipulators: vec![
-                        Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, Some(FromModifier::Mandatory(vec![ModifierKey::Control])), KeyCode::Semicolon, None),
+                        Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, Some(FromModifier::Mandatory(vec![ModifierKey::Ctrl])), KeyCode::Semicolon, None),
                         Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, Some(FromModifier::Mandatory(vec![ModifierKey::Command, ModifierKey::Shift])), KeyCode::KeypadPlus, Some(vec![ModifierKey::Command])),
                         Manipulator::new_for_key_to_key_mapping(KeyCode::Semicolon, None, KeyCode::ReturnOrEnter, None),
                     ],
@@ -1457,7 +1457,7 @@ impl Config {
                     manipulators: vec![ManipulatorInit {
                         from: From {
                             key_code: KeyCode::Quote,
-                            modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Control])),
+                            modifiers: Some(FromModifier::Mandatory(vec![ModifierKey::Ctrl])),
                         },
                         to: vec![To::Key {
                             key_code: KeyCode::Key7,

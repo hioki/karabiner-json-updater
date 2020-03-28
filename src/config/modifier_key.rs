@@ -4,7 +4,8 @@ use serde::Serialize;
 #[serde(rename_all = "snake_case")]
 pub enum ModifierKey {
     Any,
-    Control,
+    #[serde(rename = "control")]
+    Ctrl,
     Shift,
     #[serde(rename = "option")]
     Opt,
