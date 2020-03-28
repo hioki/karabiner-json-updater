@@ -29,21 +29,9 @@ impl Config {
                     description: "Virtual Keys",
                     manipulators: vec![
                         (K::Lang1, VK::Vk1, Some(K::JapaneseKana)),
-                        (
-                            K::International4,
-                            VK::Vk1,
-                            Some(K::JapaneseKana),
-                        ),
-                        (
-                            K::Lang2,
-                            VK::Vk2,
-                            Some(K::JapaneseEisuu),
-                        ),
-                        (
-                            K::International5,
-                            VK::Vk2,
-                            Some(K::JapaneseEisuu),
-                        ),
+                        (K::International4, VK::Vk1, Some(K::JapaneseKana)),
+                        (K::Lang2, VK::Vk2, Some(K::JapaneseEisuu)),
+                        (K::International5, VK::Vk2, Some(K::JapaneseEisuu)),
                         (K::RightGui, VK::Vk3, None),
                         (K::International2, VK::Vk3, None),
                         (K::Tab, VK::Vk4, Some(K::Tab)),
@@ -141,12 +129,7 @@ impl Config {
                             }.init(),
                             to: vec![To::Key {
                                 key_code,
-                                modifiers: Some(vec![
-                                    Ctrl,
-                                    Shift,
-                                    Opt,
-                                    Cmd,
-                                ]),
+                                modifiers: Some(vec![Ctrl, Shift, Opt, Cmd]),
                             }],
                             ..Default::default()
                         }.init())
@@ -1210,11 +1193,7 @@ impl Config {
                         K::B,
                         None,
                         K::M,
-                        Some(vec![
-                            Ctrl,
-                            Opt,
-                            Cmd,
-                        ]),
+                        Some(vec![Ctrl, Opt, Cmd]),
                     )],
                 },
                 Rule {
@@ -1341,11 +1320,7 @@ impl Config {
                                 from,
                                 Some(FromModifier::Mandatory(vec![Ctrl])),
                                 to,
-                                Some(vec![
-                                    Cmd,
-                                    Ctrl,
-                                    Opt,
-                                ]),
+                                Some(vec![Cmd, Ctrl, Opt]),
                             )
                         })
                         .collect_vec(),
