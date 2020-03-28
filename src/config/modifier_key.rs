@@ -9,5 +9,6 @@ pub enum ModifierKey {
     Shift,
     #[serde(rename = "option")]
     Opt,
-    Command,
+    #[serde(rename = "command")]
+    Cmd,
 }
