@@ -687,7 +687,28 @@ impl Config {
                         }.init(),
                     ]
                 },
-                // CLion unassigned: U I
+                Rule {
+                    description: "[CLion] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::X,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::X,
+                                    modifiers: Some(vec![Ctrl, Shift, Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
                 Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![

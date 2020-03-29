@@ -1947,6 +1947,40 @@
       ]
     },
     {
+      "description": "[CLion] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "control",
+                "shift",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Dynalist] VK1+U/I -> Ctrl+A/E",
       "manipulators": [
         {
