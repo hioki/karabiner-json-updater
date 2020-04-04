@@ -922,6 +922,28 @@ impl Config {
                     }).collect_vec()
                 },
                 Rule {
+                    description: "[iTerm2] VK1+W -> tmux kill-pane",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::ITerm2),
+                                Condition::with_vk1(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::W,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::new_tmux_prefix_key(),
+                                To::Key {
+                                    key_code: K::X,
+                                    modifiers: None,
+                                }],
+                            ..Default::default()
+                        }.init()
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
