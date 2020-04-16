@@ -4342,6 +4342,42 @@
             }
           ],
           "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"tell application \\\"Spotify\\\" to previous track\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "non_us_pound"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"tell application \\\"Spotify\\\" to next track\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "comma"
           },
           "to": [
