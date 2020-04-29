@@ -4378,6 +4378,24 @@
             }
           ],
           "from": {
+            "key_code": "backslash"
+          },
+          "to": [
+            {
+              "shell_command": "osascript -e \"tell application \\\"Spotify\\\" to next track\""
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "comma"
           },
           "to": [

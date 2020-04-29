@@ -1421,6 +1421,7 @@ impl Config {
                         (K::Y, "open -a 'Spotify.app'"),
                         (K::CloseBracket, r#"osascript -e "tell application \"Spotify\" to previous track""#),
                         (K::NonUsPound, r#"osascript -e "tell application \"Spotify\" to next track""#),
+                        (K::Backslash, r#"osascript -e "tell application \"Spotify\" to next track""#),
                         (K::Comma, "open -a 'System Preferences.app'"),
                         (K::Slash, "open -a 'Slack.app'"),
                         (K::OpenBracket, "open -a 'Mail.app'"),
