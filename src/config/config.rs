@@ -732,6 +732,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+Space -> Opt+Space (Quick Definition)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::Spacebar,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Spacebar,
+                                    modifiers: Some(vec![Opt]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![
                         ManipulatorInit {
