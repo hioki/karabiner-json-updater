@@ -2312,6 +2312,12 @@
           "type": "basic",
           "conditions": [
             {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
               "type": "variable_if",
               "name": "vk2",
               "value": 1

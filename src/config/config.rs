@@ -909,7 +909,10 @@ impl Config {
                 Rule {
                     description: "[iTerm2] VK2+H -> Backspace",
                     manipulators: vec![ManipulatorInit {
-                        conditions: Some(vec![Condition::with_vk2()]),
+                        conditions: Some(vec![
+                            Condition::on_app(BundleIdentifier::ITerm2),
+                            Condition::with_vk2()]
+                        ),
                         from: FromInit {
                             key_code: K::H,
                             ..Default::default()
