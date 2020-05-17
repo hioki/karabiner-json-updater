@@ -987,6 +987,40 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[iTerm2] VK4+J -> <ESC>:w<CR>",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::ITerm2),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Escape,
+                                    modifiers: None,
+                                },
+                                To::Key {
+                                    key_code: K::Quote,
+                                    modifiers: None,
+                                },
+                                To::Key {
+                                    key_code: K::W,
+                                    modifiers: None,
+                                },
+                                To::Key {
+                                    key_code: K::ReturnOrEnter,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init()
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),

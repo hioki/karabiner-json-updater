@@ -2335,6 +2335,44 @@
       ]
     },
     {
+      "description": "[iTerm2] VK4+J -> <ESC>:w<CR>",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            },
+            {
+              "key_code": "quote"
+            },
+            {
+              "key_code": "w"
+            },
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
       "manipulators": [
         {
