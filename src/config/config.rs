@@ -64,10 +64,6 @@ impl Config {
                     manipulators: vec![
                         K::C,
                         K::V,
-                        K::H,
-                        K::J,
-                        K::K,
-                        K::L,
                         K::N,
                         K::P,
                     ]
