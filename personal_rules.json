@@ -4049,24 +4049,6 @@
             }
           ],
           "from": {
-            "key_code": "b"
-          },
-          "to": [
-            {
-              "shell_command": "open -a 'Tweetbot.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
             "key_code": "e"
           },
           "to": [

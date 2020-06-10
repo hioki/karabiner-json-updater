@@ -1472,7 +1472,6 @@ impl Config {
                 Rule {
                     description: "Open apps",
                     manipulators: vec![
-                        (K::B, "open -a 'Tweetbot.app'"),
                         (
                             K::E,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
