@@ -1446,14 +1446,14 @@ impl Config {
                         .collect_vec(),
                 },
                 Rule {
-                    description: "VK2+C -> Dictionary",
+                    description: "VK2+C -> Ctrl+Opt+Shift+Cmd+C (Search selected text with Google)",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VK::Vk2,
                             K::C,
                             None,
-                            K::D,
-                            Some(vec![Cmd, Ctrl])
+                            K::C,
+                            Some(vec![Ctrl, Opt, Shift, Cmd])
                         )
                     ]
                 },

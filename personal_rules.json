@@ -3981,7 +3981,7 @@
       ]
     },
     {
-      "description": "VK2+C -> Dictionary",
+      "description": "VK2+C -> Ctrl+Opt+Shift+Cmd+C (Search selected text with Google)",
       "manipulators": [
         {
           "type": "basic",
@@ -3997,10 +3997,12 @@
           },
           "to": [
             {
-              "key_code": "d",
+              "key_code": "c",
               "modifiers": [
-                "command",
-                "control"
+                "control",
+                "option",
+                "shift",
+                "command"
               ]
             }
           ]
