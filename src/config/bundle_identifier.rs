@@ -12,4 +12,6 @@ pub enum BundleIdentifier {
     Dynalist,
     #[serde(rename = "com.github.atom")]
     Atom,
+    #[serde(rename = "com.tinyspeck.slackmacgap")]
+    Slack,
 }
