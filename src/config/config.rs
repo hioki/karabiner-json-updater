@@ -750,6 +750,31 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+                    manipulators: vec![
+                        (K::Key1, K::UpArrow),
+                        (K::Key2, K::DownArrow),
+                    ].into_iter().map(|(from, to)|{
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: from,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: to,
+                                    modifiers: Some(vec![Opt, Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init()
+                    }).collect_vec(),
+                },
+                Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![
                         ManipulatorInit {
