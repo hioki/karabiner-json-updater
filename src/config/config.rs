@@ -1115,6 +1115,32 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[GoogleChrome] VK4+N -> Cmd+Shift+M,Enter (Switch to the other user)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::GoogleChrome),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::N,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::M,
+                                    modifiers: Some(vec![Cmd, Shift]),
+                                },
+                                To::Key {
+                                    key_code: K::ReturnOrEnter,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),

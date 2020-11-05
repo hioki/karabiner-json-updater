@@ -14,4 +14,6 @@ pub enum BundleIdentifier {
     Atom,
     #[serde(rename = "com.tinyspeck.slackmacgap")]
     Slack,
+    #[serde(rename = "com.google.Chrome")]
+    GoogleChrome,
 }
