@@ -902,6 +902,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Atom] VK4+J -> Cmd+S",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Atom),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::S,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
                     manipulators: vec![
                         (K::O, K::P),
