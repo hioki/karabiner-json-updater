@@ -131,6 +131,28 @@ impl Config {
                         .collect_vec(),
                 },
                 Rule {
+                    description: "[VSCode] VK4+J -> Cmd+S (Save All)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::VSCode),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::S,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[CLion] ¥ -> \\",
                     manipulators: vec![
                         ManipulatorInit {
