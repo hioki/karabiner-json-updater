@@ -97,7 +97,6 @@ impl Config {
                         K::Key4,
                         K::A,
                         K::H,
-                        K::J,
                         K::E,
                         K::L,
                         K::S,
