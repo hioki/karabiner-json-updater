@@ -2299,35 +2299,6 @@
       ]
     },
     {
-      "description": "[iTerm2] VK2+H -> Backspace",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "h"
-          },
-          "to": [
-            {
-              "key_code": "delete_or_backspace"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "[iTerm2] VK1+Z -> Enter tmux copy-mode",
       "manipulators": [
         {

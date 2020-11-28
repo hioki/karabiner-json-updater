@@ -972,24 +972,6 @@ impl Config {
                     }).collect_vec(),
                 },
                 Rule {
-                    description: "[iTerm2] VK2+H -> Backspace",
-                    manipulators: vec![ManipulatorInit {
-                        conditions: Some(vec![
-                            Condition::on_app(BundleIdentifier::ITerm2),
-                            Condition::with_vk2()]
-                        ),
-                        from: FromInit {
-                            key_code: K::H,
-                            ..Default::default()
-                        }.init(),
-                        to: vec![To::Key {
-                            key_code: K::DeleteOrBackspace,
-                            modifiers: None,
-                        }],
-                        ..Default::default()
-                    }.init()],
-                },
-                Rule {
                     description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
                     manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![
