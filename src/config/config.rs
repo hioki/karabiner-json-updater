@@ -1629,13 +1629,13 @@ impl Config {
                         (K::L, "open -a 'Alfred 4.app'"),
                         (K::M, "open -a 'Dynalist.app'"),
                         (K::N, "open -a 'Notes.app'"),
+                        (K::O, "open -a 'Visual Studio Code.app'"),
                         (K::P, "open -a '1Password.app'"),
                         (
                             K::R,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"docsrs \"""#,
                         ),
                         (K::T, "open -a 'Microsoft To Do.app'"),
-                        (K::V, "open -a 'Visual Studio Code.app'"),
                         (
                             K::X,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip codeblocks\"""#,
