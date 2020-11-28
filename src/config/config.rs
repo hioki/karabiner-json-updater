@@ -1622,7 +1622,7 @@ impl Config {
                             K::E,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
                         ),
-                        (K::G, "open -a 'Atom.app'"),
+                        (K::H, "open -a 'Atom.app'"),
                         (K::I, "open -a 'CLion.app'"),
                         (K::J, "open -a 'Google Chrome.app'"),
                         (K::K, "open -a 'iTerm.app'"),
