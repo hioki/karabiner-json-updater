@@ -1635,7 +1635,7 @@ impl Config {
                             K::R,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"docsrs \"""#,
                         ),
-                        (K::T, "open -a 'Microsoft To Do.app'"),
+                        (K::U, "open -a 'Microsoft To Do.app'"),
                         (
                             K::X,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip codeblocks\"""#,
