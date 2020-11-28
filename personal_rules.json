@@ -376,6 +376,516 @@
             }
           ],
           "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "h",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "key_code": "m",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "n",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "i",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "comma",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "period",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "1"
           },
           "to": [
@@ -471,486 +981,6 @@
           "to": [
             {
               "key_code": "4",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "a"
-          },
-          "to": [
-            {
-              "key_code": "a",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "h"
-          },
-          "to": [
-            {
-              "key_code": "h",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "e"
-          },
-          "to": [
-            {
-              "key_code": "e",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "l"
-          },
-          "to": [
-            {
-              "key_code": "l",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "s"
-          },
-          "to": [
-            {
-              "key_code": "s",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "p"
-          },
-          "to": [
-            {
-              "key_code": "p",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "key_code": "o",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "c"
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "m"
-          },
-          "to": [
-            {
-              "key_code": "m",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "k"
-          },
-          "to": [
-            {
-              "key_code": "k",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "r"
-          },
-          "to": [
-            {
-              "key_code": "r",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "x"
-          },
-          "to": [
-            {
-              "key_code": "x",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "key_code": "i",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "y"
-          },
-          "to": [
-            {
-              "key_code": "y",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "close_bracket"
-          },
-          "to": [
-            {
-              "key_code": "close_bracket",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "non_us_pound"
-          },
-          "to": [
-            {
-              "key_code": "non_us_pound",
               "modifiers": [
                 "control",
                 "shift",

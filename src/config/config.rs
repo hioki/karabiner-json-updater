@@ -91,26 +91,27 @@ impl Config {
                 Rule {
                     description: "VK4 on VSCode",
                     manipulators: vec![
-                        K::Key1,
-                        K::Key2,
-                        K::Key3,
-                        K::Key4,
-                        K::A,
-                        K::H,
-                        K::E,
-                        K::L,
-                        K::S,
-                        K::P,
-                        K::O,
-                        K::C,
-                        K::M,
-                        K::K,
-                        K::R,
-                        K::X,
-                        K::I,
-                        K::Y,
-                        K::CloseBracket,
-                        K::NonUsPound,
+                        K::A, // execute command
+                        K::B, // show bookmarks
+                        K::F, // search file
+                        K::H, // switch sidebar visibility
+                        K::E, // switch focus between editor and explorer
+                        K::P, // prev problem
+                        K::O, // open recent
+                        K::M, // toggle bookmark
+                        K::N, // next problem
+                        K::K, // find in path
+                        K::R, // reload window
+                        K::S, // go to symbol
+                        K::T, // go to type
+                        K::X, // close window
+                        K::I, // go to implementation
+                        K::Comma, // prev bookmark
+                        K::Period, // next bookmark
+                        K::Key1, // open settings.json
+                        K::Key2, // open keybindings.json
+                        K::Key3, // open keyboard shortcut
+                        K::Key4, // open marketplace
                     ]
                         .into_iter()
                         .map(|key_code| ManipulatorInit {
