@@ -1453,13 +1453,13 @@ impl Config {
                         .collect_vec(),
                 },
                 Rule {
-                    description: "VK1+B -> Ctrl+Opt+Cmd+M (Maximize window size with ShiftIt)",
+                    description: "VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)",
                     manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                         VK::Vk1,
                         K::B,
                         None,
                         K::M,
-                        Some(vec![Ctrl, Opt, Cmd]),
+                        Some(vec![Ctrl, Opt, Cmd, Shift]),
                     )],
                 },
                 Rule {
@@ -1568,7 +1568,7 @@ impl Config {
                     ],
                 },
                 Rule {
-                    description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+                    description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
                         (K::O, K::RightArrow),
@@ -1586,7 +1586,7 @@ impl Config {
                                 from,
                                 Some(FromModifier::Mandatory(vec![Ctrl])),
                                 to,
-                                Some(vec![Cmd, Ctrl, Opt]),
+                                Some(vec![Cmd, Ctrl, Opt, Shift]),
                             )
                         })
                         .collect_vec(),

@@ -3824,7 +3824,7 @@
       ]
     },
     {
-      "description": "VK1+B -> Ctrl+Opt+Cmd+M (Maximize window size with ShiftIt)",
+      "description": "VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)",
       "manipulators": [
         {
           "type": "basic",
@@ -3844,7 +3844,8 @@
               "modifiers": [
                 "control",
                 "option",
-                "command"
+                "command",
+                "shift"
               ]
             }
           ]
@@ -4105,7 +4106,7 @@
       ]
     },
     {
-      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
       "manipulators": [
         {
           "type": "basic",
@@ -4130,7 +4131,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4158,7 +4160,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4186,7 +4189,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4214,7 +4218,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4242,7 +4247,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4270,7 +4276,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4298,7 +4305,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
@@ -4326,7 +4334,8 @@
               "modifiers": [
                 "command",
                 "control",
-                "option"
+                "option",
+                "shift"
               ]
             }
           ]
