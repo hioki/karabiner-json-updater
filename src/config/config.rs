@@ -1568,7 +1568,7 @@ impl Config {
                     ],
                 },
                 Rule {
-                    description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+                    description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma,Period} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4,N} (ShiftIt)",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
                         (K::O, K::RightArrow),
@@ -1578,6 +1578,7 @@ impl Config {
                         (K::I, K::Key2),
                         (K::M, K::Key3),
                         (K::Comma, K::Key4),
+                        (K::Period, K::N),
                     ]
                         .into_iter()
                         .map(|(from, to)| {

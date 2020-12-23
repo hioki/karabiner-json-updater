@@ -4106,7 +4106,7 @@
       ]
     },
     {
-      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4} (ShiftIt)",
+      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma,Period} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4,N} (ShiftIt)",
       "manipulators": [
         {
           "type": "basic",
@@ -4331,6 +4331,35 @@
           "to": [
             {
               "key_code": "4",
+              "modifiers": [
+                "command",
+                "control",
+                "option",
+                "shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "n",
               "modifiers": [
                 "command",
                 "control",
