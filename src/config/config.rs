@@ -63,9 +63,14 @@ impl Config {
                     description: "Substitute TMUX prefix with VK4 on iTerm2",
                     manipulators: vec![
                         K::C,
-                        K::V,
+                        K::H,
+                        // K::J,
+                        K::K,
+                        K::L,
                         K::N,
                         K::P,
+                        K::S,
+                        K::V,
                     ]
                         .into_iter()
                         .map(|key_code| ManipulatorInit {
@@ -87,6 +92,27 @@ impl Config {
                             ..Default::default()
                         }.init())
                         .collect_vec(),
+                },
+                Rule {
+                    description: "Avoid Cmd+W in iTerm",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::ITerm2),
+                            ]),
+                            from: FromInit {
+                                key_code: K::W,
+                                modifiers: Some(FromModifier::Mandatory(vec![Cmd])),
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::VkNone,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init()
+                    ]
                 },
                 Rule {
                     description: "VK4 on VSCode",
@@ -972,6 +998,32 @@ impl Config {
                     }).collect_vec(),
                 },
                 Rule {
+                    description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
+                    manipulators: vec![
+                        (K::A, K::P),
+                        (K::S, K::N),
+                    ].into_iter().map(|(from, to)| {
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::ITerm2),
+                                Condition::with_vk2(),
+                            ]),
+                            from: FromInit {
+                                key_code: from,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::new_tmux_prefix_key(),
+                                To::Key {
+                                    key_code: to,
+                                    modifiers: Some(vec![Ctrl]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init()
+                    }).collect_vec(),
+                },
+                Rule {
                     description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
                     manipulators: vec![ManipulatorInit {
                         conditions: Some(vec![
@@ -1014,28 +1066,6 @@ impl Config {
                             ..Default::default()
                         }.init()
                     }).collect_vec()
-                },
-                Rule {
-                    description: "[iTerm2] VK1+W -> tmux kill-pane",
-                    manipulators: vec![
-                        ManipulatorInit {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::ITerm2),
-                                Condition::with_vk1(),
-                            ]),
-                            from: FromInit {
-                                key_code: K::W,
-                                ..Default::default()
-                            }.init(),
-                            to: vec![
-                                To::new_tmux_prefix_key(),
-                                To::Key {
-                                    key_code: K::X,
-                                    modifiers: None,
-                                }],
-                            ..Default::default()
-                        }.init()
-                    ]
                 },
                 Rule {
                     description: "[iTerm2] VK4+J -> <ESC>:w<CR>",
