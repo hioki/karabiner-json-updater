@@ -1600,6 +1600,108 @@
       ]
     },
     {
+      "description": "[CLion] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": [
+                "command",
+                "option",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "u",
+              "modifiers": [
+                "command",
+                "option",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[CLion] VK4+G -> Opt+Tab (Goto Next Splitter)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
       "manipulators": [
         {

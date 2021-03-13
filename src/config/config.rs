@@ -443,6 +443,72 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[CLion] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::D,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::D,
+                                    modifiers: Some(vec![Cmd,Opt,Shift,Ctrl]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::U,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::U,
+                                    modifiers: Some(vec![Cmd,Opt,Shift,Ctrl]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[CLion] VK4+G -> Opt+Tab (Goto Next Splitter)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::G,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Tab,
+                                    modifiers: Some(vec![Opt]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
                     manipulators: vec![
                         ManipulatorInit {
