@@ -1829,7 +1829,7 @@ impl Config {
                         (K::K, "open -a 'iTerm.app'"),
                         (K::L, "open -a 'Alfred 4.app'"),
                         (K::M, "open -a 'Dynalist.app'"),
-                        (K::N, "open -a 'Notes.app'"),
+                        (K::N, "open -a 'Notion.app'"),
                         (K::O, "open -a 'Visual Studio Code.app'"),
                         (K::P, "open -a '1Password.app'"),
                         (
