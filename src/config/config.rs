@@ -1842,7 +1842,7 @@ impl Config {
                             K::X,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip codeblocks\"""#,
                         ),
-                        (K::Y, "open -a 'DeepL.app'"),
+                        (K::V, "open -a 'DeepL.app'"),
                         (K::CloseBracket, r#"osascript -e "tell application \"Spotify\" to previous track""#),
                         (K::NonUsPound, r#"osascript -e "tell application \"Spotify\" to next track""#),
                         (K::Backslash, r#"osascript -e "tell application \"Spotify\" to next track""#),
