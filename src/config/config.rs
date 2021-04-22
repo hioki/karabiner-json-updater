@@ -1778,7 +1778,8 @@ impl Config {
                         (K::I, K::Key2),
                         (K::M, K::Key3),
                         (K::Comma, K::Key4),
-                        (K::Period, K::N),
+                        (K::J, K::P),
+                        (K::K, K::N),
                     ]
                         .into_iter()
                         .map(|(from, to)| {

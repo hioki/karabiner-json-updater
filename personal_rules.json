@@ -4819,7 +4819,36 @@
             }
           ],
           "from": {
-            "key_code": "period",
+            "key_code": "j",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "command",
+                "control",
+                "option",
+                "shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k",
             "modifiers": {
               "mandatory": [
                 "control"
