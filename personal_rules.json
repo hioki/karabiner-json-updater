@@ -2370,6 +2370,41 @@
       ]
     },
     {
+      "description": "[CLion] VK4+_ -> Run File Watchers",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "international1"
+          },
+          "to": [
+            {
+              "key_code": "international1",
+              "modifiers": [
+                "option",
+                "command",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Dynalist] VK1+U/I -> Ctrl+A/E",
       "manipulators": [
         {

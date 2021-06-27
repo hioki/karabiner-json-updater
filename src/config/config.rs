@@ -937,6 +937,28 @@ impl Config {
                     }).collect_vec(),
                 },
                 Rule {
+                    description: "[CLion] VK4+_ -> Run File Watchers",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::CLion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::International1,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::International1,
+                                    modifiers: Some(vec![Opt, Cmd, Shift, Ctrl]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
                     manipulators: vec![
                         ManipulatorInit {
