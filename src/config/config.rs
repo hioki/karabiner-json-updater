@@ -1881,7 +1881,7 @@ impl Config {
                             K::R,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"docsrs \"""#,
                         ),
-                        (K::T, "open -a 'AS Timer.app'"),
+                        (K::T, "open -a 'Atom.app'"),
                         (K::U, "open -a 'Microsoft To Do.app'"),
                         (
                             K::X,
