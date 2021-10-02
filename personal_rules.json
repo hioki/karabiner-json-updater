@@ -2531,7 +2531,7 @@
       ]
     },
     {
-      "description": "[Atom] VK4+E -> Ctrl+O",
+      "description": "[Atom] VK4+E -> Cmd+K Cmd+B",
       "manipulators": [
         {
           "type": "basic",
@@ -2553,9 +2553,15 @@
           },
           "to": [
             {
-              "key_code": "0",
+              "key_code": "k",
               "modifiers": [
-                "control"
+                "command"
+              ]
+            },
+            {
+              "key_code": "b",
+              "modifiers": [
+                "command"
               ]
             }
           ]

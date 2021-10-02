@@ -1042,7 +1042,7 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Atom] VK4+E -> Ctrl+O",
+                    description: "[Atom] VK4+E -> Cmd+K Cmd+B",
                     manipulators: vec![
                         ManipulatorInit {
                             conditions: Some(vec![
@@ -1055,8 +1055,12 @@ impl Config {
                             }.init(),
                             to: vec![
                                 To::Key {
-                                    key_code: K::Key0,
-                                    modifiers: Some(vec![Ctrl]),
+                                    key_code: K::K,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                                To::Key {
+                                    key_code: K::B,
+                                    modifiers: Some(vec![Cmd]),
                                 },
                             ],
                             ..Default::default()
