@@ -5218,7 +5218,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'Atom.app'"
+              "shell_command": "open -a 'Visual Studio Code.app'"
             }
           ]
         },
