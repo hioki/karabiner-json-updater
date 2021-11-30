@@ -9,7 +9,7 @@ pub enum BundleIdentifier {
     #[serde(rename = "com.jetbrains.CLion")]
     CLion,
     #[serde(rename = "io.dynalist")]
-    Dynalist,
+    Dynalist, // https://help.dynalist.io/article/91-keyboard-shortcut-reference
     #[serde(rename = "com.github.atom")]
     Atom,
     #[serde(rename = "com.tinyspeck.slackmacgap")]
