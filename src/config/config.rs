@@ -1042,6 +1042,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Dynalist] VK4+F -> Open file finder",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::F,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::O,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen",
                     manipulators: vec![
                         ManipulatorInit {
