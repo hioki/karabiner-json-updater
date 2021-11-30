@@ -2499,6 +2499,66 @@
       ]
     },
     {
+      "description": "[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "io.dynalist"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "hyphen",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "io.dynalist"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "0"
+          },
+          "to": [
+            {
+              "key_code": "hyphen",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Atom] VK4+F -> Cmd+T",
       "manipulators": [
         {
