@@ -1020,6 +1020,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Dynalist] VK4+E -> Toggle file pane",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::E,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::F,
+                                    modifiers: Some(vec![Cmd, Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen",
                     manipulators: vec![
                         ManipulatorInit {
