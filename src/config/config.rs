@@ -1483,13 +1483,13 @@ impl Config {
                 Rule {
                     description: "[Slack] VK4+T -> Cmd+Shift+T (Open the Threads view)",
                     manipulators: vec![
-                        build_slack_cmd_shift_manipulator(K::T)
+                        build_slack_cmd_shift_manipulator(K::T, K::T)
                     ]
                 },
                 Rule {
                     description: "[Slack] VK4+A -> Cmd+Shift+A (Open All Unreads view)",
                     manipulators: vec![
-                        build_slack_cmd_shift_manipulator(K::A)
+                        build_slack_cmd_shift_manipulator(K::A, K::A)
                     ]
                 },
                 Rule {
@@ -1534,19 +1534,25 @@ impl Config {
                 Rule {
                     description: "[Slack] VK4+S -> Cmd+Shift+S (Saved items)",
                     manipulators: vec![
-                        build_slack_cmd_shift_manipulator(K::S)
+                        build_slack_cmd_shift_manipulator(K::S, K::S)
                     ]
                 },
                 Rule {
                     description: "[Slack] VK4+Enter -> Cmd+Shift+Enter (Create new snippet)",
                     manipulators: vec![
-                        build_slack_cmd_shift_manipulator(K::ReturnOrEnter)
+                        build_slack_cmd_shift_manipulator(K::ReturnOrEnter, K::ReturnOrEnter)
                     ]
                 },
                 Rule {
                     description: "[Slack] VK4+I -> Cmd+Shift+I (Channel info pane)",
                     manipulators: vec![
-                        build_slack_cmd_shift_manipulator(K::I)
+                        build_slack_cmd_shift_manipulator(K::I, K::I)
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+E -> Cmd+Shift+D (Toggle Sidebar)",
+                    manipulators: vec![
+                        build_slack_cmd_shift_manipulator(K::E, K::D)
                     ]
                 },
                 Rule {
@@ -2139,19 +2145,19 @@ impl Config {
     }
 }
 
-fn build_slack_cmd_shift_manipulator(key: K) -> Manipulator {
+fn build_slack_cmd_shift_manipulator(from: K, to: K) -> Manipulator {
     ManipulatorInit {
         conditions: Some(vec![
             Condition::on_app(BundleIdentifier::Slack),
             Condition::with_vk4(),
         ]),
         from: FromInit {
-            key_code: key.clone(),
+            key_code: from.clone(),
             ..Default::default()
         }
         .init(),
         to: vec![To::Key {
-            key_code: key,
+            key_code: to,
             modifiers: Some(vec![Cmd, Shift]),
         }],
         ..Default::default()
