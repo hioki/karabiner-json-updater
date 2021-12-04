@@ -1103,6 +1103,84 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Dynalist] VK4+J/K -> Cmd+DownArrow/Cmd+UpArrow",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::J,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::DownArrow,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::K,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::UpArrow,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[Dynalist] VK4+H/L -> Shift+Tab/Tab",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::H,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Tab,
+                                    modifiers: Some(vec![Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Dynalist),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::L,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Tab,
+                                    modifiers: None,
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Atom] VK4+F -> Cmd+T",
                     manipulators: vec![
                         ManipulatorInit {
