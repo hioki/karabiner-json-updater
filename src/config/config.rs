@@ -1488,72 +1488,69 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Slack] VK4+A -> Cmd+Shift+A (Open All Unreads view)",
+                    description: "[Slack] VK4+U -> Cmd+Shift+A (Open All Unreads view)",
                     manipulators: vec![
-                        build_slack_vk4_manipulator(K::A, K::A, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+{N,P} -> {F6,Shift+F6} (Move next/previous section)",
-                    manipulators: vec![
-                        ManipulatorInit {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::Slack),
-                                Condition::with_vk4(),
-                            ]),
-                            from: FromInit {
-                                key_code: K::N,
-                                ..Default::default()
-                            }.init(),
-                            to: vec![
-                                To::Key {
-                                    key_code: K::F6,
-                                    modifiers: None,
-                                },
-                            ],
-                            ..Default::default()
-                        }.init(),
-                        ManipulatorInit {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::Slack),
-                                Condition::with_vk4(),
-                            ]),
-                            from: FromInit {
-                                key_code: K::P,
-                                ..Default::default()
-                            }.init(),
-                            to: vec![
-                                To::Key {
-                                    key_code: K::F6,
-                                    modifiers: Some(vec![Shift]),
-                                },
-                            ],
-                            ..Default::default()
-                        }.init()
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+S -> Cmd+Shift+S (Saved items)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::S, K::S, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+Enter -> Cmd+Shift+Enter (Create new snippet)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::ReturnOrEnter, K::ReturnOrEnter, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+I -> Cmd+Shift+I (Channel info pane)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::I, K::I, vec![Cmd, Shift])
+                        build_slack_vk4_manipulator(K::U, K::A, vec![Cmd, Shift])
                     ]
                 },
                 Rule {
                     description: "[Slack] VK4+E -> Cmd+Shift+D (Toggle Sidebar)",
                     manipulators: vec![
                         build_slack_vk4_manipulator(K::E, K::D, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+K -> Cmd+G (Search)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::K, K::G, vec![Cmd])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+R -> Cmd+Shift+M (Reaction)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::R, K::M, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+F -> Cmd+K (Jump)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::F, K::K, vec![Cmd])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+B -> Cmd+Shift+S (Bookmarks)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::B, K::S, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+D -> Cmd+Shift+X (Strikethrough)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::D, K::X, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+@ -> Cmd+Shift+C (Code)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::OpenBracket, K::C, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+C -> Cmd+Opt+Shift+C (Code Block)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::C, K::C, vec![Cmd, Opt, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+Q -> Cmd+Shift+9 (Quote)",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::Q, K::Key9, vec![Cmd, Shift])
+                    ]
+                },
+                Rule {
+                    description: "[Slack] VK4+Semicolon -> Cmd+Enter",
+                    manipulators: vec![
+                        build_slack_vk4_manipulator(K::Semicolon, K::ReturnOrEnter, vec![Cmd])
                     ]
                 },
                 Rule {

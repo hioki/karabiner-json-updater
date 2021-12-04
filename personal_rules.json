@@ -3287,7 +3287,7 @@
       ]
     },
     {
-      "description": "[Slack] VK4+A -> Cmd+Shift+A (Open All Unreads view)",
+      "description": "[Slack] VK4+U -> Cmd+Shift+A (Open All Unreads view)",
       "manipulators": [
         {
           "type": "basic",
@@ -3305,166 +3305,11 @@
             }
           ],
           "from": {
-            "key_code": "a"
+            "key_code": "u"
           },
           "to": [
             {
               "key_code": "a",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+{N,P} -> {F6,Shift+F6} (Move next/previous section)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "n"
-          },
-          "to": [
-            {
-              "key_code": "f6"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "p"
-          },
-          "to": [
-            {
-              "key_code": "f6",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+S -> Cmd+Shift+S (Saved items)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "s"
-          },
-          "to": [
-            {
-              "key_code": "s",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+Enter -> Cmd+Shift+Enter (Create new snippet)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "return_or_enter"
-          },
-          "to": [
-            {
-              "key_code": "return_or_enter",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+I -> Cmd+Shift+I (Channel info pane)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "key_code": "i",
               "modifiers": [
                 "command",
                 "shift"
@@ -3501,6 +3346,301 @@
               "modifiers": [
                 "command",
                 "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+K -> Cmd+G (Search)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "g",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+R -> Cmd+Shift+M (Reaction)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "m",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+F -> Cmd+K (Jump)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+B -> Cmd+Shift+S (Bookmarks)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+D -> Cmd+Shift+X (Strikethrough)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+@ -> Cmd+Shift+C (Code)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+C -> Cmd+Opt+Shift+C (Code Block)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command",
+                "option",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+Q -> Cmd+Shift+9 (Quote)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "q"
+          },
+          "to": [
+            {
+              "key_code": "9",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Slack] VK4+Semicolon -> Cmd+Enter",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.tinyspeck.slackmacgap"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "command"
               ]
             }
           ]
