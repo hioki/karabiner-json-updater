@@ -1624,6 +1624,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Mural] VK4+0 -> Cmd+Opt+0",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Mural),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::Key0,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Key0,
+                                    modifiers: Some(vec![Cmd, Opt]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
