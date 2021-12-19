@@ -1646,6 +1646,50 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Mural] VK4+G -> Cmd+G (Group)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Mural),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::G,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::G,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[Mural] VK4+U -> Cmd+Shift+G (Ungroup)",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Mural),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::U,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::G,
+                                    modifiers: Some(vec![Cmd,Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "[Mural] VK4+{T/H/N/M} -> Opt+Ctrl+{T/H/N/M}",
                     manipulators: vec![
                         (K::T, K::T),
