@@ -1924,14 +1924,14 @@ impl Config {
                     ],
                 },
                 Rule {
-                    description: "VK2+9 -> Cmd+Shift+Semicolon / VK2+0 -> Cmd+Hyphen",
+                    description: "VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen",
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VK::Vk2,
                             K::Key9,
                             None,
-                            K::Semicolon,
-                            Some(vec![Cmd, Shift]),
+                            K::KeypadPlus,
+                            Some(vec![Cmd]),
                         ),
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                             VK::Vk2,

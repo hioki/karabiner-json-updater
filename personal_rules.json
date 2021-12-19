@@ -4934,7 +4934,7 @@
       ]
     },
     {
-      "description": "VK2+9 -> Cmd+Shift+Semicolon / VK2+0 -> Cmd+Hyphen",
+      "description": "VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen",
       "manipulators": [
         {
           "type": "basic",
@@ -4950,10 +4950,9 @@
           },
           "to": [
             {
-              "key_code": "semicolon",
+              "key_code": "keypad_plus",
               "modifiers": [
-                "command",
-                "shift"
+                "command"
               ]
             }
           ]
