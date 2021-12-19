@@ -3684,6 +3684,39 @@
       ]
     },
     {
+      "description": "[Mural] VK4+L -> Opt+Ctrl+L (Line)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "co.mural.macOS"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "modifiers": [
+                "option",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
       "manipulators": [
         {
