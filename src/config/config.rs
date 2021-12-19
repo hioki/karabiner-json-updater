@@ -1646,26 +1646,34 @@ impl Config {
                     ]
                 },
                 Rule {
-                    description: "[Mural] VK4+N -> Opt+Ctrl+N",
+                    description: "[Mural] VK4+{T/H/N/M} -> Opt+Ctrl+{T/H/N/M}",
                     manipulators: vec![
-                        ManipulatorInit {
-                            conditions: Some(vec![
-                                Condition::on_app(BundleIdentifier::Mural),
-                                Condition::with_vk4(),
-                            ]),
-                            from: FromInit {
-                                key_code: K::N,
-                                ..Default::default()
-                            }.init(),
-                            to: vec![
-                                To::Key {
-                                    key_code: K::N,
-                                    modifiers: Some(vec![Opt, Ctrl]),
-                                },
-                            ],
-                            ..Default::default()
-                        }.init(),
+                        (K::T, K::T),
+                        (K::H, K::H),
+                        (K::N, K::N),
+                        (K::M, K::M),
                     ]
+                        .into_iter()
+                        .map(|(from, to)| {
+                            ManipulatorInit {
+                                conditions: Some(vec![
+                                    Condition::on_app(BundleIdentifier::Mural),
+                                    Condition::with_vk4(),
+                                ]),
+                                from: FromInit {
+                                    key_code: from,
+                                    ..Default::default()
+                                }.init(),
+                                to: vec![
+                                    To::Key {
+                                        key_code: to,
+                                        modifiers: Some(vec![Opt, Ctrl]),
+                                    },
+                                ],
+                                ..Default::default()
+                            }.init()
+                        })
+                        .collect_vec(),
                 },
                 Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
