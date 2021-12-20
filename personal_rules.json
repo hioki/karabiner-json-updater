@@ -4060,6 +4060,39 @@
       ]
     },
     {
+      "description": "[Notion] VK4+U -> Cmd+Shift+U",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "u",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
       "manipulators": [
         {

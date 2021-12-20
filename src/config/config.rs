@@ -1786,6 +1786,28 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Notion] VK4+U -> Cmd+Shift+U",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Notion),
+                                Condition::with_vk4(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::U,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::U,
+                                    modifiers: Some(vec![Cmd,Shift]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
