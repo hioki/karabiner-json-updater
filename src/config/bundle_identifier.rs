@@ -18,4 +18,6 @@ pub enum BundleIdentifier {
     GoogleChrome,
     #[serde(rename = "co.mural.macOS")]
     Mural,
+    #[serde(rename = "notion.id")]
+    Notion,
 }

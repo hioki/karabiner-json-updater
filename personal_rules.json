@@ -3964,6 +3964,38 @@
       ]
     },
     {
+      "description": "[Notion] VK4+F -> Cmd+P",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
       "manipulators": [
         {
