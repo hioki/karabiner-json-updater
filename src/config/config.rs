@@ -1696,6 +1696,7 @@ impl Config {
                         (K::H, K::H),
                         (K::N, K::N),
                         (K::M, K::M),
+                        (K::C, K::C),
                     ]
                         .into_iter()
                         .map(|(from, to)| {
