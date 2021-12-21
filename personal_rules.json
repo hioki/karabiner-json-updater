@@ -4093,6 +4093,70 @@
       ]
     },
     {
+      "description": "[Notion] VK2+9 -> Cmd+^",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "equal_sign",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[Notion] VK2+0 -> Cmd+Hyphen",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "0"
+          },
+          "to": [
+            {
+              "key_code": "hyphen",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
       "manipulators": [
         {

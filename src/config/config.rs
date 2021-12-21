@@ -1808,6 +1808,50 @@ impl Config {
                     ]
                 },
                 Rule {
+                    description: "[Notion] VK2+9 -> Cmd+^",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Notion),
+                                Condition::with_vk2(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::Key9,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::EqualSign,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
+                    description: "[Notion] VK2+0 -> Cmd+Hyphen",
+                    manipulators: vec![
+                        ManipulatorInit {
+                            conditions: Some(vec![
+                                Condition::on_app(BundleIdentifier::Notion),
+                                Condition::with_vk2(),
+                            ]),
+                            from: FromInit {
+                                key_code: K::Key0,
+                                ..Default::default()
+                            }.init(),
+                            to: vec![
+                                To::Key {
+                                    key_code: K::Hyphen,
+                                    modifiers: Some(vec![Cmd]),
+                                },
+                            ],
+                            ..Default::default()
+                        }.init(),
+                    ]
+                },
+                Rule {
                     description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
                     manipulators: vec![
                         (K::H, K::LeftArrow),
