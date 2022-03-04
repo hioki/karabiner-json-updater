@@ -5859,35 +5859,6 @@
       ]
     },
     {
-      "description": "VK2+C -> Ctrl+Opt+Shift+Cmd+C (Search selected text with Google)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "c"
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "control",
-                "option",
-                "shift",
-                "command"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "description": "VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)",
       "manipulators": [
         {
@@ -5934,6 +5905,24 @@
           "to": [
             {
               "shell_command": "open -a 'Mural.app'"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "shell_command": "open -a 'ClickUp.app'"
             }
           ]
         },
@@ -6131,7 +6120,7 @@
           },
           "to": [
             {
-              "shell_command": "osascript -e \"tell application \\\"Alfred 4\\\" to search \\\"docsrs \\\"\""
+              "shell_command": "open -a 'VMWare Fusion.app'"
             }
           ]
         },

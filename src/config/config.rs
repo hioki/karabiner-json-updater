@@ -2280,18 +2280,6 @@ impl Config {
                         .collect_vec(),
                 },
                 Rule {
-                    description: "VK2+C -> Ctrl+Opt+Shift+Cmd+C (Search selected text with Google)",
-                    manipulators: vec![
-                        Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                            VK::Vk2,
-                            K::C,
-                            None,
-                            K::C,
-                            Some(vec![Ctrl, Opt, Shift, Cmd])
-                        )
-                    ]
-                },
-                Rule {
                     description: "VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)", // https://github.com/pddg/alfred-google-translate-formatter-workflow
                     manipulators: vec![
                         Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
@@ -2307,6 +2295,7 @@ impl Config {
                     description: "Open apps",
                     manipulators: vec![
                         (K::B, "open -a 'Mural.app'"),
+                        (K::C, "open -a 'ClickUp.app'"),
                         (
                             K::E,
                             r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
@@ -2320,10 +2309,7 @@ impl Config {
                         (K::N, "open -a 'Notion.app'"),
                         (K::O, "open -a 'Visual Studio Code.app'"),
                         (K::P, "open -a '1Password.app'"),
-                        (
-                            K::R,
-                            r#"osascript -e "tell application \"Alfred 4\" to search \"docsrs \"""#,
-                        ),
+                        (K::R, "open -a 'VMWare Fusion.app'"),
                         (K::T, "open -a 'Visual Studio Code.app'"),
                         (K::U, "open -a 'Microsoft To Do.app'"),
                         (
