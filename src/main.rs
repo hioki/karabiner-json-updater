@@ -10,7 +10,7 @@ use std::process::Command;
 const PERSONAL_RULES_JSON_PATH: &str = "./personal_rules.json";
 
 fn main() -> Result<()> {
-    let config = MyConfig::my_config();
+    let my_config = MyConfig::my_config();
 
     let config_karabiner_path = Path::new(env!("HOME")).join(".config/karabiner");
 
@@ -28,7 +28,7 @@ fn main() -> Result<()> {
         .read(true)
         .open(PERSONAL_RULES_JSON_PATH)?;
 
-    serde_json::to_writer_pretty(&personal_rules_file, &config)?;
+    serde_json::to_writer_pretty(&personal_rules_file, &my_config)?;
 
     personal_rules_file.seek(SeekFrom::Start(0))?;
 
@@ -40,7 +40,7 @@ fn main() -> Result<()> {
 
     let karabiner_json_path = config_karabiner_path.join("karabiner.json");
 
-    let rules_json = serde_json::to_string_pretty(&config.rules)?;
+    let rules_json = serde_json::to_string_pretty(&my_config.rules)?;
 
     let new_json = Command::new("jq")
         .arg(format!(
