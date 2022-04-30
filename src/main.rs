@@ -2,7 +2,7 @@ mod config;
 mod updater;
 
 use crate::config::config::Config;
-use crate::updater::updater::Updater;
+use crate::updater::Updater;
 use anyhow::Result;
 
 fn main() -> Result<()> {
