@@ -16,14 +16,14 @@ use serde::Serialize;
 use crate::config::modifier_key::ModifierKey;
 
 #[derive(Debug, Serialize)]
-pub struct Config {
+pub struct MyConfig {
     pub title: &'static str,
     pub rules: Vec<Rule>,
 }
 
-impl Config {
-    pub fn my_config() -> Config {
-        Config {
+impl MyConfig {
+    pub fn my_config() -> MyConfig {
+        MyConfig {
             title: "Personal rules",
             rules: vec![
                 Rule {

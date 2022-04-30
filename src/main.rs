@@ -1,6 +1,6 @@
 mod config;
 
-use crate::config::my_config::Config;
+use crate::config::my_config::MyConfig;
 use anyhow::{anyhow, Result};
 use std::fs::{File, OpenOptions};
 use std::io::{copy, Seek as _, SeekFrom, Write as _};
@@ -10,7 +10,7 @@ use std::process::Command;
 const PERSONAL_RULES_JSON_PATH: &str = "./personal_rules.json";
 
 fn main() -> Result<()> {
-    let config = Config::my_config();
+    let config = MyConfig::my_config();
 
     let config_karabiner_path = Path::new(env!("HOME")).join(".config/karabiner");
 
