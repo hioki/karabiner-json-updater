@@ -20,6 +20,6 @@ pub enum BundleIdentifier {
     Mural,
     #[serde(rename = "notion.id")]
     Notion,
-    #[serde(rename = "com.clickup.desktop-app")]
-    ClickUp,
+    // #[serde(rename = "com.clickup.desktop-app")]
+    // ClickUp,
 }
