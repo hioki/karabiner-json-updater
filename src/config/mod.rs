@@ -1,6 +1,5 @@
 pub mod bundle_identifier;
 pub mod condition;
-pub mod my_config;
 pub mod from;
 pub mod key_code;
 pub mod manipulator;

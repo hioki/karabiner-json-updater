@@ -1,6 +1,7 @@
 mod config;
+mod my_config;
 
-use crate::config::my_config::MyConfig;
+use crate::my_config::MyConfig;
 use anyhow::{anyhow, Result};
 use std::fs::{File, OpenOptions};
 use std::io::{copy, Seek as _, SeekFrom, Write as _};
