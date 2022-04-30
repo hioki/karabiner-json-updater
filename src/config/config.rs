@@ -2294,7 +2294,7 @@ impl Config {
                 Rule {
                     description: "Open apps",
                     manipulators: vec![
-                        (K::B, "open -a 'Mural.app'"),
+                        (K::B, "open -a 'Bitwarden.app'"),
                         (K::C, "open -a 'ClickUp.app'"),
                         (
                             K::E,
