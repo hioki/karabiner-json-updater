@@ -1,19 +1,10 @@
 use serde::Serialize;
 
+#[derive(Default)]
 pub struct MouseKeyInit {
     pub x: Option<i32>,
     pub y: Option<i32>,
     pub vertical_wheel: Option<i32>,
-}
-
-impl Default for MouseKeyInit {
-    fn default() -> Self {
-        Self {
-            x: None,
-            y: None,
-            vertical_wheel: None,
-        }
-    }
 }
 
 impl MouseKeyInit {

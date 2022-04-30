@@ -586,7 +586,6 @@ impl Config {
                             from: FromInit {
                                 key_code: K::CloseBracket,
                                 modifiers: Some(FromModifier::Optional(vec![Shift])),
-                                ..Default::default()
                             }.init(),
                             to: vec![
                                 To::Key {
@@ -609,7 +608,6 @@ impl Config {
                             from: FromInit {
                                 key_code: K::Backslash,
                                 modifiers: Some(FromModifier::Optional(vec![Shift])),
-                                ..Default::default()
                             }.init(),
                             to: vec![
                                 To::Key {
@@ -790,7 +788,6 @@ impl Config {
                             from: FromInit {
                                 key_code: K::OpenBracket,
                                 modifiers: Some(FromModifier::Optional(vec![Shift])),
-                                ..Default::default()
                             }.init(),
                             to: vec![
                                 To::Key {
@@ -2411,7 +2408,7 @@ fn build_slack_vk4_manipulator(from: K, to: K, modifiers: Vec<ModifierKey>) -> M
             Condition::with_vk4(),
         ]),
         from: FromInit {
-            key_code: from.clone(),
+            key_code: from,
             ..Default::default()
         }
         .init(),
