@@ -3254,7 +3254,7 @@
       ]
     },
     {
-      "description": "[Slack] VK4+T -> Cmd+Shift+T (Open the Threads view)",
+      "description": "Slack",
       "manipulators": [
         {
           "type": "basic",
@@ -3283,12 +3283,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+U -> Cmd+Shift+A (Open All Unreads view)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3316,12 +3311,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+E -> Cmd+Shift+D (Toggle Sidebar)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3349,12 +3339,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+K -> Cmd+G (Search)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3381,45 +3366,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+R -> Cmd+Shift+M (Reaction)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "r"
-          },
-          "to": [
-            {
-              "key_code": "m",
-              "modifiers": [
-                "command",
-                "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+F -> Cmd+K (Jump)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3446,12 +3393,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+B -> Cmd+Shift+S (Bookmarks)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3479,12 +3421,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+D -> Cmd+Shift+X (Strikethrough)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3512,12 +3449,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+@ -> Cmd+Shift+C (Code)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3545,12 +3477,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+C -> Cmd+Opt+Shift+C (Code Block)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3579,12 +3506,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+Q -> Cmd+Shift+9 (Quote)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3609,38 +3531,6 @@
               "modifiers": [
                 "command",
                 "shift"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[Slack] VK4+Semicolon -> Cmd+Enter",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.tinyspeck.slackmacgap"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "semicolon"
-          },
-          "to": [
-            {
-              "key_code": "return_or_enter",
-              "modifiers": [
-                "command"
               ]
             }
           ]

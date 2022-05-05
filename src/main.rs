@@ -21,15 +21,7 @@ use crate::config::to::{PointingButton, To};
 use crate::config::value::Value;
 use crate::config::virtual_key::VirtualKey as VK;
 
-use crate::config::modifier_key::ModifierKey;
-
 const PERSONAL_RULES_JSON_PATH: &str = "./personal_rules.json";
-
-#[derive(Debug, Serialize)]
-pub struct MyConfig {
-    pub title: &'static str,
-    pub rules: Vec<Rule>,
-}
 
 fn main() -> Result<()> {
     let title = "Personal rules";
@@ -1487,77 +1479,38 @@ fn main() -> Result<()> {
                     }).collect_vec()
                 },
                 Rule {
-                    description: "[Slack] VK4+T -> Cmd+Shift+T (Open the Threads view)",
+                    description: "Slack",
                     manipulators: vec![
-                        build_slack_vk4_manipulator(K::T, K::T, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+U -> Cmd+Shift+A (Open All Unreads view)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::U, K::A, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+E -> Cmd+Shift+D (Toggle Sidebar)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::E, K::D, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+K -> Cmd+G (Search)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::K, K::G, vec![Cmd])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+R -> Cmd+Shift+M (Reaction)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::R, K::M, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+F -> Cmd+K (Jump)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::F, K::K, vec![Cmd])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+B -> Cmd+Shift+S (Bookmarks)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::B, K::S, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+D -> Cmd+Shift+X (Strikethrough)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::D, K::X, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+@ -> Cmd+Shift+C (Code)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::OpenBracket, K::C, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+C -> Cmd+Opt+Shift+C (Code Block)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::C, K::C, vec![Cmd, Opt, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+Q -> Cmd+Shift+9 (Quote)",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::Q, K::Key9, vec![Cmd, Shift])
-                    ]
-                },
-                Rule {
-                    description: "[Slack] VK4+Semicolon -> Cmd+Enter",
-                    manipulators: vec![
-                        build_slack_vk4_manipulator(K::Semicolon, K::ReturnOrEnter, vec![Cmd])
-                    ]
-                },
+                            (K::T, K::T, vec![Cmd, Shift]), // Threads
+                            (K::U, K::A, vec![Cmd, Shift]), // All Unreads
+                            (K::E, K::D, vec![Cmd, Shift]), // Toggle Sidebar
+                            (K::K, K::G, vec![Cmd]), // Search
+                            (K::F, K::K, vec![Cmd]), // Jump
+                            (K::B, K::S, vec![Cmd, Shift]), // Bookmarks
+                            (K::D, K::X, vec![Cmd, Shift]), // Strike through
+                            (K::OpenBracket, K::C, vec![Cmd, Shift]), // Code
+                            (K::C, K::C, vec![Cmd, Opt, Shift]), // Code Block
+                            (K::Q, K::Key9, vec![Cmd, Shift]), // Quote
+                        ].into_iter().map(|(from, to, modifiers)|
+                            ManipulatorInit {
+                                conditions: Some(vec![
+                                    Condition::on_app(BundleIdentifier::Slack),
+                                    Condition::with_vk4(),
+                                ]),
+                                from: FromInit {
+                                    key_code: from,
+                                    ..Default::default()
+                                }
+                                    .init(),
+                                to: vec![To::Key {
+                                    key_code: to,
+                                    modifiers: Some(modifiers),
+                                }],
+                                ..Default::default()
+                            }
+                                .init()
+                        ).collect_vec(),
+                    },
                 Rule {
                     description: "[GoogleChrome] VK4+N -> Cmd+Shift+M,Enter (Switch to the other user)",
                     manipulators: vec![
@@ -2406,6 +2359,12 @@ fn main() -> Result<()> {
                 },
             ];
 
+    #[derive(Debug, Serialize)]
+    struct MyConfig {
+        pub title: &'static str,
+        pub rules: Vec<Rule>,
+    }
+
     let my_config = MyConfig { title, rules };
 
     let config_karabiner_path = Path::new(env!("HOME")).join(".config/karabiner");
@@ -2454,24 +2413,4 @@ fn main() -> Result<()> {
     println!("done.");
 
     Ok(())
-}
-
-fn build_slack_vk4_manipulator(from: K, to: K, modifiers: Vec<ModifierKey>) -> Manipulator {
-    ManipulatorInit {
-        conditions: Some(vec![
-            Condition::on_app(BundleIdentifier::Slack),
-            Condition::with_vk4(),
-        ]),
-        from: FromInit {
-            key_code: from,
-            ..Default::default()
-        }
-        .init(),
-        to: vec![To::Key {
-            key_code: to,
-            modifiers: Some(modifiers),
-        }],
-        ..Default::default()
-    }
-    .init()
 }
