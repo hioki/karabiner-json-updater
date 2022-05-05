@@ -552,6 +552,321 @@
       ]
     },
     {
+      "description": "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "p",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "n",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "p",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "n",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[iTerm2] VK1+W -> <ESC>:w<CR>",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            },
+            {
+              "key_code": "quote"
+            },
+            {
+              "key_code": "w"
+            },
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[iTerm2] VK1+Q -> <ESC>:q<CR>",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "q"
+          },
+          "to": [
+            {
+              "key_code": "escape"
+            },
+            {
+              "key_code": "quote"
+            },
+            {
+              "key_code": "q"
+            },
+            {
+              "key_code": "return_or_enter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[iTerm2] VK1+Z -> Enter tmux copy-mode",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "z"
+          },
+          "to": [
+            {
+              "key_code": "t",
+              "modifiers": [
+                "control"
+              ]
+            },
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "0",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.googlecode.iterm2"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "4",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "VK4 on VSCode",
       "manipulators": [
         {
@@ -2932,321 +3247,6 @@
               "key_code": "s",
               "modifiers": [
                 "command"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "o"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "p",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "p"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "n",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "a"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "p",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "s"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "n",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+W -> <ESC>:w<CR>",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "w"
-          },
-          "to": [
-            {
-              "key_code": "escape"
-            },
-            {
-              "key_code": "quote"
-            },
-            {
-              "key_code": "w"
-            },
-            {
-              "key_code": "return_or_enter"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+Q -> <ESC>:q<CR>",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "q"
-          },
-          "to": [
-            {
-              "key_code": "escape"
-            },
-            {
-              "key_code": "quote"
-            },
-            {
-              "key_code": "q"
-            },
-            {
-              "key_code": "return_or_enter"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+Z -> Enter tmux copy-mode",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "z"
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": [
-                "control"
-              ]
-            },
-            {
-              "key_code": "close_bracket",
-              "modifiers": [
-                "control"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "u"
-          },
-          "to": [
-            {
-              "key_code": "0",
-              "modifiers": [
-                "shift"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.googlecode.iterm2"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "i"
-          },
-          "to": [
-            {
-              "key_code": "4",
-              "modifiers": [
-                "shift"
               ]
             }
           ]

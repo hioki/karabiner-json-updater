@@ -100,6 +100,178 @@ fn rules_iterm2() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
+            manipulators: vec![(K::O, K::P), (K::P, K::N)]
+                .into_iter()
+                .map(|(from, to)| {
+                    ManipulatorInit {
+                        conditions: Some(vec![
+                            Condition::on_app(BundleIdentifier::ITerm2),
+                            Condition::with_vk1(),
+                        ]),
+                        from: FromInit {
+                            key_code: from,
+                            ..Default::default()
+                        }
+                        .init(),
+                        to: vec![
+                            To::new_tmux_prefix_key(),
+                            To::Key {
+                                key_code: to,
+                                modifiers: Some(vec![Ctrl]),
+                            },
+                        ],
+                        ..Default::default()
+                    }
+                    .init()
+                })
+                .collect_vec(),
+        },
+        Rule {
+            description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
+            manipulators: vec![(K::A, K::P), (K::S, K::N)]
+                .into_iter()
+                .map(|(from, to)| {
+                    ManipulatorInit {
+                        conditions: Some(vec![
+                            Condition::on_app(BundleIdentifier::ITerm2),
+                            Condition::with_vk2(),
+                        ]),
+                        from: FromInit {
+                            key_code: from,
+                            ..Default::default()
+                        }
+                        .init(),
+                        to: vec![
+                            To::new_tmux_prefix_key(),
+                            To::Key {
+                                key_code: to,
+                                modifiers: Some(vec![Ctrl]),
+                            },
+                        ],
+                        ..Default::default()
+                    }
+                    .init()
+                })
+                .collect_vec(),
+        },
+        Rule {
+            description: "[iTerm2] VK1+W -> <ESC>:w<CR>",
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_vk1(),
+                ]),
+                from: FromInit {
+                    key_code: K::W,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![
+                    To::Key {
+                        key_code: K::Escape,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::Quote,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::W,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::ReturnOrEnter,
+                        modifiers: None,
+                    },
+                ],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: "[iTerm2] VK1+Q -> <ESC>:q<CR>",
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_vk1(),
+                ]),
+                from: FromInit {
+                    key_code: K::Q,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![
+                    To::Key {
+                        key_code: K::Escape,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::Quote,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::Q,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::ReturnOrEnter,
+                        modifiers: None,
+                    },
+                ],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_vk1(),
+                ]),
+                from: FromInit {
+                    key_code: K::Z,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![
+                    To::new_tmux_prefix_key(),
+                    To::Key {
+                        key_code: K::CloseBracket,
+                        modifiers: Some(vec![Ctrl]),
+                    },
+                ],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
+            manipulators: vec![(K::U, K::Key0), (K::I, K::Key4)]
+                .into_iter()
+                .map(|(from, to)| {
+                    ManipulatorInit {
+                        conditions: Some(vec![
+                            Condition::on_app(BundleIdentifier::ITerm2),
+                            Condition::with_vk1(),
+                        ]),
+                        from: FromInit {
+                            key_code: from,
+                            ..Default::default()
+                        }
+                        .init(),
+                        to: vec![To::Key {
+                            key_code: to,
+                            modifiers: Some(vec![Shift]),
+                        }],
+                        ..Default::default()
+                    }
+                    .init()
+                })
+                .collect_vec(),
+        },
     ]
 }
 
@@ -1240,183 +1412,6 @@ fn rules_atom() -> Vec<Rule> {
     ]
 }
 
-fn rules_iterm2_2() -> Vec<Rule> {
-    vec![
-        Rule {
-            description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
-            manipulators: vec![(K::O, K::P), (K::P, K::N)]
-                .into_iter()
-                .map(|(from, to)| {
-                    ManipulatorInit {
-                        conditions: Some(vec![
-                            Condition::on_app(BundleIdentifier::ITerm2),
-                            Condition::with_vk1(),
-                        ]),
-                        from: FromInit {
-                            key_code: from,
-                            ..Default::default()
-                        }
-                        .init(),
-                        to: vec![
-                            To::new_tmux_prefix_key(),
-                            To::Key {
-                                key_code: to,
-                                modifiers: Some(vec![Ctrl]),
-                            },
-                        ],
-                        ..Default::default()
-                    }
-                    .init()
-                })
-                .collect_vec(),
-        },
-        Rule {
-            description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
-            manipulators: vec![(K::A, K::P), (K::S, K::N)]
-                .into_iter()
-                .map(|(from, to)| {
-                    ManipulatorInit {
-                        conditions: Some(vec![
-                            Condition::on_app(BundleIdentifier::ITerm2),
-                            Condition::with_vk2(),
-                        ]),
-                        from: FromInit {
-                            key_code: from,
-                            ..Default::default()
-                        }
-                        .init(),
-                        to: vec![
-                            To::new_tmux_prefix_key(),
-                            To::Key {
-                                key_code: to,
-                                modifiers: Some(vec![Ctrl]),
-                            },
-                        ],
-                        ..Default::default()
-                    }
-                    .init()
-                })
-                .collect_vec(),
-        },
-        Rule {
-            description: "[iTerm2] VK1+W -> <ESC>:w<CR>",
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::ITerm2),
-                    Condition::with_vk1(),
-                ]),
-                from: FromInit {
-                    key_code: K::W,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![
-                    To::Key {
-                        key_code: K::Escape,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::Quote,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::W,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::ReturnOrEnter,
-                        modifiers: None,
-                    },
-                ],
-                ..Default::default()
-            }
-            .init()],
-        },
-        Rule {
-            description: "[iTerm2] VK1+Q -> <ESC>:q<CR>",
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::ITerm2),
-                    Condition::with_vk1(),
-                ]),
-                from: FromInit {
-                    key_code: K::Q,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![
-                    To::Key {
-                        key_code: K::Escape,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::Quote,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::Q,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::ReturnOrEnter,
-                        modifiers: None,
-                    },
-                ],
-                ..Default::default()
-            }
-            .init()],
-        },
-        Rule {
-            description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::ITerm2),
-                    Condition::with_vk1(),
-                ]),
-                from: FromInit {
-                    key_code: K::Z,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![
-                    To::new_tmux_prefix_key(),
-                    To::Key {
-                        key_code: K::CloseBracket,
-                        modifiers: Some(vec![Ctrl]),
-                    },
-                ],
-                ..Default::default()
-            }
-            .init()],
-        },
-        Rule {
-            description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
-            manipulators: vec![(K::U, K::Key0), (K::I, K::Key4)]
-                .into_iter()
-                .map(|(from, to)| {
-                    ManipulatorInit {
-                        conditions: Some(vec![
-                            Condition::on_app(BundleIdentifier::ITerm2),
-                            Condition::with_vk1(),
-                        ]),
-                        from: FromInit {
-                            key_code: from,
-                            ..Default::default()
-                        }
-                        .init(),
-                        to: vec![To::Key {
-                            key_code: to,
-                            modifiers: Some(vec![Shift]),
-                        }],
-                        ..Default::default()
-                    }
-                    .init()
-                })
-                .collect_vec(),
-        },
-    ]
-}
-
 fn rules_slack() -> Vec<Rule> {
     vec![Rule {
         description: "Slack",
@@ -2219,7 +2214,6 @@ pub fn build_custom_rules() -> Vec<Rule> {
         rules_clion(),
         rules_dynalist(),
         rules_atom(),
-        rules_iterm2_2(),
         rules_slack(),
         rules_google_chrome(),
         rules_notion(),
