@@ -16,8 +16,6 @@ pub enum BundleIdentifier {
     Slack,
     #[serde(rename = "com.google.Chrome")]
     GoogleChrome,
-    #[serde(rename = "co.mural.macOS")]
-    Mural,
     #[serde(rename = "notion.id")]
     Notion,
     // #[serde(rename = "com.clickup.desktop-app")]
