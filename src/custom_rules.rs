@@ -667,7 +667,7 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+H -> Ctrl+Opt+UpArrow",
+            description: "[CLion] VK4+H -> Cmd+[",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::CLion),
@@ -679,15 +679,15 @@ fn rules_clion() -> Vec<Rule> {
                 }
                 .init(),
                 to: vec![To::Key {
-                    key_code: K::UpArrow,
-                    modifiers: Some(vec![Ctrl, Opt]),
+                    key_code: K::OpenBracket,
+                    modifiers: Some(vec![Cmd]),
                 }],
                 ..Default::default()
             }
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+L -> Ctrl+Opt+DownArrow",
+            description: "[CLion] VK4+L -> Cmd+]",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::CLion),
@@ -699,8 +699,8 @@ fn rules_clion() -> Vec<Rule> {
                 }
                 .init(),
                 to: vec![To::Key {
-                    key_code: K::DownArrow,
-                    modifiers: Some(vec![Ctrl, Opt]),
+                    key_code: K::CloseBracket,
+                    modifiers: Some(vec![Cmd]),
                 }],
                 ..Default::default()
             }

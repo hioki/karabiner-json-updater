@@ -2050,7 +2050,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+H -> Ctrl+Opt+UpArrow",
+      "description": "[CLion] VK4+H -> Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -2072,10 +2072,9 @@
           },
           "to": [
             {
-              "key_code": "up_arrow",
+              "key_code": "open_bracket",
               "modifiers": [
-                "control",
-                "option"
+                "command"
               ]
             }
           ]
@@ -2083,7 +2082,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+L -> Ctrl+Opt+DownArrow",
+      "description": "[CLion] VK4+L -> Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -2105,10 +2104,9 @@
           },
           "to": [
             {
-              "key_code": "down_arrow",
+              "key_code": "close_bracket",
               "modifiers": [
-                "control",
-                "option"
+                "command"
               ]
             }
           ]
