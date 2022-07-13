@@ -507,7 +507,7 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+R -> Opt+Cmd+Y (File Reload)",
+            description: "[CLion] VK4+R -> Ctrl+Opt+R (Run)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::CLion),
@@ -519,8 +519,8 @@ fn rules_clion() -> Vec<Rule> {
                 }
                 .init(),
                 to: vec![To::Key {
-                    key_code: K::Y,
-                    modifiers: Some(vec![Opt, Cmd]),
+                    key_code: K::R,
+                    modifiers: Some(vec![Ctrl, Opt]),
                 }],
                 ..Default::default()
             }

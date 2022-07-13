@@ -1784,7 +1784,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+R -> Opt+Cmd+Y (File Reload)",
+      "description": "[CLion] VK4+R -> Ctrl+Opt+R (Run)",
       "manipulators": [
         {
           "type": "basic",
@@ -1806,10 +1806,10 @@
           },
           "to": [
             {
-              "key_code": "y",
+              "key_code": "r",
               "modifiers": [
-                "option",
-                "command"
+                "control",
+                "option"
               ]
             }
           ]
