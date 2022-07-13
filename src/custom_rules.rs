@@ -1605,6 +1605,29 @@ fn rules_notion() -> Vec<Rule> {
     ]
 }
 
+fn rules_clickup() -> Vec<Rule> {
+    vec![Rule {
+        description: "[ClickUp] VK4+H -> Cmd+[",
+        manipulators: vec![ManipulatorInit {
+            conditions: Some(vec![
+                Condition::on_app(BundleIdentifier::ClickUp),
+                Condition::with_vk4(),
+            ]),
+            from: FromInit {
+                key_code: K::H,
+                ..Default::default()
+            }
+            .init(),
+            to: vec![To::Key {
+                key_code: K::CloseBracket,
+                modifiers: Some(vec![Cmd]),
+            }],
+            ..Default::default()
+        }
+        .init()],
+    }]
+}
+
 fn rules_vk1() -> Vec<Rule> {
     vec![
         Rule {
@@ -2217,6 +2240,7 @@ pub fn build_custom_rules() -> Vec<Rule> {
         rules_slack(),
         rules_google_chrome(),
         rules_notion(),
+        rules_clickup(),
         rules_vk1(),
         rules_vk2(),
         rules_open_apps(),

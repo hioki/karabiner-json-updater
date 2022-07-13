@@ -18,6 +18,6 @@ pub enum BundleIdentifier {
     GoogleChrome,
     #[serde(rename = "notion.id")]
     Notion,
-    // #[serde(rename = "com.clickup.desktop-app")]
-    // ClickUp,
+    #[serde(rename = "com.clickup.desktop-app")]
+    ClickUp,
 }
