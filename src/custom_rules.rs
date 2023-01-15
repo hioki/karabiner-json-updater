@@ -2088,6 +2088,7 @@ fn rules_open_apps() -> Vec<Rule> {
                 K::E,
                 r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
             ),
+            (K::G, "open -a 'Visual Studio Code.app'"),
             (K::H, "open -a 'Atom.app'"),
             (K::I, "open -a 'CLion.app'"),
             (K::J, "open -a 'Google Chrome.app'"),
