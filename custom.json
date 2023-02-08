@@ -3765,6 +3765,30 @@
       ]
     },
     {
+      "description": "[Notion] VK1+S -> Noop",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "s"
+          }
+        }
+      ]
+    },
+    {
       "description": "[ClickUp] VK4+H -> Cmd+[",
       "manipulators": [
         {

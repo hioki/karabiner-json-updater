@@ -1602,6 +1602,23 @@ fn rules_notion() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: "[Notion] VK1+S -> Noop",
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::Notion),
+                    Condition::with_vk1(),
+                ]),
+                from: FromInit {
+                    key_code: K::S,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
