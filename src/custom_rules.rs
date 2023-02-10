@@ -1602,23 +1602,6 @@ fn rules_notion() -> Vec<Rule> {
             }
             .init()],
         },
-        Rule {
-            description: "[Notion] VK1+S -> Noop",
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::Notion),
-                    Condition::with_vk1(),
-                ]),
-                from: FromInit {
-                    key_code: K::S,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![],
-                ..Default::default()
-            }
-            .init()],
-        },
     ]
 }
 
@@ -1655,52 +1638,66 @@ fn rules_vk1() -> Vec<Rule> {
                 (K::K, K::UpArrow),
                 (K::L, K::RightArrow),
             ]
-                .into_iter()
-                .map(|(from, to)| {
-                    Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VK::Vk1,
-                        from,
-                        Some(FromModifier::Optional(vec![Any])),
-                        to,
-                        None,
-                    )
-                })
-                .collect_vec(),
+            .into_iter()
+            .map(|(from, to)| {
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    from,
+                    Some(FromModifier::Optional(vec![Any])),
+                    to,
+                    None,
+                )
+            })
+            .collect_vec(),
         },
         Rule {
             description: "VK1+F -> Escape",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::F,
-                Some(FromModifier::Optional(vec![Any])),
-                K::Escape,
-                None,
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::F,
+                    Some(FromModifier::Optional(vec![Any])),
+                    K::Escape,
+                    None,
+                ),
+            ],
         },
         Rule {
-            description: "VK1+S -> Shift+Ctrl+J / VK1+D -> Shift+Ctrl+Semicolon (IME Switching of Google Japanese Input)",
+            description: "VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu",
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
                     K::S,
                     None,
-                    K::J,
-                    Some(vec![Shift, Ctrl]),
+                    K::JapaneseKana,
+                    None,
                 ),
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
                     K::D,
                     None,
-                    K::Semicolon,
-                    Some(vec![Shift, Ctrl]),
+                    K::JapaneseEisuu,
+                    None,
                 ),
             ],
         },
         Rule {
             description: "VK1+A -> F10 / VK1+Z -> F7",
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, K::A, None, K::F10, None),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, K::Z, None, K::F7, None),
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::A,
+                    None,
+                    K::F10,
+                    None,
+                ),
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::Z,
+                    None,
+                    K::F7,
+                    None,
+                ),
             ],
         },
         Rule {
@@ -1724,13 +1721,15 @@ fn rules_vk1() -> Vec<Rule> {
         },
         Rule {
             description: "VK1+G -> Tab",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::G,
-                Some(FromModifier::Optional(vec![Any])),
-                K::Tab,
-                None,
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::G,
+                    Some(FromModifier::Optional(vec![Any])),
+                    K::Tab,
+                    None,
+                ),
+            ],
         },
         Rule {
             description: "VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab",
@@ -1773,11 +1772,7 @@ fn rules_vk1() -> Vec<Rule> {
                     K::X,
                     None,
                     K::V,
-                    Some(vec![
-                        Cmd,
-                        Shift,
-                        Opt,
-                    ]),
+                    Some(vec![Cmd, Shift, Opt]),
                 ),
             ],
         },
@@ -1802,23 +1797,27 @@ fn rules_vk1() -> Vec<Rule> {
         },
         Rule {
             description: "VK1+[ -> Cmd+Z",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::CloseBracket,
-                Some(FromModifier::Optional(vec![Any])),
-                K::Z,
-                Some(vec![Cmd]),
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::CloseBracket,
+                    Some(FromModifier::Optional(vec![Any])),
+                    K::Z,
+                    Some(vec![Cmd]),
+                ),
+            ],
         },
         Rule {
             description: "VK1+Colon -> Cmd+H",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::Quote,
-                None,
-                K::H,
-                Some(vec![Cmd]),
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::Quote,
+                    None,
+                    K::H,
+                    Some(vec![Cmd]),
+                ),
+            ],
         },
         Rule {
             description: "VK1+{N,M,Comma,Period} -> Mouse{Left,Down,Up,Right}",
@@ -1852,8 +1851,9 @@ fn rules_vk1() -> Vec<Rule> {
                 (K::Comma, None, None, Some(-3072)),
                 (K::Period, None, Some(3072), None),
             ]
-                .into_iter()
-                .map(|(key_code, modifiers, x, y)| ManipulatorInit {
+            .into_iter()
+            .map(|(key_code, modifiers, x, y)| {
+                ManipulatorInit {
                     conditions: Some(vec![Condition::with_vk1()]),
                     from: From {
                         key_code,
@@ -1864,18 +1864,23 @@ fn rules_vk1() -> Vec<Rule> {
                             x,
                             y,
                             ..Default::default()
-                        }.init(),
+                        }
+                        .init(),
                     }],
                     ..Default::default()
-                }.init())
-                .collect_vec(),
+                }
+                .init()
+            })
+            .collect_vec(),
         },
         Rule {
             description: "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
             manipulators: vec![
                 (K::Slash, PointingButton::Button1),
                 (K::International1, PointingButton::Button2),
-            ].into_iter().map(|(from, to)|{
+            ]
+            .into_iter()
+            .map(|(from, to)| {
                 ManipulatorInit {
                     conditions: Some(vec![Condition::with_vk1()]),
                     from: From {
@@ -1886,8 +1891,10 @@ fn rules_vk1() -> Vec<Rule> {
                         pointing_button: to,
                     }],
                     ..Default::default()
-                }.init()
-            }).collect_vec(),
+                }
+                .init()
+            })
+            .collect_vec(),
         },
         Rule {
             description: "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
@@ -1896,22 +1903,27 @@ fn rules_vk1() -> Vec<Rule> {
                 (K::NonUsPound, 64),
                 (K::Backslash, 64),
             ]
-                .into_iter()
-                .map(|(key_code, vertical_wheel)| ManipulatorInit {
+            .into_iter()
+            .map(|(key_code, vertical_wheel)| {
+                ManipulatorInit {
                     conditions: Some(vec![Condition::with_vk1()]),
                     from: FromInit {
                         key_code,
                         ..Default::default()
-                    }.init(),
+                    }
+                    .init(),
                     to: vec![To::Mouse {
                         mouse_key: MouseKeyInit {
                             vertical_wheel: Some(vertical_wheel),
                             ..Default::default()
-                        }.init(),
+                        }
+                        .init(),
                     }],
                     ..Default::default()
-                }.init())
-                .collect(),
+                }
+                .init()
+            })
+            .collect(),
         },
         Rule {
             description: "VK1+{1,2,3,4,5,6,7,8,9,0,-,^} -> F{1,2,3,4,5,6,7,8,9,10,11,12}",
@@ -1929,31 +1941,42 @@ fn rules_vk1() -> Vec<Rule> {
                 (K::Hyphen, K::F11),
                 (K::EqualSign, K::F12),
             ]
-                .into_iter()
-                .map(|(from, to)| Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(VK::Vk1, from, Some(FromModifier::Optional(vec![Any])), to, None))
-                .collect_vec(),
+            .into_iter()
+            .map(|(from, to)| {
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    from,
+                    Some(FromModifier::Optional(vec![Any])),
+                    to,
+                    None,
+                )
+            })
+            .collect_vec(),
         },
         Rule {
             description: "VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::B,
-                None,
-                K::M,
-                Some(vec![Ctrl, Opt, Cmd, Shift]),
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::B,
+                    None,
+                    K::M,
+                    Some(vec![Ctrl, Opt, Cmd, Shift]),
+                ),
+            ],
         },
         Rule {
             description: "VK1+Backslash -> Cmd+Opt+D (Hide the Dock)",
-            manipulators: vec![Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk1,
-                K::International3,
-                None,
-                K::D,
-                Some(vec![Cmd, Opt]),
-            )],
+            manipulators: vec![
+                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
+                    VK::Vk1,
+                    K::International3,
+                    None,
+                    K::D,
+                    Some(vec![Cmd, Opt]),
+                ),
+            ],
         },
-
     ]
 }
 

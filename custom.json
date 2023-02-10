@@ -3765,30 +3765,6 @@
       ]
     },
     {
-      "description": "[Notion] VK1+S -> Noop",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "notion.id"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "s"
-          }
-        }
-      ]
-    },
-    {
       "description": "[ClickUp] VK4+H -> Cmd+[",
       "manipulators": [
         {
@@ -3946,7 +3922,7 @@
       ]
     },
     {
-      "description": "VK1+S -> Shift+Ctrl+J / VK1+D -> Shift+Ctrl+Semicolon (IME Switching of Google Japanese Input)",
+      "description": "VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu",
       "manipulators": [
         {
           "type": "basic",
@@ -3962,11 +3938,7 @@
           },
           "to": [
             {
-              "key_code": "j",
-              "modifiers": [
-                "shift",
-                "control"
-              ]
+              "key_code": "japanese_kana"
             }
           ]
         },
@@ -3984,11 +3956,7 @@
           },
           "to": [
             {
-              "key_code": "semicolon",
-              "modifiers": [
-                "shift",
-                "control"
-              ]
+              "key_code": "japanese_eisuu"
             }
           ]
         }
