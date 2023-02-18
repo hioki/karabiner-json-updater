@@ -2126,14 +2126,14 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::C, "open -a 'ClickUp.app'"),
             (
                 K::E,
-                r#"osascript -e "tell application \"Alfred 4\" to search \"snip \"""#,
+                r#"osascript -e "tell application \"Alfred 5\" to search \"snip \"""#,
             ),
             (K::G, "open -a 'Visual Studio Code.app'"),
             (K::H, "open -a 'Atom.app'"),
             (K::I, "open -a 'CLion.app'"),
             (K::J, "open -a 'Google Chrome.app'"),
             (K::K, "open -a 'iTerm.app'"),
-            (K::L, "open -a 'Alfred 4.app'"),
+            (K::L, "open -a 'Alfred 5.app'"),
             (K::M, "open -a 'Dynalist.app'"),
             (K::N, "open -a 'Notion.app'"),
             (K::O, "open -a 'Visual Studio Code.app'"),
@@ -2143,12 +2143,12 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::U, "open -a 'Microsoft To Do.app'"),
             (
                 K::X,
-                r#"osascript -e "tell application \"Alfred 4\" to search \"snip codeblocks\"""#,
+                r#"osascript -e "tell application \"Alfred 5\" to search \"snip codeblocks\"""#,
             ),
             (K::V, "open -a 'DeepL.app'"),
             (
                 K::W,
-                r#"osascript -e "tell application \"Alfred 4\" to search \"define $(pbpaste)\"""#,
+                r#"osascript -e "tell application \"Alfred 5\" to search \"define $(pbpaste)\"""#,
             ),
             (
                 K::CloseBracket,
