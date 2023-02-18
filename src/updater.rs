@@ -61,6 +61,7 @@ impl<'a> Updater<'a> {
         copy(&mut custom_file_in_current_dir, &mut custom_file_in_config)?;
 
         // Update $HOME/.config/karabiner.json
+        // TODO: remove jq dependency
         let new_json = Command::new("jq")
             .arg(format!(
                 ".profiles[0].complex_modifications.rules = {}",
