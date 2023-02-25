@@ -1602,6 +1602,45 @@ fn rules_notion() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: "[Notion] VK4+N/P -> Ctrl+Shift+J/K",
+            manipulators: vec![
+                ManipulatorInit {
+                    conditions: Some(vec![
+                        Condition::on_app(BundleIdentifier::Notion),
+                        Condition::with_vk4(),
+                    ]),
+                    from: FromInit {
+                        key_code: K::N,
+                        ..Default::default()
+                    }
+                    .init(),
+                    to: vec![To::Key {
+                        key_code: K::J,
+                        modifiers: Some(vec![Ctrl, Shift]),
+                    }],
+                    ..Default::default()
+                }
+                .init(),
+                ManipulatorInit {
+                    conditions: Some(vec![
+                        Condition::on_app(BundleIdentifier::Notion),
+                        Condition::with_vk4(),
+                    ]),
+                    from: FromInit {
+                        key_code: K::P,
+                        ..Default::default()
+                    }
+                    .init(),
+                    to: vec![To::Key {
+                        key_code: K::K,
+                        modifiers: Some(vec![Ctrl, Shift]),
+                    }],
+                    ..Default::default()
+                }
+                .init(),
+            ],
+        },
     ]
 }
 
