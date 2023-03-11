@@ -1566,7 +1566,7 @@
       ]
     },
     {
-      "description": "¥ -> \\",
+      "description": "[CLion] ¥ -> \\",
       "manipulators": [
         {
           "type": "basic",
@@ -1593,7 +1593,7 @@
       ]
     },
     {
-      "description": "VK4+E -> Cmd+1 (Project)",
+      "description": "[CLion] VK4+E -> Cmd+1 (Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -1625,7 +1625,7 @@
       ]
     },
     {
-      "description": "VK4+F -> Cmd+Shift+O (Files)",
+      "description": "[CLion] VK4+F -> Cmd+Shift+O (Files)",
       "manipulators": [
         {
           "type": "basic",
@@ -1658,7 +1658,7 @@
       ]
     },
     {
-      "description": "VK4+K -> Cmd+Shift+F (Find in Path)",
+      "description": "[CLion] VK4+K -> Cmd+Shift+F (Find in Path)",
       "manipulators": [
         {
           "type": "basic",
@@ -1691,7 +1691,7 @@
       ]
     },
     {
-      "description": "VK4+N -> F2 (Next Problems)",
+      "description": "[CLion] VK4+N -> F2 (Next Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -1720,7 +1720,7 @@
       ]
     },
     {
-      "description": "VK4+P -> Shift+F2 (Previous Problems)",
+      "description": "[CLion] VK4+P -> Shift+F2 (Previous Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -1752,7 +1752,7 @@
       ]
     },
     {
-      "description": "VK4+; -> Opt+Enter (More Actions)",
+      "description": "[CLion] VK4+; -> Opt+Enter (More Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -1784,7 +1784,7 @@
       ]
     },
     {
-      "description": "VK4+R -> Ctrl+Opt+R (Run)",
+      "description": "[CLion] VK4+R -> Ctrl+Opt+R (Run)",
       "manipulators": [
         {
           "type": "basic",
@@ -1817,7 +1817,7 @@
       ]
     },
     {
-      "description": "VK4+T -> Opt+Cmd+B (Type)",
+      "description": "[CLion] VK4+T -> Opt+Cmd+B (Type)",
       "manipulators": [
         {
           "type": "basic",
@@ -1850,7 +1850,7 @@
       ]
     },
     {
-      "description": "VK4+S -> Opt+Cmd+O (Symbols)",
+      "description": "[CLion] VK4+S -> Opt+Cmd+O (Symbols)",
       "manipulators": [
         {
           "type": "basic",
@@ -1883,7 +1883,7 @@
       ]
     },
     {
-      "description": "VK4+C -> Cmd+O (Classes)",
+      "description": "[CLion] VK4+C -> Cmd+O (Classes)",
       "manipulators": [
         {
           "type": "basic",
@@ -1915,7 +1915,7 @@
       ]
     },
     {
-      "description": "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+      "description": "[CLion] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
       "manipulators": [
         {
           "type": "basic",
@@ -1950,7 +1950,7 @@
       ]
     },
     {
-      "description": "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+      "description": "[CLion] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
       "manipulators": [
         {
           "type": "basic",
@@ -1985,7 +1985,7 @@
       ]
     },
     {
-      "description": "VK4+G -> Opt+Tab (Goto Next Splitter)",
+      "description": "[CLion] VK4+G -> Opt+Tab (Goto Next Splitter)",
       "manipulators": [
         {
           "type": "basic",
@@ -2017,7 +2017,7 @@
       ]
     },
     {
-      "description": "VK4+A -> Cmd+Shift+A (Actions)",
+      "description": "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -2050,7 +2050,7 @@
       ]
     },
     {
-      "description": "VK4+H -> Cmd+[",
+      "description": "[CLion] VK4+H -> Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -2082,7 +2082,7 @@
       ]
     },
     {
-      "description": "VK4+L -> Cmd+]",
+      "description": "[CLion] VK4+L -> Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -2114,7 +2114,7 @@
       ]
     },
     {
-      "description": "VK4+[ -> Opt+Cmd+[",
+      "description": "[CLion] VK4+[ -> Opt+Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -2152,7 +2152,7 @@
       ]
     },
     {
-      "description": "VK4+] -> Opt+Cmd+]",
+      "description": "[CLion] VK4+] -> Opt+Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -2190,7 +2190,7 @@
       ]
     },
     {
-      "description": "VK4+M -> F3 (Bookmark)",
+      "description": "[CLion] VK4+M -> F3 (Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2219,7 +2219,7 @@
       ]
     },
     {
-      "description": "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+      "description": "[CLion] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2253,7 +2253,7 @@
       ]
     },
     {
-      "description": "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+      "description": "[CLion] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2287,7 +2287,7 @@
       ]
     },
     {
-      "description": "VK4+B -> Cmd+F3 (Show Bookmarks)",
+      "description": "[CLion] VK4+B -> Cmd+F3 (Show Bookmarks)",
       "manipulators": [
         {
           "type": "basic",
@@ -2319,7 +2319,7 @@
       ]
     },
     {
-      "description": "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+      "description": "[CLion] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
       "manipulators": [
         {
           "type": "basic",
@@ -2354,7 +2354,7 @@
       ]
     },
     {
-      "description": "VK4+J -> Cmd+S (Save All)",
+      "description": "[CLion] VK4+J -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -2386,7 +2386,7 @@
       ]
     },
     {
-      "description": "VK1+W -> Cmd+S (Save All)",
+      "description": "[CLion] VK1+W -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -2421,7 +2421,7 @@
       ]
     },
     {
-      "description": "VK4+@ -> F1 (Quick Documentation)",
+      "description": "[CLion] VK4+@ -> F1 (Quick Documentation)",
       "manipulators": [
         {
           "type": "basic",
@@ -2455,7 +2455,7 @@
       ]
     },
     {
-      "description": "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+      "description": "[CLion] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
       "manipulators": [
         {
           "type": "basic",
@@ -2490,7 +2490,7 @@
       ]
     },
     {
-      "description": "VK4+: -> Cmd+Shift+E (Recent Locations)",
+      "description": "[CLion] VK4+: -> Cmd+Shift+E (Recent Locations)",
       "manipulators": [
         {
           "type": "basic",
@@ -2523,7 +2523,7 @@
       ]
     },
     {
-      "description": "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+      "description": "[CLion] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -2557,7 +2557,7 @@
       ]
     },
     {
-      "description": "VK4+I -> Opt+Cmd+B (Go to implementation)",
+      "description": "[CLion] VK4+I -> Opt+Cmd+B (Go to implementation)",
       "manipulators": [
         {
           "type": "basic",
@@ -2590,7 +2590,7 @@
       ]
     },
     {
-      "description": "VK4+Space -> Opt+Space (Quick Definition)",
+      "description": "[CLion] VK4+Space -> Opt+Space (Quick Definition)",
       "manipulators": [
         {
           "type": "basic",
@@ -2622,7 +2622,7 @@
       ]
     },
     {
-      "description": "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+      "description": "[CLion] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
       "manipulators": [
         {
           "type": "basic",
@@ -2683,7 +2683,7 @@
       ]
     },
     {
-      "description": "VK4+_ -> Run File Watchers",
+      "description": "[CLion] VK4+_ -> Run File Watchers",
       "manipulators": [
         {
           "type": "basic",
@@ -2718,7 +2718,7 @@
       ]
     },
     {
-      "description": "VK4+Enter -> Run",
+      "description": "[CLion] VK4+Enter -> Run",
       "manipulators": [
         {
           "type": "basic",
@@ -2753,7 +2753,7 @@
       ]
     },
     {
-      "description": "¥ -> \\",
+      "description": "[IdeaEAP] ¥ -> \\",
       "manipulators": [
         {
           "type": "basic",
@@ -2780,7 +2780,7 @@
       ]
     },
     {
-      "description": "VK4+E -> Cmd+1 (Project)",
+      "description": "[IdeaEAP] VK4+E -> Cmd+1 (Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -2812,7 +2812,7 @@
       ]
     },
     {
-      "description": "VK4+F -> Cmd+Shift+O (Files)",
+      "description": "[IdeaEAP] VK4+F -> Cmd+Shift+O (Files)",
       "manipulators": [
         {
           "type": "basic",
@@ -2845,7 +2845,7 @@
       ]
     },
     {
-      "description": "VK4+K -> Cmd+Shift+F (Find in Path)",
+      "description": "[IdeaEAP] VK4+K -> Cmd+Shift+F (Find in Path)",
       "manipulators": [
         {
           "type": "basic",
@@ -2878,7 +2878,7 @@
       ]
     },
     {
-      "description": "VK4+N -> F2 (Next Problems)",
+      "description": "[IdeaEAP] VK4+N -> F2 (Next Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -2907,7 +2907,7 @@
       ]
     },
     {
-      "description": "VK4+P -> Shift+F2 (Previous Problems)",
+      "description": "[IdeaEAP] VK4+P -> Shift+F2 (Previous Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -2939,7 +2939,7 @@
       ]
     },
     {
-      "description": "VK4+; -> Opt+Enter (More Actions)",
+      "description": "[IdeaEAP] VK4+; -> Opt+Enter (More Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -2971,7 +2971,7 @@
       ]
     },
     {
-      "description": "VK4+R -> Ctrl+Opt+R (Run)",
+      "description": "[IdeaEAP] VK4+R -> Ctrl+Opt+R (Run)",
       "manipulators": [
         {
           "type": "basic",
@@ -3004,7 +3004,7 @@
       ]
     },
     {
-      "description": "VK4+T -> Opt+Cmd+B (Type)",
+      "description": "[IdeaEAP] VK4+T -> Opt+Cmd+B (Type)",
       "manipulators": [
         {
           "type": "basic",
@@ -3037,7 +3037,7 @@
       ]
     },
     {
-      "description": "VK4+S -> Opt+Cmd+O (Symbols)",
+      "description": "[IdeaEAP] VK4+S -> Opt+Cmd+O (Symbols)",
       "manipulators": [
         {
           "type": "basic",
@@ -3070,7 +3070,7 @@
       ]
     },
     {
-      "description": "VK4+C -> Cmd+O (Classes)",
+      "description": "[IdeaEAP] VK4+C -> Cmd+O (Classes)",
       "manipulators": [
         {
           "type": "basic",
@@ -3102,7 +3102,7 @@
       ]
     },
     {
-      "description": "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+      "description": "[IdeaEAP] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
       "manipulators": [
         {
           "type": "basic",
@@ -3137,7 +3137,7 @@
       ]
     },
     {
-      "description": "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+      "description": "[IdeaEAP] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
       "manipulators": [
         {
           "type": "basic",
@@ -3172,7 +3172,7 @@
       ]
     },
     {
-      "description": "VK4+G -> Opt+Tab (Goto Next Splitter)",
+      "description": "[IdeaEAP] VK4+G -> Opt+Tab (Goto Next Splitter)",
       "manipulators": [
         {
           "type": "basic",
@@ -3204,7 +3204,7 @@
       ]
     },
     {
-      "description": "VK4+A -> Cmd+Shift+A (Actions)",
+      "description": "[IdeaEAP] VK4+A -> Cmd+Shift+A (Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -3237,7 +3237,7 @@
       ]
     },
     {
-      "description": "VK4+H -> Cmd+[",
+      "description": "[IdeaEAP] VK4+H -> Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -3269,7 +3269,7 @@
       ]
     },
     {
-      "description": "VK4+L -> Cmd+]",
+      "description": "[IdeaEAP] VK4+L -> Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -3301,7 +3301,7 @@
       ]
     },
     {
-      "description": "VK4+[ -> Opt+Cmd+[",
+      "description": "[IdeaEAP] VK4+[ -> Opt+Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -3339,7 +3339,7 @@
       ]
     },
     {
-      "description": "VK4+] -> Opt+Cmd+]",
+      "description": "[IdeaEAP] VK4+] -> Opt+Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -3377,7 +3377,7 @@
       ]
     },
     {
-      "description": "VK4+M -> F3 (Bookmark)",
+      "description": "[IdeaEAP] VK4+M -> F3 (Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -3406,7 +3406,7 @@
       ]
     },
     {
-      "description": "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+      "description": "[IdeaEAP] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -3440,7 +3440,7 @@
       ]
     },
     {
-      "description": "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+      "description": "[IdeaEAP] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -3474,7 +3474,7 @@
       ]
     },
     {
-      "description": "VK4+B -> Cmd+F3 (Show Bookmarks)",
+      "description": "[IdeaEAP] VK4+B -> Cmd+F3 (Show Bookmarks)",
       "manipulators": [
         {
           "type": "basic",
@@ -3506,7 +3506,7 @@
       ]
     },
     {
-      "description": "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+      "description": "[IdeaEAP] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
       "manipulators": [
         {
           "type": "basic",
@@ -3541,7 +3541,7 @@
       ]
     },
     {
-      "description": "VK4+J -> Cmd+S (Save All)",
+      "description": "[IdeaEAP] VK4+J -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -3573,7 +3573,7 @@
       ]
     },
     {
-      "description": "VK1+W -> Cmd+S (Save All)",
+      "description": "[IdeaEAP] VK1+W -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -3608,7 +3608,7 @@
       ]
     },
     {
-      "description": "VK4+@ -> F1 (Quick Documentation)",
+      "description": "[IdeaEAP] VK4+@ -> F1 (Quick Documentation)",
       "manipulators": [
         {
           "type": "basic",
@@ -3642,7 +3642,7 @@
       ]
     },
     {
-      "description": "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+      "description": "[IdeaEAP] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
       "manipulators": [
         {
           "type": "basic",
@@ -3677,7 +3677,7 @@
       ]
     },
     {
-      "description": "VK4+: -> Cmd+Shift+E (Recent Locations)",
+      "description": "[IdeaEAP] VK4+: -> Cmd+Shift+E (Recent Locations)",
       "manipulators": [
         {
           "type": "basic",
@@ -3710,7 +3710,7 @@
       ]
     },
     {
-      "description": "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+      "description": "[IdeaEAP] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -3744,7 +3744,7 @@
       ]
     },
     {
-      "description": "VK4+I -> Opt+Cmd+B (Go to implementation)",
+      "description": "[IdeaEAP] VK4+I -> Opt+Cmd+B (Go to implementation)",
       "manipulators": [
         {
           "type": "basic",
@@ -3777,7 +3777,7 @@
       ]
     },
     {
-      "description": "VK4+Space -> Opt+Space (Quick Definition)",
+      "description": "[IdeaEAP] VK4+Space -> Opt+Space (Quick Definition)",
       "manipulators": [
         {
           "type": "basic",
@@ -3809,7 +3809,7 @@
       ]
     },
     {
-      "description": "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+      "description": "[IdeaEAP] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
       "manipulators": [
         {
           "type": "basic",
@@ -3870,7 +3870,7 @@
       ]
     },
     {
-      "description": "VK4+_ -> Run File Watchers",
+      "description": "[IdeaEAP] VK4+_ -> Run File Watchers",
       "manipulators": [
         {
           "type": "basic",
@@ -3905,7 +3905,7 @@
       ]
     },
     {
-      "description": "VK4+Enter -> Run",
+      "description": "[IdeaEAP] VK4+Enter -> Run",
       "manipulators": [
         {
           "type": "basic",

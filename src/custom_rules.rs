@@ -371,10 +371,10 @@ fn rules_vscode() -> Vec<Rule> {
 }
 
 // TODO: Use label
-fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec<Rule> {
+fn rules_intellij_idea(label: &str, bundle_identifier: BundleIdentifier) -> Vec<Rule> {
     vec![
         Rule {
-            description: S("¥ -> \\"),
+            description: format!("[{}] ¥ -> \\", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![Condition::on_app(bundle_identifier.clone())]),
                 from: FromInit {
@@ -391,7 +391,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+E -> Cmd+1 (Project)"),
+            description: format!("[{}] VK4+E -> Cmd+1 (Project)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -411,7 +411,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+F -> Cmd+Shift+O (Files)"),
+            description: format!("[{}] VK4+F -> Cmd+Shift+O (Files)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -431,7 +431,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+K -> Cmd+Shift+F (Find in Path)"),
+            description: format!("[{}] VK4+K -> Cmd+Shift+F (Find in Path)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -451,7 +451,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+N -> F2 (Next Problems)"),
+            description: format!("[{}] VK4+N -> F2 (Next Problems)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -471,7 +471,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+P -> Shift+F2 (Previous Problems)"),
+            description: format!("[{}] VK4+P -> Shift+F2 (Previous Problems)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -491,7 +491,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+; -> Opt+Enter (More Actions)"),
+            description: format!("[{}] VK4+; -> Opt+Enter (More Actions)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -511,7 +511,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+R -> Ctrl+Opt+R (Run)"),
+            description: format!("[{}] VK4+R -> Ctrl+Opt+R (Run)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -531,7 +531,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+T -> Opt+Cmd+B (Type)"),
+            description: format!("[{}] VK4+T -> Opt+Cmd+B (Type)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -551,7 +551,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+S -> Opt+Cmd+O (Symbols)"),
+            description: format!("[{}] VK4+S -> Opt+Cmd+O (Symbols)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -571,7 +571,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+C -> Cmd+O (Classes)"),
+            description: format!("[{}] VK4+C -> Cmd+O (Classes)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -591,7 +591,10 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)"),
+            description: format!(
+                "[{}] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+                label
+            ),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -611,7 +614,10 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)"),
+            description: format!(
+                "[{}] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+                label
+            ),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -631,7 +637,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+G -> Opt+Tab (Goto Next Splitter)"),
+            description: format!("[{}] VK4+G -> Opt+Tab (Goto Next Splitter)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -651,7 +657,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+A -> Cmd+Shift+A (Actions)"),
+            description: format!("[{}] VK4+A -> Cmd+Shift+A (Actions)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -671,7 +677,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+H -> Cmd+["),
+            description: format!("[{}] VK4+H -> Cmd+[", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -691,7 +697,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+L -> Cmd+]"),
+            description: format!("[{}] VK4+L -> Cmd+]", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -711,7 +717,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+[ -> Opt+Cmd+["),
+            description: format!("[{}] VK4+[ -> Opt+Cmd+[", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -731,7 +737,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+] -> Opt+Cmd+]"),
+            description: format!("[{}] VK4+] -> Opt+Cmd+]", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -751,7 +757,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+M -> F3 (Bookmark)"),
+            description: format!("[{}] VK4+M -> F3 (Bookmark)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -771,7 +777,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)"),
+            description: format!("[{}] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -791,7 +797,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)"),
+            description: format!("[{}] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -811,7 +817,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+B -> Cmd+F3 (Show Bookmarks)"),
+            description: format!("[{}] VK4+B -> Cmd+F3 (Show Bookmarks)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -831,7 +837,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)"),
+            description: format!("[{}] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -851,7 +857,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+J -> Cmd+S (Save All)"),
+            description: format!("[{}] VK4+J -> Cmd+S (Save All)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -871,7 +877,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK1+W -> Cmd+S (Save All)"),
+            description: format!("[{}] VK1+W -> Cmd+S (Save All)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -897,7 +903,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+@ -> F1 (Quick Documentation)"),
+            description: format!("[{}] VK4+@ -> F1 (Quick Documentation)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -917,7 +923,10 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)"),
+            description: format!(
+                "[{}] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+                label
+            ),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -937,7 +946,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+: -> Cmd+Shift+E (Recent Locations)"),
+            description: format!("[{}] VK4+: -> Cmd+Shift+E (Recent Locations)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -957,7 +966,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+X -> Ctrl+Shift+Cmd+X (Close Project)"),
+            description: format!("[{}] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -977,7 +986,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+I -> Opt+Cmd+B (Go to implementation)"),
+            description: format!("[{}] VK4+I -> Opt+Cmd+B (Go to implementation)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -997,7 +1006,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+Space -> Opt+Space (Quick Definition)"),
+            description: format!("[{}] VK4+Space -> Opt+Space (Quick Definition)", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -1017,7 +1026,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+1/2 -> Opt+Cmd DownArrow/UpArrow"),
+            description: format!("[{}] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow", label),
             manipulators: vec![(K::Key1, K::UpArrow), (K::Key2, K::DownArrow)]
                 .into_iter()
                 .map(|(from, to)| {
@@ -1042,7 +1051,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
                 .collect_vec(),
         },
         Rule {
-            description: S("VK4+_ -> Run File Watchers"),
+            description: format!("[{}] VK4+_ -> Run File Watchers", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -1062,7 +1071,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: S("VK4+Enter -> Run"),
+            description: format!("[{}] VK4+Enter -> Run", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
