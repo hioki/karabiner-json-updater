@@ -3,6 +3,6 @@ use serde::Serialize;
 
 #[derive(Debug, Serialize)]
 pub struct Rule {
-    pub description: &'static str,
+    pub description: String,
     pub manipulators: Vec<Manipulator>,
 }

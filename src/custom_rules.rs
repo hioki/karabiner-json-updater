@@ -1,3 +1,4 @@
+use big_s::S;
 use itertools::Itertools;
 
 use crate::config::{
@@ -17,7 +18,7 @@ use crate::config::{
 
 fn rules_virtual_keys() -> Vec<Rule> {
     vec![Rule {
-        description: "Virtual Keys",
+        description: S("Virtual Keys"),
         manipulators: vec![
             (K::Lang1, VK::Vk1, Some(K::JapaneseKana)),
             (K::International4, VK::Vk1, Some(K::JapaneseKana)),
@@ -58,7 +59,7 @@ fn rules_virtual_keys() -> Vec<Rule> {
 fn rules_iterm2() -> Vec<Rule> {
     vec![
         Rule {
-            description: "Substitute TMUX prefix with VK4 on iTerm2",
+            description: S("Substitute TMUX prefix with VK4 on iTerm2"),
             manipulators: vec![K::C, K::H, K::J, K::K, K::L, K::N, K::P, K::S, K::V]
                 .into_iter()
                 .map(|key_code| {
@@ -86,7 +87,7 @@ fn rules_iterm2() -> Vec<Rule> {
                 .collect_vec(),
         },
         Rule {
-            description: "Avoid Cmd+W in iTerm",
+            description: S("Avoid Cmd+W in iTerm"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![Condition::on_app(BundleIdentifier::ITerm2)]),
                 from: FromInit {
@@ -103,7 +104,7 @@ fn rules_iterm2() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
+            description: S("[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N"),
             manipulators: vec![(K::O, K::P), (K::P, K::N)]
                 .into_iter()
                 .map(|(from, to)| {
@@ -131,7 +132,7 @@ fn rules_iterm2() -> Vec<Rule> {
                 .collect_vec(),
         },
         Rule {
-            description: "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
+            description: S("[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N"),
             manipulators: vec![(K::A, K::P), (K::S, K::N)]
                 .into_iter()
                 .map(|(from, to)| {
@@ -159,7 +160,7 @@ fn rules_iterm2() -> Vec<Rule> {
                 .collect_vec(),
         },
         Rule {
-            description: "[iTerm2] VK1+W -> <ESC>:w<CR>",
+            description: S("[iTerm2] VK1+W -> <ESC>:w<CR>"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::ITerm2),
@@ -193,7 +194,7 @@ fn rules_iterm2() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[iTerm2] VK1+Q -> <ESC>:q<CR>",
+            description: S("[iTerm2] VK1+Q -> <ESC>:q<CR>"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::ITerm2),
@@ -227,7 +228,7 @@ fn rules_iterm2() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[iTerm2] VK1+Z -> Enter tmux copy-mode",
+            description: S("[iTerm2] VK1+Z -> Enter tmux copy-mode"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::ITerm2),
@@ -250,7 +251,7 @@ fn rules_iterm2() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
+            description: S("[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4"),
             manipulators: vec![(K::U, K::Key0), (K::I, K::Key4)]
                 .into_iter()
                 .map(|(from, to)| {
@@ -280,7 +281,7 @@ fn rules_iterm2() -> Vec<Rule> {
 fn rules_vscode() -> Vec<Rule> {
     vec![
         Rule {
-            description: "VK4 on VSCode",
+            description: S("VK4 on VSCode"),
             manipulators: vec![
                 K::A,      // execute command
                 K::B,      // show bookmarks
@@ -327,7 +328,7 @@ fn rules_vscode() -> Vec<Rule> {
             .collect_vec(),
         },
         Rule {
-            description: "[VSCode] VK4+J -> Cmd+S (Save All)",
+            description: S("[VSCode] VK4+J -> Cmd+S (Save All)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::VSCode),
@@ -347,7 +348,7 @@ fn rules_vscode() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[VSCode] VK1+W -> Cmd+S (Save All)",
+            description: S("[VSCode] VK1+W -> Cmd+S (Save All)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::VSCode),
@@ -373,7 +374,7 @@ fn rules_vscode() -> Vec<Rule> {
 fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec<Rule> {
     vec![
         Rule {
-            description: "¥ -> \\",
+            description: S("¥ -> \\"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![Condition::on_app(bundle_identifier.clone())]),
                 from: FromInit {
@@ -390,7 +391,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+E -> Cmd+1 (Project)",
+            description: S("VK4+E -> Cmd+1 (Project)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -410,7 +411,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+F -> Cmd+Shift+O (Files)",
+            description: S("VK4+F -> Cmd+Shift+O (Files)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -430,7 +431,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+K -> Cmd+Shift+F (Find in Path)",
+            description: S("VK4+K -> Cmd+Shift+F (Find in Path)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -450,7 +451,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+N -> F2 (Next Problems)",
+            description: S("VK4+N -> F2 (Next Problems)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -470,7 +471,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+P -> Shift+F2 (Previous Problems)",
+            description: S("VK4+P -> Shift+F2 (Previous Problems)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -490,7 +491,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+; -> Opt+Enter (More Actions)",
+            description: S("VK4+; -> Opt+Enter (More Actions)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -510,7 +511,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+R -> Ctrl+Opt+R (Run)",
+            description: S("VK4+R -> Ctrl+Opt+R (Run)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -530,7 +531,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+T -> Opt+Cmd+B (Type)",
+            description: S("VK4+T -> Opt+Cmd+B (Type)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -550,7 +551,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+S -> Opt+Cmd+O (Symbols)",
+            description: S("VK4+S -> Opt+Cmd+O (Symbols)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -570,7 +571,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+C -> Cmd+O (Classes)",
+            description: S("VK4+C -> Cmd+O (Classes)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -590,7 +591,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+            description: S("VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -610,7 +611,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+            description: S("VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -630,7 +631,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+G -> Opt+Tab (Goto Next Splitter)",
+            description: S("VK4+G -> Opt+Tab (Goto Next Splitter)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -650,7 +651,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+A -> Cmd+Shift+A (Actions)",
+            description: S("VK4+A -> Cmd+Shift+A (Actions)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -670,7 +671,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+H -> Cmd+[",
+            description: S("VK4+H -> Cmd+["),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -690,7 +691,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+L -> Cmd+]",
+            description: S("VK4+L -> Cmd+]"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -710,7 +711,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+[ -> Opt+Cmd+[",
+            description: S("VK4+[ -> Opt+Cmd+["),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -730,7 +731,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+] -> Opt+Cmd+]",
+            description: S("VK4+] -> Opt+Cmd+]"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -750,7 +751,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+M -> F3 (Bookmark)",
+            description: S("VK4+M -> F3 (Bookmark)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -770,7 +771,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+            description: S("VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -790,7 +791,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+            description: S("VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -810,7 +811,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+B -> Cmd+F3 (Show Bookmarks)",
+            description: S("VK4+B -> Cmd+F3 (Show Bookmarks)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -830,7 +831,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+            description: S("VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -850,7 +851,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+J -> Cmd+S (Save All)",
+            description: S("VK4+J -> Cmd+S (Save All)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -870,7 +871,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK1+W -> Cmd+S (Save All)",
+            description: S("VK1+W -> Cmd+S (Save All)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -896,7 +897,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+@ -> F1 (Quick Documentation)",
+            description: S("VK4+@ -> F1 (Quick Documentation)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -916,7 +917,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+            description: S("VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -936,7 +937,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+: -> Cmd+Shift+E (Recent Locations)",
+            description: S("VK4+: -> Cmd+Shift+E (Recent Locations)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -956,7 +957,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+            description: S("VK4+X -> Ctrl+Shift+Cmd+X (Close Project)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -976,7 +977,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+I -> Opt+Cmd+B (Go to implementation)",
+            description: S("VK4+I -> Opt+Cmd+B (Go to implementation)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -996,7 +997,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+Space -> Opt+Space (Quick Definition)",
+            description: S("VK4+Space -> Opt+Space (Quick Definition)"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -1016,7 +1017,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+            description: S("VK4+1/2 -> Opt+Cmd DownArrow/UpArrow"),
             manipulators: vec![(K::Key1, K::UpArrow), (K::Key2, K::DownArrow)]
                 .into_iter()
                 .map(|(from, to)| {
@@ -1041,7 +1042,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
                 .collect_vec(),
         },
         Rule {
-            description: "VK4+_ -> Run File Watchers",
+            description: S("VK4+_ -> Run File Watchers"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -1061,7 +1062,7 @@ fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec
             .init()],
         },
         Rule {
-            description: "VK4+Enter -> Run",
+            description: S("VK4+Enter -> Run"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(bundle_identifier.clone()),
@@ -1094,7 +1095,7 @@ fn rules_idea_eap() -> Vec<Rule> {
 fn rules_dynalist() -> Vec<Rule> {
     vec![
         Rule {
-            description: "[Dynalist] VK1+U/I -> Ctrl+A/E",
+            description: S("[Dynalist] VK1+U/I -> Ctrl+A/E"),
             manipulators: vec![
                 ManipulatorInit {
                     conditions: Some(vec![
@@ -1133,7 +1134,7 @@ fn rules_dynalist() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "[Dynalist] VK4+E -> Toggle file pane",
+            description: S("[Dynalist] VK4+E -> Toggle file pane"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Dynalist),
@@ -1153,7 +1154,7 @@ fn rules_dynalist() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Dynalist] VK4+F -> Open file finder",
+            description: S("[Dynalist] VK4+F -> Open file finder"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Dynalist),
@@ -1173,7 +1174,7 @@ fn rules_dynalist() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen",
+            description: S("[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen"),
             manipulators: vec![
                 ManipulatorInit {
                     conditions: Some(vec![
@@ -1212,7 +1213,7 @@ fn rules_dynalist() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "[Dynalist] VK4+J/K -> Cmd+DownArrow/Cmd+UpArrow",
+            description: S("[Dynalist] VK4+J/K -> Cmd+DownArrow/Cmd+UpArrow"),
             manipulators: vec![
                 ManipulatorInit {
                     conditions: Some(vec![
@@ -1251,7 +1252,7 @@ fn rules_dynalist() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "[Dynalist] VK4+H/L -> Shift+Tab/Tab",
+            description: S("[Dynalist] VK4+H/L -> Shift+Tab/Tab"),
             manipulators: vec![
                 ManipulatorInit {
                     conditions: Some(vec![
@@ -1295,7 +1296,7 @@ fn rules_dynalist() -> Vec<Rule> {
 fn rules_atom() -> Vec<Rule> {
     vec![
         Rule {
-            description: "[Atom] VK4+F -> Cmd+T",
+            description: S("[Atom] VK4+F -> Cmd+T"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1315,7 +1316,7 @@ fn rules_atom() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Atom] VK4+E -> Cmd+K Cmd+B",
+            description: S("[Atom] VK4+E -> Cmd+K Cmd+B"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1341,7 +1342,7 @@ fn rules_atom() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Atom] VK4+K -> Cmd+Shift+F",
+            description: S("[Atom] VK4+K -> Cmd+Shift+F"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1361,7 +1362,7 @@ fn rules_atom() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Atom] VK4+A -> Cmd+Shift+P",
+            description: S("[Atom] VK4+A -> Cmd+Shift+P"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1381,7 +1382,7 @@ fn rules_atom() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Atom] VK4+J -> Cmd+S",
+            description: S("[Atom] VK4+J -> Cmd+S"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1401,7 +1402,7 @@ fn rules_atom() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Atom] VK1+W -> Cmd+S",
+            description: S("[Atom] VK1+W -> Cmd+S"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Atom),
@@ -1425,7 +1426,7 @@ fn rules_atom() -> Vec<Rule> {
 
 fn rules_slack() -> Vec<Rule> {
     vec![Rule {
-        description: "Slack",
+        description: S("Slack"),
         manipulators: vec![
             (K::T, K::T, vec![Cmd, Shift]),           // Threads
             (K::U, K::A, vec![Cmd, Shift]),           // All Unreads
@@ -1464,7 +1465,7 @@ fn rules_slack() -> Vec<Rule> {
 
 fn rules_google_chrome() -> Vec<Rule> {
     vec![Rule {
-        description: "[GoogleChrome] VK4+N -> Cmd+Shift+M,Enter (Switch to the other user)",
+        description: S("[GoogleChrome] VK4+N -> Cmd+Shift+M,Enter (Switch to the other user)"),
         manipulators: vec![ManipulatorInit {
             conditions: Some(vec![
                 Condition::on_app(BundleIdentifier::GoogleChrome),
@@ -1494,7 +1495,7 @@ fn rules_google_chrome() -> Vec<Rule> {
 fn rules_notion() -> Vec<Rule> {
     vec![
         Rule {
-            description: "[Notion] VK4+F -> Cmd+P",
+            description: S("[Notion] VK4+F -> Cmd+P"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1514,7 +1515,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK4+H -> Cmd+[",
+            description: S("[Notion] VK4+H -> Cmd+["),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1534,7 +1535,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK4+L -> Cmd+]",
+            description: S("[Notion] VK4+L -> Cmd+]"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1554,7 +1555,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK4+U -> Cmd+Shift+U",
+            description: S("[Notion] VK4+U -> Cmd+Shift+U"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1574,7 +1575,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK2+9 -> Cmd+^",
+            description: S("[Notion] VK2+9 -> Cmd+^"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1594,7 +1595,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK2+0 -> Cmd+Hyphen",
+            description: S("[Notion] VK2+0 -> Cmd+Hyphen"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
                     Condition::on_app(BundleIdentifier::Notion),
@@ -1614,7 +1615,7 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[Notion] VK4+N/P -> Ctrl+Shift+J/K",
+            description: S("[Notion] VK4+N/P -> Ctrl+Shift+J/K"),
             manipulators: vec![
                 ManipulatorInit {
                     conditions: Some(vec![
@@ -1657,7 +1658,7 @@ fn rules_notion() -> Vec<Rule> {
 
 fn rules_clickup() -> Vec<Rule> {
     vec![Rule {
-        description: "[ClickUp] VK4+H -> Cmd+[",
+        description: S("[ClickUp] VK4+H -> Cmd+["),
         manipulators: vec![ManipulatorInit {
             conditions: Some(vec![
                 Condition::on_app(BundleIdentifier::ClickUp),
@@ -1681,7 +1682,7 @@ fn rules_clickup() -> Vec<Rule> {
 fn rules_vk1() -> Vec<Rule> {
     vec![
         Rule {
-            description: "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
+            description: S("VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow"),
             manipulators: vec![
                 (K::H, K::LeftArrow),
                 (K::J, K::DownArrow),
@@ -1701,7 +1702,7 @@ fn rules_vk1() -> Vec<Rule> {
             .collect_vec(),
         },
         Rule {
-            description: "VK1+F -> Escape",
+            description: S("VK1+F -> Escape"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1713,7 +1714,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu",
+            description: S("VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1732,7 +1733,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+A -> F10 / VK1+Z -> F7",
+            description: S("VK1+A -> F10 / VK1+Z -> F7"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1751,7 +1752,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow",
+            description: S("VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1770,7 +1771,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+G -> Tab",
+            description: S("VK1+G -> Tab"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1782,7 +1783,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab",
+            description: S("VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1801,7 +1802,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V",
+            description: S("VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1827,7 +1828,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+C -> Backspace / VK1+E -> Delete",
+            description: S("VK1+C -> Backspace / VK1+E -> Delete"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1846,7 +1847,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+[ -> Cmd+Z",
+            description: S("VK1+[ -> Cmd+Z"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1858,7 +1859,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+Colon -> Cmd+H",
+            description: S("VK1+Colon -> Cmd+H"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -1870,7 +1871,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+{N,M,Comma,Period} -> Mouse{Left,Down,Up,Right}",
+            description: S("VK1+{N,M,Comma,Period} -> Mouse{Left,Down,Up,Right}"),
             manipulators: vec![
                 (
                     K::N,
@@ -1924,7 +1925,7 @@ fn rules_vk1() -> Vec<Rule> {
             .collect_vec(),
         },
         Rule {
-            description: "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
+            description: S("VK1+Slash -> LeftClick / VK1+Underscore -> RightClick"),
             manipulators: vec![
                 (K::Slash, PointingButton::Button1),
                 (K::International1, PointingButton::Button2),
@@ -1947,7 +1948,7 @@ fn rules_vk1() -> Vec<Rule> {
             .collect_vec(),
         },
         Rule {
-            description: "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
+            description: S("VK1+@ -> ScrollUp / VK1+] -> ScrollDown"),
             manipulators: vec![
                 (K::OpenBracket, -64),
                 (K::NonUsPound, 64),
@@ -1976,7 +1977,7 @@ fn rules_vk1() -> Vec<Rule> {
             .collect(),
         },
         Rule {
-            description: "VK1+{1,2,3,4,5,6,7,8,9,0,-,^} -> F{1,2,3,4,5,6,7,8,9,10,11,12}",
+            description: S("VK1+{1,2,3,4,5,6,7,8,9,0,-,^} -> F{1,2,3,4,5,6,7,8,9,10,11,12}"),
             manipulators: vec![
                 (K::Key1, K::F1),
                 (K::Key2, K::F2),
@@ -2004,7 +2005,7 @@ fn rules_vk1() -> Vec<Rule> {
             .collect_vec(),
         },
         Rule {
-            description: "VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)",
+            description: S("VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -2016,7 +2017,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK1+Backslash -> Cmd+Opt+D (Hide the Dock)",
+            description: S("VK1+Backslash -> Cmd+Opt+D (Hide the Dock)"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -2033,7 +2034,7 @@ fn rules_vk1() -> Vec<Rule> {
 fn rules_vk2() -> Vec<Rule> {
     vec![
         Rule {
-            description: "VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab",
+            description: S("VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2052,7 +2053,7 @@ fn rules_vk2() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab",
+            description: S("VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2071,7 +2072,7 @@ fn rules_vk2() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen",
+            description: S("VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2090,7 +2091,7 @@ fn rules_vk2() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement",
+            description: S("VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2109,7 +2110,7 @@ fn rules_vk2() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement",
+            description: S("VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2128,7 +2129,7 @@ fn rules_vk2() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: "VK2+Ctrl+{H,O,N,P,U,I,M,Comma,Period} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4,N} (ShiftIt)",
+            description: S("VK2+Ctrl+{H,O,N,P,U,I,M,Comma,Period} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4,N} (ShiftIt)"),
             manipulators: vec![
                 (K::H, K::LeftArrow),
                 (K::O, K::RightArrow),
@@ -2154,7 +2155,7 @@ fn rules_vk2() -> Vec<Rule> {
                 .collect_vec(),
         },
         Rule {
-            description: "VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)", // https://github.com/pddg/alfred-google-translate-formatter-workflow
+            description: S("VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)"), // https://github.com/pddg/alfred-google-translate-formatter-workflow
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk2,
@@ -2170,7 +2171,7 @@ fn rules_vk2() -> Vec<Rule> {
 
 fn rules_open_apps() -> Vec<Rule> {
     vec![Rule {
-        description: "Open apps",
+        description: S("Open apps"),
         manipulators: vec![
             (K::B, "open -a 'Bitwarden.app'"),
             (K::C, "open -a 'ClickUp.app'"),
@@ -2235,7 +2236,7 @@ fn rules_open_apps() -> Vec<Rule> {
 
 fn rules_vk3() -> Vec<Rule> {
     vec![Rule {
-        description: "VK3+{A,S,D,F,G,H,J,K,L,Semicolon,Quote} -> {1,2,3,4,5,6,7,8,9,0,-}",
+        description: S("VK3+{A,S,D,F,G,H,J,K,L,Semicolon,Quote} -> {1,2,3,4,5,6,7,8,9,0,-}"),
         manipulators: vec![
             (K::A, K::Key1),
             (K::S, K::Key2),
@@ -2265,7 +2266,7 @@ fn rules_vk3() -> Vec<Rule> {
 
 fn rules_semicolon() -> Vec<Rule> {
     vec![Rule {
-        description: "Semicolon -> Enter",
+        description: S("Semicolon -> Enter"),
         manipulators: vec![
             Manipulator::new_for_key_to_key_mapping(
                 K::Semicolon,
@@ -2286,7 +2287,7 @@ fn rules_semicolon() -> Vec<Rule> {
 
 fn rules_singlequote() -> Vec<Rule> {
     vec![Rule {
-        description: "Ctrl+Colon -> SingleQuote",
+        description: S("Ctrl+Colon -> SingleQuote"),
         manipulators: vec![ManipulatorInit {
             from: From {
                 key_code: K::Quote,
@@ -2304,7 +2305,7 @@ fn rules_singlequote() -> Vec<Rule> {
 
 fn rules_disable_capslock() -> Vec<Rule> {
     vec![Rule {
-        description: "Disable CapsLock",
+        description: S("Disable CapsLock"),
         manipulators: vec![ManipulatorInit {
             from: From {
                 key_code: K::CapsLock,
