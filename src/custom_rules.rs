@@ -283,28 +283,16 @@ fn rules_vscode() -> Vec<Rule> {
         Rule {
             description: S("VK4 on VSCode"),
             manipulators: vec![
-                K::A,      // execute command
-                K::B,      // show bookmarks
-                K::F,      // search file
-                K::H,      // Go Back
-                K::E,      // switch focus between editor and explorer
-                K::P,      // prev problem
-                K::L,      // Go Forward
-                K::O,      // open recent
-                K::M,      // toggle bookmark
-                K::N,      // next problem
-                K::K,      // find in path
-                K::R,      // reload window
-                K::S,      // go to symbol
-                K::T,      // go to type
-                K::X,      // close window
-                K::I,      // go to implementation
-                K::Comma,  // prev bookmark
-                K::Period, // next bookmark
-                K::Key1,   // open settings.json
-                K::Key2,   // open keybindings.json
-                K::Key3,   // open keyboard shortcut
-                K::Key4,   // open marketplace
+                K::A, // execute command
+                K::B, // show bookmarks
+                K::F, // search file
+                K::H, // Go Back
+                K::E, // switch focus between editor and explorer
+                K::L, // Go Forward
+                K::O, // open recent
+                K::K, // find in path
+                K::R, // reload window
+                K::S, // go to symbol
             ]
             .into_iter()
             .map(|key_code| {
@@ -363,6 +351,26 @@ fn rules_vscode() -> Vec<Rule> {
                 to: vec![To::Key {
                     key_code: K::S,
                     modifiers: Some(vec![Cmd]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: S("[VSCode] VK4+M -> Opt+Cmd+K (Bookmarks: Toggle)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::M,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::K,
+                    modifiers: Some(vec![Opt, Cmd]),
                 }],
                 ..Default::default()
             }
