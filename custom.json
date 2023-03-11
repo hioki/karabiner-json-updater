@@ -1566,7 +1566,7 @@
       ]
     },
     {
-      "description": "[CLion] ¥ -> \\",
+      "description": "¥ -> \\",
       "manipulators": [
         {
           "type": "basic",
@@ -1593,7 +1593,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+E -> Cmd+1 (Project)",
+      "description": "VK4+E -> Cmd+1 (Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -1625,7 +1625,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+F -> Cmd+Shift+O (Files)",
+      "description": "VK4+F -> Cmd+Shift+O (Files)",
       "manipulators": [
         {
           "type": "basic",
@@ -1658,7 +1658,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+K -> Cmd+Shift+F (Find in Path)",
+      "description": "VK4+K -> Cmd+Shift+F (Find in Path)",
       "manipulators": [
         {
           "type": "basic",
@@ -1691,7 +1691,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+N -> F2 (Next Problems)",
+      "description": "VK4+N -> F2 (Next Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -1720,7 +1720,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+P -> Shift+F2 (Previous Problems)",
+      "description": "VK4+P -> Shift+F2 (Previous Problems)",
       "manipulators": [
         {
           "type": "basic",
@@ -1752,7 +1752,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+; -> Opt+Enter (More Actions)",
+      "description": "VK4+; -> Opt+Enter (More Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -1784,7 +1784,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+R -> Ctrl+Opt+R (Run)",
+      "description": "VK4+R -> Ctrl+Opt+R (Run)",
       "manipulators": [
         {
           "type": "basic",
@@ -1817,7 +1817,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+T -> Opt+Cmd+B (Type)",
+      "description": "VK4+T -> Opt+Cmd+B (Type)",
       "manipulators": [
         {
           "type": "basic",
@@ -1850,7 +1850,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+S -> Opt+Cmd+O (Symbols)",
+      "description": "VK4+S -> Opt+Cmd+O (Symbols)",
       "manipulators": [
         {
           "type": "basic",
@@ -1883,7 +1883,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+C -> Cmd+O (Classes)",
+      "description": "VK4+C -> Cmd+O (Classes)",
       "manipulators": [
         {
           "type": "basic",
@@ -1915,7 +1915,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+      "description": "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
       "manipulators": [
         {
           "type": "basic",
@@ -1950,7 +1950,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+      "description": "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
       "manipulators": [
         {
           "type": "basic",
@@ -1985,7 +1985,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+G -> Opt+Tab (Goto Next Splitter)",
+      "description": "VK4+G -> Opt+Tab (Goto Next Splitter)",
       "manipulators": [
         {
           "type": "basic",
@@ -2017,7 +2017,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
+      "description": "VK4+A -> Cmd+Shift+A (Actions)",
       "manipulators": [
         {
           "type": "basic",
@@ -2050,7 +2050,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+H -> Cmd+[",
+      "description": "VK4+H -> Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -2082,7 +2082,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+L -> Cmd+]",
+      "description": "VK4+L -> Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -2114,7 +2114,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+[ -> Opt+Cmd+[",
+      "description": "VK4+[ -> Opt+Cmd+[",
       "manipulators": [
         {
           "type": "basic",
@@ -2152,7 +2152,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+] -> Opt+Cmd+]",
+      "description": "VK4+] -> Opt+Cmd+]",
       "manipulators": [
         {
           "type": "basic",
@@ -2190,7 +2190,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+M -> F3 (Bookmark)",
+      "description": "VK4+M -> F3 (Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2219,7 +2219,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+      "description": "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2253,7 +2253,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+      "description": "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
       "manipulators": [
         {
           "type": "basic",
@@ -2287,7 +2287,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+B -> Cmd+F3 (Show Bookmarks)",
+      "description": "VK4+B -> Cmd+F3 (Show Bookmarks)",
       "manipulators": [
         {
           "type": "basic",
@@ -2319,7 +2319,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+      "description": "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
       "manipulators": [
         {
           "type": "basic",
@@ -2354,7 +2354,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+J -> Cmd+S (Save All)",
+      "description": "VK4+J -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -2386,7 +2386,7 @@
       ]
     },
     {
-      "description": "[CLion] VK1+W -> Cmd+S (Save All)",
+      "description": "VK1+W -> Cmd+S (Save All)",
       "manipulators": [
         {
           "type": "basic",
@@ -2421,7 +2421,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+@ -> F1 (Quick Documentation)",
+      "description": "VK4+@ -> F1 (Quick Documentation)",
       "manipulators": [
         {
           "type": "basic",
@@ -2455,7 +2455,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+      "description": "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
       "manipulators": [
         {
           "type": "basic",
@@ -2490,7 +2490,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+: -> Cmd+Shift+E (Recent Locations)",
+      "description": "VK4+: -> Cmd+Shift+E (Recent Locations)",
       "manipulators": [
         {
           "type": "basic",
@@ -2523,7 +2523,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+      "description": "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
       "manipulators": [
         {
           "type": "basic",
@@ -2557,7 +2557,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+I -> Opt+Cmd+B (Go to implementation)",
+      "description": "VK4+I -> Opt+Cmd+B (Go to implementation)",
       "manipulators": [
         {
           "type": "basic",
@@ -2590,7 +2590,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+Space -> Opt+Space (Quick Definition)",
+      "description": "VK4+Space -> Opt+Space (Quick Definition)",
       "manipulators": [
         {
           "type": "basic",
@@ -2622,7 +2622,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+      "description": "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
       "manipulators": [
         {
           "type": "basic",
@@ -2683,7 +2683,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+_ -> Run File Watchers",
+      "description": "VK4+_ -> Run File Watchers",
       "manipulators": [
         {
           "type": "basic",
@@ -2718,7 +2718,7 @@
       ]
     },
     {
-      "description": "[CLion] VK4+Enter -> Run",
+      "description": "VK4+Enter -> Run",
       "manipulators": [
         {
           "type": "basic",
@@ -2727,6 +2727,1193 @@
               "type": "frontmost_application_if",
               "bundle_identifiers": [
                 "com.jetbrains.CLion"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "option",
+                "command",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "¥ -> \\",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            }
+          ],
+          "from": {
+            "key_code": "international3"
+          },
+          "to": [
+            {
+              "key_code": "international3",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+E -> Cmd+1 (Project)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "1",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+F -> Cmd+Shift+O (Files)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+K -> Cmd+Shift+F (Find in Path)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "f",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+N -> F2 (Next Problems)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "f2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+P -> Shift+F2 (Previous Problems)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "f2",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+; -> Opt+Enter (More Actions)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "semicolon"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+R -> Ctrl+Opt+R (Run)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "modifiers": [
+                "control",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+T -> Opt+Cmd+B (Type)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+S -> Opt+Cmd+O (Symbols)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+C -> Cmd+O (Classes)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "d",
+              "modifiers": [
+                "command",
+                "option",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "u",
+              "modifiers": [
+                "command",
+                "option",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+G -> Opt+Tab (Goto Next Splitter)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+A -> Cmd+Shift+A (Actions)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "a",
+              "modifiers": [
+                "shift",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+H -> Cmd+[",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "open_bracket",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+L -> Cmd+]",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+[ -> Opt+Cmd+[",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": [
+                "command",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+] -> Opt+Cmd+]",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "backslash",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "backslash",
+              "modifiers": [
+                "command",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+M -> F3 (Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "key_code": "f3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "key_code": "comma",
+              "modifiers": [
+                "control",
+                "shift",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "period"
+          },
+          "to": [
+            {
+              "key_code": "period",
+              "modifiers": [
+                "control",
+                "shift",
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+B -> Cmd+F3 (Show Bookmarks)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "f3",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "o",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+J -> Cmd+S (Save All)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK1+W -> Cmd+S (Save All)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "command"
+              ]
+            },
+            {
+              "key_code": "escape"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+@ -> F1 (Quick Documentation)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "optional": [
+                "shift"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "slash"
+          },
+          "to": [
+            {
+              "key_code": "s",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+: -> Cmd+Shift+E (Recent Locations)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "quote"
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "shift",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "x",
+              "modifiers": [
+                "control",
+                "shift",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+I -> Opt+Cmd+B (Go to implementation)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+Space -> Opt+Space (Quick Definition)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "spacebar"
+          },
+          "to": [
+            {
+              "key_code": "spacebar",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "1"
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "2"
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "option",
+                "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+_ -> Run File Watchers",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "international1"
+          },
+          "to": [
+            {
+              "key_code": "international1",
+              "modifiers": [
+                "option",
+                "command",
+                "shift",
+                "control"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK4+Enter -> Run",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.jetbrains.cwm.guest-EAP"
               ]
             },
             {
@@ -5803,7 +6990,7 @@
           },
           "to": [
             {
-              "shell_command": "open -a 'VMWare Fusion.app'"
+              "shell_command": "open -a 'jetbrains client 2023.1 eap.app'"
             }
           ]
         },

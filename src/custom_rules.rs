@@ -367,12 +367,13 @@ fn rules_vscode() -> Vec<Rule> {
     ]
 }
 
-fn rules_clion() -> Vec<Rule> {
+// TODO: Use label
+fn rules_intellij_idea(_label: &str, bundle_identifier: BundleIdentifier) -> Vec<Rule> {
     vec![
         Rule {
-            description: "[CLion] ¥ -> \\",
+            description: "¥ -> \\",
             manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![Condition::on_app(BundleIdentifier::CLion)]),
+                conditions: Some(vec![Condition::on_app(bundle_identifier.clone())]),
                 from: FromInit {
                     key_code: K::International3,
                     ..Default::default()
@@ -387,10 +388,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+E -> Cmd+1 (Project)",
+            description: "VK4+E -> Cmd+1 (Project)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -407,10 +408,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+F -> Cmd+Shift+O (Files)",
+            description: "VK4+F -> Cmd+Shift+O (Files)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -427,10 +428,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+K -> Cmd+Shift+F (Find in Path)",
+            description: "VK4+K -> Cmd+Shift+F (Find in Path)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -447,10 +448,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+N -> F2 (Next Problems)",
+            description: "VK4+N -> F2 (Next Problems)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -467,10 +468,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+P -> Shift+F2 (Previous Problems)",
+            description: "VK4+P -> Shift+F2 (Previous Problems)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -487,10 +488,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+; -> Opt+Enter (More Actions)",
+            description: "VK4+; -> Opt+Enter (More Actions)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -507,10 +508,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+R -> Ctrl+Opt+R (Run)",
+            description: "VK4+R -> Ctrl+Opt+R (Run)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -527,10 +528,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+T -> Opt+Cmd+B (Type)",
+            description: "VK4+T -> Opt+Cmd+B (Type)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -547,10 +548,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+S -> Opt+Cmd+O (Symbols)",
+            description: "VK4+S -> Opt+Cmd+O (Symbols)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -567,10 +568,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+C -> Cmd+O (Classes)",
+            description: "VK4+C -> Cmd+O (Classes)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -587,10 +588,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
+            description: "VK4+D -> Cmd+Opt+Shift+Ctrl+D (Split and Move Down)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -607,10 +608,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
+            description: "VK4+U -> Cmd+Opt+Shift+Ctrl+U (Move To Opposite Group)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -627,10 +628,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+G -> Opt+Tab (Goto Next Splitter)",
+            description: "VK4+G -> Opt+Tab (Goto Next Splitter)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -647,10 +648,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+A -> Cmd+Shift+A (Actions)",
+            description: "VK4+A -> Cmd+Shift+A (Actions)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -667,10 +668,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+H -> Cmd+[",
+            description: "VK4+H -> Cmd+[",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -687,10 +688,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+L -> Cmd+]",
+            description: "VK4+L -> Cmd+]",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -707,10 +708,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+[ -> Opt+Cmd+[",
+            description: "VK4+[ -> Opt+Cmd+[",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -727,10 +728,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+] -> Opt+Cmd+]",
+            description: "VK4+] -> Opt+Cmd+]",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -747,10 +748,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+M -> F3 (Bookmark)",
+            description: "VK4+M -> F3 (Bookmark)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -767,10 +768,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
+            description: "VK4+, -> Ctrl+Shift+Opt+, (Previous Bookmark)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -787,10 +788,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
+            description: "VK4+. -> Ctrl+Shift+Opt+. (Next Bookmark)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -807,10 +808,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+B -> Cmd+F3 (Show Bookmarks)",
+            description: "VK4+B -> Cmd+F3 (Show Bookmarks)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -827,10 +828,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
+            description: "VK4+O -> Ctrl+Shift+Opt+Cmd+O (Open Recent)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -847,10 +848,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+J -> Cmd+S (Save All)",
+            description: "VK4+J -> Cmd+S (Save All)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -867,10 +868,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK1+W -> Cmd+S (Save All)",
+            description: "VK1+W -> Cmd+S (Save All)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk1(),
                 ]),
                 from: FromInit {
@@ -893,10 +894,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+@ -> F1 (Quick Documentation)",
+            description: "VK4+@ -> F1 (Quick Documentation)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -913,10 +914,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
+            description: "VK4+/ -> Ctrl+Shift+Opt+Cmd+S (Search Everywhere)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -933,10 +934,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+: -> Cmd+Shift+E (Recent Locations)",
+            description: "VK4+: -> Cmd+Shift+E (Recent Locations)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -953,10 +954,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
+            description: "VK4+X -> Ctrl+Shift+Cmd+X (Close Project)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -973,10 +974,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+I -> Opt+Cmd+B (Go to implementation)",
+            description: "VK4+I -> Opt+Cmd+B (Go to implementation)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -993,10 +994,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+Space -> Opt+Space (Quick Definition)",
+            description: "VK4+Space -> Opt+Space (Quick Definition)",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -1013,13 +1014,13 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
+            description: "VK4+1/2 -> Opt+Cmd DownArrow/UpArrow",
             manipulators: vec![(K::Key1, K::UpArrow), (K::Key2, K::DownArrow)]
                 .into_iter()
                 .map(|(from, to)| {
                     ManipulatorInit {
                         conditions: Some(vec![
-                            Condition::on_app(BundleIdentifier::CLion),
+                            Condition::on_app(bundle_identifier.clone()),
                             Condition::with_vk4(),
                         ]),
                         from: FromInit {
@@ -1038,10 +1039,10 @@ fn rules_clion() -> Vec<Rule> {
                 .collect_vec(),
         },
         Rule {
-            description: "[CLion] VK4+_ -> Run File Watchers",
+            description: "VK4+_ -> Run File Watchers",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -1058,10 +1059,10 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
         Rule {
-            description: "[CLion] VK4+Enter -> Run",
+            description: "VK4+Enter -> Run",
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::CLion),
+                    Condition::on_app(bundle_identifier.clone()),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
@@ -1078,6 +1079,14 @@ fn rules_clion() -> Vec<Rule> {
             .init()],
         },
     ]
+}
+
+fn rules_clion() -> Vec<Rule> {
+    rules_intellij_idea("CLion", BundleIdentifier::CLion)
+}
+
+fn rules_idea_eap() -> Vec<Rule> {
+    rules_intellij_idea("IdeaEAP", BundleIdentifier::IdeaEAP)
 }
 
 fn rules_dynalist() -> Vec<Rule> {
@@ -2177,7 +2186,7 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::N, "open -a 'Notion.app'"),
             (K::O, "open -a 'Visual Studio Code.app'"),
             (K::P, "open -a '1Password.app'"),
-            (K::R, "open -a 'VMWare Fusion.app'"),
+            (K::R, "open -a 'jetbrains client 2023.1 eap.app'"),
             (K::T, "open -a 'Visual Studio Code.app'"),
             (K::U, "open -a 'Microsoft To Do.app'"),
             (
@@ -2315,6 +2324,7 @@ pub fn build_custom_rules() -> Vec<Rule> {
         rules_iterm2(),
         rules_vscode(),
         rules_clion(),
+        rules_idea_eap(),
         rules_dynalist(),
         rules_atom(),
         rules_slack(),
