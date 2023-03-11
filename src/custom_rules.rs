@@ -286,9 +286,10 @@ fn rules_vscode() -> Vec<Rule> {
                 K::A,      // execute command
                 K::B,      // show bookmarks
                 K::F,      // search file
-                K::H,      // switch sidebar visibility
+                K::H,      // Go Back
                 K::E,      // switch focus between editor and explorer
                 K::P,      // prev problem
+                K::L,      // Go Forward
                 K::O,      // open recent
                 K::M,      // toggle bookmark
                 K::N,      // next problem
