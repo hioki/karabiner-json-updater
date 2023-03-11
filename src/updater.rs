@@ -1,9 +1,11 @@
 use anyhow::Result;
 use serde::Serialize;
-use std::fs::{File, OpenOptions};
-use std::io::{copy, Seek as _, SeekFrom, Write as _};
-use std::path::PathBuf;
-use std::process::Command;
+use std::{
+    fs::{File, OpenOptions},
+    io::{copy, Seek as _, SeekFrom, Write as _},
+    path::PathBuf,
+    process::Command,
+};
 
 use crate::config::rule::Rule;
 

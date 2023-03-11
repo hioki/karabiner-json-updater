@@ -1,17 +1,19 @@
 use itertools::Itertools;
 
-use crate::config::bundle_identifier::BundleIdentifier;
-use crate::config::condition::Condition;
-use crate::config::from::{From, FromInit, FromModifier};
-use crate::config::key_code::KeyCode as K;
-use crate::config::manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone};
-use crate::config::modifier_key::ModifierKey::*;
-use crate::config::mouse_key::MouseKeyInit;
-use crate::config::rule::Rule;
-use crate::config::set_variable::SetVariable;
-use crate::config::to::{PointingButton, To};
-use crate::config::value::Value;
-use crate::config::virtual_key::VirtualKey as VK;
+use crate::config::{
+    bundle_identifier::BundleIdentifier,
+    condition::Condition,
+    from::{From, FromInit, FromModifier},
+    key_code::KeyCode as K,
+    manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone},
+    modifier_key::ModifierKey::*,
+    mouse_key::MouseKeyInit,
+    rule::Rule,
+    set_variable::SetVariable,
+    to::{PointingButton, To},
+    value::Value,
+    virtual_key::VirtualKey as VK,
+};
 
 fn rules_virtual_keys() -> Vec<Rule> {
     vec![Rule {

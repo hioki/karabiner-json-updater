@@ -1,6 +1,4 @@
-use crate::config::bundle_identifier::BundleIdentifier;
-use crate::config::value::Value;
-use crate::config::virtual_key::VirtualKey;
+use crate::config::{bundle_identifier::BundleIdentifier, value::Value, virtual_key::VirtualKey};
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]

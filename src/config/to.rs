@@ -1,7 +1,6 @@
-use crate::config::key_code::KeyCode;
-use crate::config::modifier_key::ModifierKey;
-use crate::config::mouse_key::MouseKey;
-use crate::config::set_variable::SetVariable;
+use crate::config::{
+    key_code::KeyCode, modifier_key::ModifierKey, mouse_key::MouseKey, set_variable::SetVariable,
+};
 use serde::Serialize;
 
 #[derive(Debug, Serialize)]
