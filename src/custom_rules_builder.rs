@@ -1,6 +1,3 @@
-use big_s::S;
-use itertools::Itertools;
-
 use crate::config::{
     bundle_identifier::BundleIdentifier,
     condition::Condition,
@@ -15,6 +12,42 @@ use crate::config::{
     value::Value,
     virtual_key::VirtualKey as VK,
 };
+use big_s::S;
+use itertools::Itertools;
+
+pub struct CustomRulesBuilder {}
+
+impl CustomRulesBuilder {
+    pub fn new() -> Self {
+        Self {}
+    }
+
+    pub fn build(&self) -> Vec<Rule> {
+        vec![
+            rules_virtual_keys(),
+            rules_iterm2(),
+            rules_vscode(),
+            rules_clion(),
+            rules_idea_eap(),
+            rules_dynalist(),
+            rules_atom(),
+            rules_slack(),
+            rules_google_chrome(),
+            rules_notion(),
+            rules_clickup(),
+            rules_vk1(),
+            rules_vk2(),
+            rules_open_apps(),
+            rules_vk3(),
+            rules_semicolon(),
+            rules_singlequote(),
+            rules_disable_capslock(),
+        ]
+        .into_iter()
+        .flatten()
+        .collect()
+    }
+}
 
 fn rules_virtual_keys() -> Vec<Rule> {
     vec![Rule {
@@ -2336,30 +2369,4 @@ fn rules_disable_capslock() -> Vec<Rule> {
         }
         .init()],
     }]
-}
-
-pub fn build_custom_rules() -> Vec<Rule> {
-    vec![
-        rules_virtual_keys(),
-        rules_iterm2(),
-        rules_vscode(),
-        rules_clion(),
-        rules_idea_eap(),
-        rules_dynalist(),
-        rules_atom(),
-        rules_slack(),
-        rules_google_chrome(),
-        rules_notion(),
-        rules_clickup(),
-        rules_vk1(),
-        rules_vk2(),
-        rules_open_apps(),
-        rules_vk3(),
-        rules_semicolon(),
-        rules_singlequote(),
-        rules_disable_capslock(),
-    ]
-    .into_iter()
-    .flatten()
-    .collect()
 }

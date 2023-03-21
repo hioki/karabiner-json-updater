@@ -1,16 +1,22 @@
 mod config;
-mod custom_rules;
-mod updater;
+mod config_updater;
+mod custom_rules_builder;
 
 use anyhow::{anyhow, Result};
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
-use crate::{custom_rules::build_custom_rules, updater::Updater};
+use crate::{config_updater::ConfigUpdater, custom_rules_builder::CustomRulesBuilder};
 
 fn main() -> Result<()> {
-    let filename = "custom.json";
+    let config_dir = get_config_dir()?;
+    let custom_rules_builder = CustomRulesBuilder::new();
+    let custom_rules = custom_rules_builder.build();
+    let config_updater = ConfigUpdater::new(config_dir, custom_rules);
+    config_updater.update()
+}
 
-    // https://karabiner-elements.pqrs.org/docs/json/location/
+// https://karabiner-elements.pqrs.org/docs/json/location/
+fn get_config_dir() -> Result<PathBuf> {
     let config_dir = Path::new(env!("HOME")).join(".config/karabiner");
     if !config_dir.is_dir() {
         return Err(anyhow!(format!(
@@ -18,16 +24,5 @@ fn main() -> Result<()> {
             config_dir.to_str().unwrap()
         )));
     }
-
-    let karabiner_json_path = config_dir.join("karabiner.json");
-
-    let custom_path = config_dir
-        .join("assets/complex_modifications")
-        .join(filename);
-
-    let rules = build_custom_rules();
-
-    let updater = Updater::new(filename, karabiner_json_path, custom_path, rules);
-
-    updater.update()
+    Ok(config_dir)
 }
