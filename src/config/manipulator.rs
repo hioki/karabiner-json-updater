@@ -114,9 +114,10 @@ impl Manipulator {
     }
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Default)]
 #[serde(rename_all = "snake_case")]
 pub enum ManipulatorType {
+    #[default]
     Basic,
 }
 
@@ -133,10 +134,4 @@ pub struct ToIfAlone {
 #[derive(Debug, Serialize)]
 pub struct ToAfterKeyUp {
     pub set_variable: SetVariable,
-}
-
-impl Default for ManipulatorType {
-    fn default() -> Self {
-        ManipulatorType::Basic
-    }
 }
