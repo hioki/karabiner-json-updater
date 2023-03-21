@@ -1083,7 +1083,7 @@ fn rules_intellij_idea(label: &str, bundle_identifier: BundleIdentifier) -> Vec<
             description: format!("[{}] VK4+Enter -> Run", label),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
-                    Condition::on_app(bundle_identifier.clone()),
+                    Condition::on_app(bundle_identifier),
                     Condition::with_vk4(),
                 ]),
                 from: FromInit {
