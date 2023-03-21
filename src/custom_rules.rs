@@ -379,7 +379,6 @@ fn rules_vscode() -> Vec<Rule> {
     ]
 }
 
-// TODO: Use label
 fn rules_intellij_idea(label: &str, bundle_identifier: BundleIdentifier) -> Vec<Rule> {
     vec![
         Rule {
