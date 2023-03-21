@@ -9,6 +9,8 @@ use std::{
 
 use crate::config::rule::Rule;
 
+static TITLE: &str = "Personal rules";
+
 pub struct Updater<'a> {
     title: &'a str,
     filename: &'a str,
@@ -19,14 +21,13 @@ pub struct Updater<'a> {
 
 impl<'a> Updater<'a> {
     pub fn new(
-        title: &'a str,
         filename: &'a str,
         karabiner_json_path: PathBuf,
         custom_path: PathBuf,
         rules: Vec<Rule>,
     ) -> Self {
         Self {
-            title,
+            title: TITLE,
             filename,
             karabiner_json_path,
             custom_path,

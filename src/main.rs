@@ -5,13 +5,9 @@ mod updater;
 use anyhow::{anyhow, Result};
 use std::path::Path;
 
-use crate::custom_rules::build_custom_rules;
-
-use crate::updater::Updater;
+use crate::{custom_rules::build_custom_rules, updater::Updater};
 
 fn main() -> Result<()> {
-    let title = "Personal rules";
-
     let filename = "custom.json";
 
     // https://karabiner-elements.pqrs.org/docs/json/location/
@@ -31,7 +27,7 @@ fn main() -> Result<()> {
 
     let rules = build_custom_rules();
 
-    let updater = Updater::new(title, filename, karabiner_json_path, custom_path, rules);
+    let updater = Updater::new(filename, karabiner_json_path, custom_path, rules);
 
     updater.update()
 }
