@@ -750,7 +750,7 @@ fn rules_intellij_idea(label: &str, bundle_identifier: BundleIdentifier) -> Vec<
                 }
                 .init(),
                 to: vec![To::Key {
-                    key_code: K::OpenBracket,
+                    key_code: K::CloseBracket,
                     modifiers: Some(vec![Cmd]),
                 }],
                 ..Default::default()
@@ -770,7 +770,7 @@ fn rules_intellij_idea(label: &str, bundle_identifier: BundleIdentifier) -> Vec<
                 }
                 .init(),
                 to: vec![To::Key {
-                    key_code: K::CloseBracket,
+                    key_code: K::Backslash,
                     modifiers: Some(vec![Cmd]),
                 }],
                 ..Default::default()

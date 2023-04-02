@@ -1807,7 +1807,7 @@
           },
           "to": [
             {
-              "key_code": "open_bracket",
+              "key_code": "close_bracket",
               "modifiers": [
                 "command"
               ]
@@ -1839,7 +1839,7 @@
           },
           "to": [
             {
-              "key_code": "close_bracket",
+              "key_code": "backslash",
               "modifiers": [
                 "command"
               ]
@@ -2994,7 +2994,7 @@
           },
           "to": [
             {
-              "key_code": "open_bracket",
+              "key_code": "close_bracket",
               "modifiers": [
                 "command"
               ]
@@ -3026,7 +3026,7 @@
           },
           "to": [
             {
-              "key_code": "close_bracket",
+              "key_code": "backslash",
               "modifiers": [
                 "command"
               ]
