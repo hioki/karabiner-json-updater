@@ -409,6 +409,26 @@ fn rules_vscode() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: S("[VSCode] VK4+U -> Shift+F12 (Go To Reference)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::U,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::F12,
+                    modifiers: Some(vec![Shift]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
