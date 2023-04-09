@@ -1159,7 +1159,7 @@ fn rules_clion() -> Vec<Rule> {
 }
 
 fn rules_idea_eap() -> Vec<Rule> {
-    rules_intellij_idea("IdeaEAP", BundleIdentifier::IdeaEAP)
+    rules_intellij_idea("IdeaEAP", BundleIdentifier::JetBrainsClient)
 }
 
 fn rules_dynalist() -> Vec<Rule> {

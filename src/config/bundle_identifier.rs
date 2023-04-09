@@ -20,6 +20,6 @@ pub enum BundleIdentifier {
     Notion,
     #[serde(rename = "com.clickup.desktop-app")]
     ClickUp,
-    #[serde(rename = "com.jetbrains.cwm.guest-EAP")]
-    IdeaEAP,
+    #[serde(rename = "com.jetbrains.cwm.guest")]
+    JetBrainsClient,
 }
