@@ -2224,18 +2224,6 @@ fn rules_vk2() -> Vec<Rule> {
                 })
                 .collect_vec(),
         },
-        Rule {
-            description: S("VK2+Z -> Ctrl+Shift+Cmd+Opt+T (Launch alfred-google-translate-formatter-workflow)"), // https://github.com/pddg/alfred-google-translate-formatter-workflow
-            manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Z,
-                    None,
-                    K::T,
-                    Some(vec![Ctrl, Shift, Cmd, Opt])
-                )
-            ]
-        },
     ]
 }
 
@@ -2243,12 +2231,15 @@ fn rules_open_apps() -> Vec<Rule> {
     vec![Rule {
         description: S("Open apps"),
         manipulators: vec![
+            // (K::A, "Ctrl+Shift+Tab"),
             (K::B, "open -a 'Bitwarden.app'"),
-            (K::C, "open -a 'ClickUp.app'"),
+            (K::C, "open -a 'Calendar.app'"),
+            // (K::D, "Command+Shift+Tab"),
             (
                 K::E,
                 r#"osascript -e "tell application \"Alfred 5\" to search \"snip \"""#,
             ),
+            // (K::F, "Command+Tab"),
             (K::G, "open -a 'Visual Studio Code.app'"),
             (K::H, "open -a 'Atom.app'"),
             (K::I, "open -a 'CLion.app'"),
@@ -2259,32 +2250,33 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::N, "open -a 'Notion.app'"),
             (K::O, "open -a 'Visual Studio Code.app'"),
             (K::P, "open -a '1Password.app'"),
+            // (K::Q, None),
             (K::R, "open -a 'jetbrains client 2023.1 eap.app'"),
+            // (K::S, "Ctrl+Tab"),
             (K::T, "open -a 'Visual Studio Code.app'"),
             (K::U, "open -a 'Microsoft To Do.app'"),
-            (
-                K::X,
-                r#"osascript -e "tell application \"Alfred 5\" to search \"snip codeblocks\"""#,
-            ),
             (K::V, "open -a 'DeepL.app'"),
             (
                 K::W,
                 r#"osascript -e "tell application \"Alfred 5\" to search \"define $(pbpaste)\"""#,
             ),
             (
-                K::CloseBracket,
-                r#"osascript -e "tell application \"Spotify\" to previous track""#,
+                K::X,
+                r#"osascript -e "tell application \"Alfred 5\" to search \"snip codeblocks\"""#,
             ),
-            (
-                K::NonUsPound,
-                r#"osascript -e "tell application \"Spotify\" to next track""#,
-            ),
-            (
-                K::Backslash,
-                r#"osascript -e "tell application \"Spotify\" to next track""#,
-            ),
-            (K::Comma, "open -a 'System Preferences.app'"),
-            (K::OpenBracket, "open -a 'Mail.app'"),
+            (K::Y, "open -a 'Slack.app'"),
+            (K::Z, "open -a 'LICEcap.app'"),
+            // (K::ReturnOrEnter, None),
+            // (K::Quote, None), // :
+            // (K::NonUsPound, None), // ]
+            (K::OpenBracket, "open -a 'Mail.app'"), // @
+            // (K::CloseBracket, None), // [
+            (K::Comma, "open -a 'System Settings.app'"),
+            // (K::Period, None),
+            // (K::Slash, None),
+            // (K::International1, None), // _
+            // (K::NonUsPound, None),
+            // (K::Backslash, None),
         ]
         .into_iter()
         .map(|(key_code, shell_command)| {
