@@ -3,5 +3,5 @@
 ## How to import
 
 ```
-karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/hioki/karabiner-json-updater/master/custom.json
+karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/hioki/karabiner-json-updater/main/custom.json
 ```
