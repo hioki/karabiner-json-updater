@@ -308,6 +308,26 @@ fn rules_iterm2() -> Vec<Rule> {
                 })
                 .collect_vec(),
         },
+        Rule {
+            description: S("[iTerm2] VK1+Semicolon -> Ctrl+F"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::ITerm2),
+                    Condition::with_vk1(),
+                ]),
+                from: FromInit {
+                    key_code: K::Semicolon,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::F,
+                    modifiers: Some(vec![Ctrl]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
