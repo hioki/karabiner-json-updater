@@ -2261,7 +2261,7 @@ fn rules_open_apps() -> Vec<Rule> {
             ),
             // (K::F, "Command+Tab"),
             (K::G, "open -a 'Visual Studio Code.app'"),
-            (K::H, "open -a 'Atom.app'"),
+            (K::H, "open -a 'Visual Studio Code.app'"),
             (K::I, "open -a 'CLion.app'"),
             (K::J, "open -a 'Google Chrome.app'"),
             (K::K, "open -a 'iTerm.app'"),
