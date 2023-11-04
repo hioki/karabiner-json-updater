@@ -336,16 +336,17 @@ fn rules_vscode() -> Vec<Rule> {
         Rule {
             description: S("VK4 on VSCode"),
             manipulators: vec![
-                K::A, // execute command
-                K::B, // show bookmarks
-                K::F, // search file
-                K::H, // Go Back
-                K::E, // switch focus between editor and explorer
-                K::L, // Go Forward
-                K::O, // open recent
-                K::K, // find in path
-                K::R, // reload window
-                K::S, // go to symbol
+                K::A,    // execute command
+                K::B,    // show bookmarks
+                K::F,    // search file
+                K::H,    // Go Back
+                K::E,    // switch focus between editor and explorer
+                K::L,    // Go Forward
+                K::Key0, // toggle panel
+                K::O,    // open recent
+                K::K,    // find in path
+                K::R,    // reload window
+                K::S,    // go to symbol
             ]
             .into_iter()
             .map(|key_code| {
