@@ -1586,6 +1586,26 @@ fn rules_google_chrome() -> Vec<Rule> {
 fn rules_notion() -> Vec<Rule> {
     vec![
         Rule {
+            description: S("[Notion] VK2+9 -> Cmd+Shift+;"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::Notion),
+                    Condition::with_vk2(),
+                ]),
+                from: FromInit {
+                    key_code: K::Key9,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::Semicolon,
+                    modifiers: Some(vec![Cmd, Shift]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
             description: S("[Notion] VK4+F -> Cmd+P"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![

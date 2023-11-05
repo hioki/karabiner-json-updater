@@ -4556,6 +4556,39 @@
       ]
     },
     {
+      "description": "[Notion] VK2+9 -> Cmd+Shift+;",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "notion.id"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "semicolon",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "[Notion] VK4+F -> Cmd+P",
       "manipulators": [
         {
