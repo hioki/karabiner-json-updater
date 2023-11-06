@@ -2289,7 +2289,7 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::L, "open -a 'Alfred 5.app'"),
             (K::M, "open -a 'Dynalist.app'"),
             (K::N, "open -a 'Notion.app'"),
-            (K::O, "open -a 'Visual Studio Code.app'"),
+            (K::O, "open -a 'Finder.app'"),
             (K::P, "open -a '1Password.app'"),
             // (K::Q, None),
             (K::R, "open -a 'jetbrains client 2023.1 eap.app'"),
