@@ -470,6 +470,26 @@ fn rules_vscode() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: S("[VSCode] VK4+. -> Cmd+. (クイック修正)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::Period,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::Period,
+                    modifiers: Some(vec![Cmd]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
