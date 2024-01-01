@@ -450,6 +450,26 @@ fn rules_vscode() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: S("[VSCode] VK4+N -> Opt+F8 (次の問題へ移動)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::N,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::F8,
+                    modifiers: Some(vec![Opt]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
