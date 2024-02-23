@@ -2334,7 +2334,7 @@ fn rules_open_apps() -> Vec<Rule> {
         manipulators: vec![
             // (K::A, "Ctrl+Shift+Tab"),
             (K::B, "open -a 'Bitwarden.app'"),
-            (K::C, "open -a 'Calendar.app'"),
+            (K::C, "open -a 'Notion Calendar.app'"),
             // (K::D, "Command+Shift+Tab"),
             (
                 K::E,
