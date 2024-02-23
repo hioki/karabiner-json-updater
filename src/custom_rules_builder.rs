@@ -1646,6 +1646,26 @@ fn rules_notion() -> Vec<Rule> {
             .init()],
         },
         Rule {
+            description: S("[Notion] VK4+E -> Cmd+Yen"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::Notion),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::E,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::International3,
+                    modifiers: Some(vec![Cmd]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
             description: S("[Notion] VK4+F -> Cmd+P"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![
