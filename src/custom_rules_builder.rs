@@ -2373,7 +2373,7 @@ fn rules_open_apps() -> Vec<Rule> {
             (K::OpenBracket, "open -a 'Mail.app'"), // @
             // (K::CloseBracket, None), // [
             (K::Comma, "open -a 'System Settings.app'"),
-            // (K::Period, None),
+            (K::Period, "open -a 'ChatGPT.app'"),
             (
                 K::Slash,
                 "open 'https://s2.kingtime.jp/independent/recorder2/personal/'",
