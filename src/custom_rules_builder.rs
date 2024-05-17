@@ -1595,32 +1595,68 @@ fn rules_slack() -> Vec<Rule> {
 }
 
 fn rules_google_chrome() -> Vec<Rule> {
-    vec![Rule {
-        description: S("[GoogleChrome] VK4+N -> Cmd+Shift+M,Enter (Switch to the other user)"),
-        manipulators: vec![ManipulatorInit {
-            conditions: Some(vec![
-                Condition::on_app(BundleIdentifier::GoogleChrome),
-                Condition::with_vk4(),
-            ]),
-            from: FromInit {
-                key_code: K::N,
-                ..Default::default()
-            }
-            .init(),
-            to: vec![
-                To::Key {
+    vec![
+        Rule {
+            description: S("[GoogleChrome] VK4+M -> Cmd+Shift+M (Switch profile)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::GoogleChrome),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::M,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
                     key_code: K::M,
                     modifiers: Some(vec![Cmd, Shift]),
-                },
-                To::Key {
-                    key_code: K::ReturnOrEnter,
-                    modifiers: None,
-                },
-            ],
-            ..Default::default()
-        }
-        .init()],
-    }]
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: S(
+                "[GoogleChrome] VK4+N -> Cmd+Shift+M,Down,Down,Down,Enter (Toggle profile)",
+            ),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::GoogleChrome),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::N,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![
+                    To::Key {
+                        key_code: K::M,
+                        modifiers: Some(vec![Cmd, Shift]),
+                    },
+                    To::Key {
+                        key_code: K::DownArrow,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::DownArrow,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::DownArrow,
+                        modifiers: None,
+                    },
+                    To::Key {
+                        key_code: K::ReturnOrEnter,
+                        modifiers: None,
+                    },
+                ],
+                ..Default::default()
+            }
+            .init()],
+        },
+    ]
 }
 
 fn rules_notion() -> Vec<Rule> {
