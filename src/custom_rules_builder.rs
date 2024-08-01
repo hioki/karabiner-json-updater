@@ -347,6 +347,7 @@ fn rules_vscode() -> Vec<Rule> {
                 K::K,    // find in path
                 K::R,    // reload window
                 K::S,    // go to symbol
+                K::I,    // 実装へ移動
             ]
             .into_iter()
             .map(|key_code| {
