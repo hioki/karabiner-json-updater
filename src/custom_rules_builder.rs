@@ -490,6 +490,26 @@ fn rules_vscode() -> Vec<Rule> {
             }
             .init()],
         },
+        Rule {
+            description: S("[VSCode] VK4+T -> Cmd+T (全体シンボル検索)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::T,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::T,
+                    modifiers: Some(vec![Cmd]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
     ]
 }
 
