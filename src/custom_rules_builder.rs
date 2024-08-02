@@ -348,6 +348,8 @@ fn rules_vscode() -> Vec<Rule> {
                 K::R,    // reload window
                 K::S,    // go to symbol
                 K::I,    // 実装へ移動
+                K::Key9, // 表示の拡大
+                K::Key0, // 表示の縮小
             ]
             .into_iter()
             .map(|key_code| {
