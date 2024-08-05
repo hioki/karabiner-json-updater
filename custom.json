@@ -1007,6 +1007,36 @@
             }
           ],
           "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "g",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "h"
           },
           "to": [

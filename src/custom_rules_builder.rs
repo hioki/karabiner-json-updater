@@ -339,6 +339,7 @@ fn rules_vscode() -> Vec<Rule> {
                 K::A,    // execute command
                 K::B,    // show bookmarks
                 K::F,    // search file
+                K::G,    // GitLens: Open File on Remote
                 K::H,    // Go Back
                 K::E,    // switch focus between editor and explorer
                 K::L,    // Go Forward
