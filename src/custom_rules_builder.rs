@@ -349,6 +349,7 @@ fn rules_vscode() -> Vec<Rule> {
                 K::R,    // reload window
                 K::S,    // go to symbol
                 K::I,    // 実装へ移動
+                K::Y,    // Toggle File Blame
                 K::Key9, // 表示の拡大
                 K::Key0, // 表示の縮小
             ]
