@@ -336,22 +336,23 @@ fn rules_vscode() -> Vec<Rule> {
         Rule {
             description: S("VK4 on VSCode"),
             manipulators: vec![
-                K::A,    // execute command
-                K::B,    // show bookmarks
-                K::F,    // search file
-                K::G,    // GitLens: Open File on Remote
-                K::H,    // Go Back
-                K::E,    // switch focus between editor and explorer
-                K::L,    // Go Forward
-                K::Key0, // toggle panel
-                K::O,    // open recent
-                K::K,    // find in path
-                K::R,    // reload window
-                K::S,    // go to symbol
-                K::I,    // 実装へ移動
-                K::Y,    // Toggle File Blame
-                K::Key9, // 表示の拡大
-                K::Key0, // 表示の縮小
+                K::A,             // execute command
+                K::B,             // show bookmarks
+                K::E,             // Toggle sidebar
+                K::F,             // search file
+                K::G,             // GitLens: Open File on Remote
+                K::H,             // Go Back
+                K::I,             // 実装へ移動
+                K::L,             // Go Forward
+                K::O,             // open recent
+                K::K,             // find in path
+                K::R,             // reload window
+                K::S,             // go to symbol
+                K::V,             // アクティブファイルの相対パスをコピー
+                K::Y,             // Toggle File Blame
+                K::Key9,          // 表示の拡大
+                K::Key0,          // 表示の縮小
+                K::ReturnOrEnter, // workbench.action.tasks.reRunTask
             ]
             .into_iter()
             .map(|key_code| {
@@ -510,6 +511,26 @@ fn rules_vscode() -> Vec<Rule> {
                 to: vec![To::Key {
                     key_code: K::T,
                     modifiers: Some(vec![Cmd]),
+                }],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: S("[VSCode] VK4+P -> Cmd+Shift+M (問題を開く)"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![
+                    Condition::on_app(BundleIdentifier::VSCode),
+                    Condition::with_vk4(),
+                ]),
+                from: FromInit {
+                    key_code: K::P,
+                    ..Default::default()
+                }
+                .init(),
+                to: vec![To::Key {
+                    key_code: K::M,
+                    modifiers: Some(vec![Cmd, Shift]),
                 }],
                 ..Default::default()
             }
@@ -2435,10 +2456,6 @@ fn rules_open_apps() -> Vec<Rule> {
             // (K::CloseBracket, None), // [
             (K::Comma, "open -a 'System Settings.app'"),
             (K::Period, "open -a 'ChatGPT.app'"),
-            (
-                K::Slash,
-                "open 'https://s2.kingtime.jp/independent/recorder2/personal/'",
-            ),
             // (K::International1, None), // _
             // (K::NonUsPound, None),
             // (K::Backslash, None),

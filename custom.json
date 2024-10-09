@@ -977,6 +977,36 @@
             }
           ],
           "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "e",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
             "key_code": "f"
           },
           "to": [
@@ -1067,11 +1097,11 @@
             }
           ],
           "from": {
-            "key_code": "e"
+            "key_code": "i"
           },
           "to": [
             {
-              "key_code": "e",
+              "key_code": "i",
               "modifiers": [
                 "control",
                 "shift",
@@ -1102,36 +1132,6 @@
           "to": [
             {
               "key_code": "l",
-              "modifiers": [
-                "control",
-                "shift",
-                "option",
-                "command"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.microsoft.VSCode"
-              ]
-            },
-            {
-              "type": "variable_if",
-              "name": "vk4",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "0"
-          },
-          "to": [
-            {
-              "key_code": "0",
               "modifiers": [
                 "control",
                 "shift",
@@ -1277,11 +1277,11 @@
             }
           ],
           "from": {
-            "key_code": "i"
+            "key_code": "v"
           },
           "to": [
             {
-              "key_code": "i",
+              "key_code": "v",
               "modifiers": [
                 "control",
                 "shift",
@@ -1372,6 +1372,36 @@
           "to": [
             {
               "key_code": "0",
+              "modifiers": [
+                "control",
+                "shift",
+                "option",
+                "command"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "return_or_enter"
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
               "modifiers": [
                 "control",
                 "shift",
@@ -1602,6 +1632,39 @@
               "key_code": "t",
               "modifiers": [
                 "command"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "[VSCode] VK4+P -> Cmd+Shift+M (問題を開く)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.microsoft.VSCode"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "vk4",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "m",
+              "modifiers": [
+                "command",
+                "shift"
               ]
             }
           ]
@@ -7292,24 +7355,6 @@
           "to": [
             {
               "shell_command": "open -a 'ChatGPT.app'"
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk2",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "slash"
-          },
-          "to": [
-            {
-              "shell_command": "open 'https://s2.kingtime.jp/independent/recorder2/personal/'"
             }
           ]
         }
