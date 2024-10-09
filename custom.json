@@ -7357,6 +7357,24 @@
               "shell_command": "open -a 'ChatGPT.app'"
             }
           ]
+        },
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk2",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "slash"
+          },
+          "to": [
+            {
+              "shell_command": "open 'https://s2.kingtime.jp/independent/recorder2/personal/'"
+            }
+          ]
         }
       ]
     },

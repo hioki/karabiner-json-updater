@@ -2456,6 +2456,10 @@ fn rules_open_apps() -> Vec<Rule> {
             // (K::CloseBracket, None), // [
             (K::Comma, "open -a 'System Settings.app'"),
             (K::Period, "open -a 'ChatGPT.app'"),
+            (
+                K::Slash,
+                "open 'https://s2.kingtime.jp/independent/recorder2/personal/'",
+            ),
             // (K::International1, None), // _
             // (K::NonUsPound, None),
             // (K::Backslash, None),
