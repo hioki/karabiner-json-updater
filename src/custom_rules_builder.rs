@@ -2055,7 +2055,7 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: S("VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V"),
+            description: S("VK1+Y -> Cmd+C"),
             manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
@@ -2064,6 +2064,11 @@ fn rules_vk1() -> Vec<Rule> {
                     K::C,
                     Some(vec![Cmd]),
                 ),
+            ],
+        },
+        Rule {
+            description: S("VK1+T -> Cmd+X, VK1+X -> Cmd+Shift+V"),
+            manipulators: vec![
                 Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
                     VK::Vk1,
                     K::T,

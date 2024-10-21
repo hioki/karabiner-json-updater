@@ -5598,7 +5598,7 @@
       ]
     },
     {
-      "description": "VK1+Y -> Cmd+C / VK1+T -> Cmd+X / VK1+X -> Cmd+Shift+V",
+      "description": "VK1+Y -> Cmd+C",
       "manipulators": [
         {
           "type": "basic",
@@ -5620,7 +5620,12 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "description": "VK1+T -> Cmd+X, VK1+X -> Cmd+Shift+V",
+      "manipulators": [
         {
           "type": "basic",
           "conditions": [
