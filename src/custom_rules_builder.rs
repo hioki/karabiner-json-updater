@@ -2055,12 +2055,33 @@ fn rules_vk1() -> Vec<Rule> {
             ],
         },
         Rule {
-            description: S("VK1+Y -> Cmd+C"),
+            description: S("VK1+Y -> Cmd+C and remove all newlines"),
             manipulators: vec![ManipulatorInit {
                 conditions: Some(vec![Condition::with_vk1()]),
                 from: From {
                     key_code: K::Y,
                     modifiers: None,
+                },
+                to: vec![
+                    To::Key {
+                        key_code: K::C,
+                        modifiers: Some(vec![Cmd]),
+                    },
+                    To::Command {
+                        shell_command: "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | pbcopy",
+                    },
+                ],
+                ..Default::default()
+            }
+            .init()],
+        },
+        Rule {
+            description: S("VK1+Shift+Y -> Cmd+C"),
+            manipulators: vec![ManipulatorInit {
+                conditions: Some(vec![Condition::with_vk1()]),
+                from: From {
+                    key_code: K::Y,
+                    modifiers: Some(FromModifier::Mandatory(vec![Shift])),
                 },
                 to: vec![To::Key {
                     key_code: K::C,
