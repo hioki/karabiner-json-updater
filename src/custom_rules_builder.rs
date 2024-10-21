@@ -2068,7 +2068,7 @@ fn rules_vk1() -> Vec<Rule> {
                         modifiers: Some(vec![Cmd]),
                     },
                     To::Command {
-                        shell_command: "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | pbcopy",
+                        shell_command: "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | sed 's/  */ /g' | pbcopy",
                     },
                 ],
                 ..Default::default()
