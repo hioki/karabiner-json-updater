@@ -5598,36 +5598,7 @@
       ]
     },
     {
-      "description": "VK1+Y -> Cmd+C and remove all newlines",
-      "manipulators": [
-        {
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vk1",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "y"
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "command"
-              ]
-            },
-            {
-              "shell_command": "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | pbcopy"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Shift+Y -> Cmd+C",
+      "description": "VK1+Shift+Y -> Cmd+C and remove all newlines",
       "manipulators": [
         {
           "type": "basic",
@@ -5645,6 +5616,35 @@
                 "shift"
               ]
             }
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "command"
+              ]
+            },
+            {
+              "shell_command": "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | pbcopy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "VK1+Y -> Cmd+C",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vk1",
+              "value": 1
+            }
+          ],
+          "from": {
+            "key_code": "y"
           },
           "to": [
             {
