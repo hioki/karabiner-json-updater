@@ -35,6 +35,7 @@ impl CustomRulesBuilder {
             rules_google_chrome(),
             rules_notion(),
             rules_clickup(),
+            rules_chatgpt(),
             rules_vk1(),
             rules_vk2(),
             rules_open_apps(),
@@ -1925,6 +1926,29 @@ fn rules_clickup() -> Vec<Rule> {
             to: vec![To::Key {
                 key_code: K::CloseBracket,
                 modifiers: Some(vec![Cmd]),
+            }],
+            ..Default::default()
+        }
+        .init()],
+    }]
+}
+
+fn rules_chatgpt() -> Vec<Rule> {
+    vec![Rule {
+        description: S("[ChatGPT] VK4+E -> Cmd+Ctrl+S"),
+        manipulators: vec![ManipulatorInit {
+            conditions: Some(vec![
+                Condition::on_app(BundleIdentifier::ChatGPT),
+                Condition::with_vk4(),
+            ]),
+            from: FromInit {
+                key_code: K::E,
+                ..Default::default()
+            }
+            .init(),
+            to: vec![To::Key {
+                key_code: K::S,
+                modifiers: Some(vec![Cmd, Ctrl]),
             }],
             ..Default::default()
         }

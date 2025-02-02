@@ -22,4 +22,6 @@ pub enum BundleIdentifier {
     ClickUp,
     #[serde(rename = "com.jetbrains.cwm.guest")]
     JetBrainsClient,
+    #[serde(rename = "com.openai.chat")]
+    ChatGPT,
 }
