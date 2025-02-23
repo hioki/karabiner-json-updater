@@ -1,26 +1,28 @@
 mod config;
-mod config_updater;
 mod util;
 
-use crate::{
-    config::{
-        bundle_identifier::BundleIdentifier,
-        condition::Condition,
-        from::{From, FromInit, FromModifier},
-        key_code::KeyCode as K,
-        manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone},
-        modifier_key::ModifierKey::*,
-        mouse_key::MouseKeyInit,
-        rule::Rule,
-        set_variable::SetVariable,
-        to::{PointingButton, To},
-        value::Value,
-        virtual_key::VirtualKey as VK,
-    },
-    config_updater::ConfigUpdater,
+use crate::config::{
+    bundle_identifier::BundleIdentifier,
+    condition::Condition,
+    from::{From, FromInit, FromModifier},
+    key_code::KeyCode as K,
+    manipulator::{Manipulator, ManipulatorInit, ToAfterKeyUp, ToIfAlone},
+    modifier_key::ModifierKey::*,
+    mouse_key::MouseKeyInit,
+    rule::Rule,
+    set_variable::SetVariable,
+    to::{PointingButton, To},
+    value::Value,
+    virtual_key::VirtualKey as VK,
 };
 use big_s::S;
 use itertools::Itertools;
+use serde::Serialize;
+use serde_json::json;
+use std::{
+    fs::{File, OpenOptions},
+    io::{copy, Seek as _, SeekFrom, Write as _},
+};
 
 fn main() -> anyhow::Result<()> {
     let home_dir = util::get_home_dir();
@@ -48,7 +50,53 @@ fn main() -> anyhow::Result<()> {
     .into_iter()
     .flatten()
     .collect::<Vec<Rule>>();
-    ConfigUpdater::new(home_dir, rules).update()
+    let custom_filename = "custom.json";
+    // https://karabiner-elements.pqrs.org/docs/json/location/
+    let config_dir = home_dir.join(".config/karabiner");
+    if !config_dir.is_dir() {
+        panic!("{:?} must be created via Karabiner-Elements", config_dir);
+    }
+    let mut current_file = OpenOptions::new()
+        .write(true)
+        .create(true)
+        .truncate(true)
+        .read(true)
+        .open(custom_filename)?;
+    // https://karabiner-elements.pqrs.org/docs/json/root-data-structure/#custom-json-file-in-configkarabinerassetscomplex_modifications
+    #[derive(Debug, Serialize)]
+    struct CustomRules<'a> {
+        pub title: &'a str,
+        pub rules: &'a Vec<Rule>,
+    }
+    serde_json::to_writer_pretty(
+        &current_file,
+        &CustomRules {
+            title: "Personal rules",
+            rules: &rules,
+        },
+    )?;
+    let mut config_file = File::create(
+        config_dir
+            .join("assets/complex_modifications")
+            .join(custom_filename),
+    )?;
+    current_file.seek(SeekFrom::Start(0))?;
+    copy(&mut current_file, &mut config_file)?;
+    let karabiner_json_path = config_dir.join("karabiner.json");
+    let mut config: serde_json::Value =
+        serde_json::from_reader(&File::open(&karabiner_json_path)?)?;
+    config["profiles"]
+        .as_array_mut()
+        .unwrap()
+        .get_mut(0)
+        .unwrap()["complex_modifications"]
+        .as_object_mut()
+        .unwrap()
+        .insert(S("rules"), json!(&rules));
+    let buf = serde_json::to_vec_pretty(&config)?;
+    let mut f = File::create(karabiner_json_path)?;
+    let _written = f.write(&buf)?;
+    Ok(())
 }
 
 fn rules_virtual_keys() -> Vec<Rule> {

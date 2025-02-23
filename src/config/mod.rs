@@ -8,6 +8,5 @@ pub mod mouse_key;
 pub mod rule;
 pub mod set_variable;
 pub mod to;
-pub mod util;
 pub mod value;
 pub mod virtual_key;
