@@ -19,23 +19,12 @@ pub fn rules() -> Vec<Rule> {
         ]
         .into_iter()
         .map(|(from, to, modifiers)| {
-            ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::Slack),
-                    Condition::with_vk4(),
-                ]),
-                from: FromInit {
-                    key_code: from,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![To::Key {
-                    key_code: to,
-                    modifiers: Some(modifiers),
-                }],
-                ..Default::default()
-            }
-            .init()
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::Slack))
+                .condition(Condition::with_vk4())
+                .from_key(from)
+                .to_key(to, Some(modifiers))
+                .build()
         })
         .collect_vec(),
     }]

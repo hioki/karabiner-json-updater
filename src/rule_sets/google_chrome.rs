@@ -5,63 +5,27 @@ pub fn rules() -> Vec<Rule> {
     vec![
         Rule {
             description: S("[GoogleChrome] VK4+M -> Cmd+Shift+M (Switch profile)"),
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::GoogleChrome),
-                    Condition::with_vk4(),
-                ]),
-                from: FromInit {
-                    key_code: K::M,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![To::Key {
-                    key_code: K::M,
-                    modifiers: Some(vec![Cmd, Shift]),
-                }],
-                ..Default::default()
-            }
-            .init()],
+            manipulators: vec![Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::GoogleChrome))
+                .condition(Condition::with_vk4())
+                .from_key(K::M)
+                .to_key(K::M, Some(vec![Cmd, Shift]))
+                .build()],
         },
         Rule {
             description: S(
                 "[GoogleChrome] VK4+N -> Cmd+Shift+M,Down,Down,Down,Enter (Toggle profile)",
             ),
-            manipulators: vec![ManipulatorInit {
-                conditions: Some(vec![
-                    Condition::on_app(BundleIdentifier::GoogleChrome),
-                    Condition::with_vk4(),
-                ]),
-                from: FromInit {
-                    key_code: K::N,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![
-                    To::Key {
-                        key_code: K::M,
-                        modifiers: Some(vec![Cmd, Shift]),
-                    },
-                    To::Key {
-                        key_code: K::DownArrow,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::DownArrow,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::DownArrow,
-                        modifiers: None,
-                    },
-                    To::Key {
-                        key_code: K::ReturnOrEnter,
-                        modifiers: None,
-                    },
-                ],
-                ..Default::default()
-            }
-            .init()],
+            manipulators: vec![Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::GoogleChrome))
+                .condition(Condition::with_vk4())
+                .from_key(K::N)
+                .to_key(K::M, Some(vec![Cmd, Shift]))
+                .to_key(K::DownArrow, None)
+                .to_key(K::DownArrow, None)
+                .to_key(K::DownArrow, None)
+                .to_key(K::ReturnOrEnter, None)
+                .build()],
         },
     ]
 }

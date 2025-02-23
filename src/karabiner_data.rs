@@ -252,7 +252,102 @@ pub struct Manipulator {
     pub to_if_alone: Option<Vec<ToIfAlone>>,
 }
 
+#[derive(Default)]
+pub struct ManipulatorInitBuilder {
+    conditions: Option<Vec<Condition>>,
+    from: Option<From>,
+    to: Vec<To>,
+    to_after_key_up: Option<Vec<ToAfterKeyUp>>,
+    to_if_alone: Option<Vec<ToIfAlone>>,
+}
+
+impl ManipulatorInitBuilder {
+    pub fn condition(mut self, condition: Condition) -> Self {
+        self.conditions.get_or_insert(vec![]).push(condition);
+        self
+    }
+
+    pub fn from_key(mut self, key_code: KeyCode) -> Self {
+        self.from = Some(From {
+            key_code,
+            modifiers: None,
+        });
+        self
+    }
+
+    pub fn from_key_with_modifiers(mut self, key_code: KeyCode, modifiers: FromModifier) -> Self {
+        self.from = Some(From {
+            key_code,
+            modifiers: Some(modifiers),
+        });
+        self
+    }
+
+    pub fn to_key(mut self, key_code: KeyCode, modifiers: Option<Vec<ModifierKey>>) -> Self {
+        self.to.push(To::Key {
+            key_code,
+            modifiers,
+        });
+        self
+    }
+
+    pub fn to_command(mut self, command: &'static str) -> Self {
+        self.to.push(To::Command {
+            shell_command: command,
+        });
+        self
+    }
+
+    pub fn to_mouse(mut self, mouse_key: MouseKey) -> Self {
+        self.to.push(To::Mouse { mouse_key });
+        self
+    }
+
+    pub fn to_click(mut self, pointing_button: PointingButton) -> Self {
+        self.to.push(To::Click { pointing_button });
+        self
+    }
+
+    pub fn to_variable(mut self, set_variable: SetVariable) -> Self {
+        self.to.push(To::Variable { set_variable });
+        self
+    }
+
+    pub fn to_after_key_up(mut self, set_variable: SetVariable) -> Self {
+        self.to_after_key_up
+            .get_or_insert(vec![])
+            .push(ToAfterKeyUp { set_variable });
+        self
+    }
+
+    pub fn to_if_alone(mut self, key_code: KeyCode) -> Self {
+        self.to_if_alone
+            .get_or_insert(vec![])
+            .push(ToIfAlone { key_code });
+        self
+    }
+
+    pub fn build(self) -> Manipulator {
+        Manipulator {
+            r#type: ManipulatorType::Basic,
+            conditions: self.conditions,
+            from: self.from.unwrap_or(From {
+                key_code: KeyCode::Escape,
+                modifiers: None,
+            }),
+            to: self.to,
+            to_delayed_action: None,
+            to_after_key_up: self.to_after_key_up,
+            to_if_alone: self.to_if_alone,
+        }
+    }
+}
+
 impl Manipulator {
+    pub fn builder() -> ManipulatorInitBuilder {
+        ManipulatorInitBuilder::default()
+    }
+
     pub fn new_for_key_to_key_mapping(
         from: KeyCode,
         from_modifiers: Option<FromModifier>,

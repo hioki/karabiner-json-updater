@@ -5,19 +5,18 @@ pub fn rules() -> Vec<Rule> {
     vec![Rule {
         description: S("Semicolon -> Enter"),
         manipulators: vec![
-            Manipulator::new_for_key_to_key_mapping(
-                K::Semicolon,
-                Some(FromModifier::Mandatory(vec![Ctrl])),
-                K::Semicolon,
-                None,
-            ),
-            Manipulator::new_for_key_to_key_mapping(
-                K::Semicolon,
-                Some(FromModifier::Mandatory(vec![Cmd, Shift])),
-                K::KeypadPlus,
-                Some(vec![Cmd]),
-            ),
-            Manipulator::new_for_key_to_key_mapping(K::Semicolon, None, K::ReturnOrEnter, None),
+            Manipulator::builder()
+                .from_key_with_modifiers(K::Semicolon, FromModifier::Mandatory(vec![Ctrl]))
+                .to_key(K::Semicolon, None)
+                .build(),
+            Manipulator::builder()
+                .from_key_with_modifiers(K::Semicolon, FromModifier::Mandatory(vec![Cmd, Shift]))
+                .to_key(K::KeypadPlus, Some(vec![Cmd]))
+                .build(),
+            Manipulator::builder()
+                .from_key(K::Semicolon)
+                .to_key(K::ReturnOrEnter, None)
+                .build(),
         ],
     }]
 }

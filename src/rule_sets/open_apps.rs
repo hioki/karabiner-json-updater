@@ -58,17 +58,11 @@ pub fn rules() -> Vec<Rule> {
         ]
         .into_iter()
         .map(|(key_code, shell_command)| {
-            ManipulatorInit {
-                conditions: Some(vec![Condition::with_vk2()]),
-                from: FromInit {
-                    key_code,
-                    ..Default::default()
-                }
-                .init(),
-                to: vec![To::Command { shell_command }],
-                ..Default::default()
-            }
-            .init()
+            Manipulator::builder()
+                .condition(Condition::with_vk2())
+                .from_key(key_code)
+                .to_command(shell_command)
+                .build()
         })
         .collect_vec(),
     }]

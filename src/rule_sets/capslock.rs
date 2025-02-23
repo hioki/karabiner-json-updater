@@ -4,17 +4,9 @@ use big_s::S;
 pub fn rules() -> Vec<Rule> {
     vec![Rule {
         description: S("Disable CapsLock"),
-        manipulators: vec![ManipulatorInit {
-            from: From {
-                key_code: K::CapsLock,
-                modifiers: Some(FromModifier::Optional(vec![Any])),
-            },
-            to: vec![To::Key {
-                key_code: K::VkNone,
-                modifiers: None,
-            }],
-            ..Default::default()
-        }
-        .init()],
+        manipulators: vec![Manipulator::builder()
+            .from_key_with_modifiers(K::CapsLock, FromModifier::Optional(vec![Any]))
+            .to_key(K::VkNone, None)
+            .build()],
     }]
 }

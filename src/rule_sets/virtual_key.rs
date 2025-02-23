@@ -16,27 +16,20 @@ pub fn rules() -> Vec<Rule> {
         ]
         .into_iter()
         .map(|(key_code, virtual_key, to_if_alone)| {
-            ManipulatorInit {
-                from: From {
-                    key_code,
-                    modifiers: Some(FromModifier::Optional(vec![Any])),
-                },
-                to: vec![To::Variable {
-                    set_variable: SetVariable {
-                        name: virtual_key.clone(),
-                        value: VirtualKeyValue::On,
-                    },
-                }],
-                to_after_key_up: Some(vec![ToAfterKeyUp {
-                    set_variable: SetVariable {
-                        name: virtual_key,
-                        value: VirtualKeyValue::Off,
-                    },
-                }]),
-                to_if_alone: to_if_alone.map(|key_code| vec![ToIfAlone { key_code }]),
-                ..Default::default()
+            let mut builder = Manipulator::builder()
+                .from_key_with_modifiers(key_code, FromModifier::Optional(vec![Any]))
+                .to_variable(SetVariable {
+                    name: virtual_key.clone(),
+                    value: VirtualKeyValue::On,
+                })
+                .to_after_key_up(SetVariable {
+                    name: virtual_key,
+                    value: VirtualKeyValue::Off,
+                });
+            if let Some(to_if_alone) = to_if_alone {
+                builder = builder.to_if_alone(to_if_alone);
             }
-            .init()
+            builder.build()
         })
         .collect_vec(),
     }]

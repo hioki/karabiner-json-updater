@@ -4,17 +4,9 @@ use big_s::S;
 pub fn rules() -> Vec<Rule> {
     vec![Rule {
         description: S("Ctrl+Colon -> SingleQuote"),
-        manipulators: vec![ManipulatorInit {
-            from: From {
-                key_code: K::Quote,
-                modifiers: Some(FromModifier::Mandatory(vec![Ctrl])),
-            },
-            to: vec![To::Key {
-                key_code: K::Key7,
-                modifiers: Some(vec![Shift]),
-            }],
-            ..Default::default()
-        }
-        .init()],
+        manipulators: vec![Manipulator::builder()
+            .from_key_with_modifiers(K::Quote, FromModifier::Mandatory(vec![Ctrl]))
+            .to_key(K::Key7, Some(vec![Shift]))
+            .build()],
     }]
 }
