@@ -14,77 +14,29 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab"),
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::S,
-                    None,
-                    K::Tab,
-                    Some(vec![Ctrl]),
-                ),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::A,
-                    None,
-                    K::Tab,
-                    Some(vec![Ctrl, Shift]),
-                ),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::S).to_key(K::Tab, Some(vec![Ctrl])).build(),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::A).to_key(K::Tab, Some(vec![Ctrl,Shift])).build(),
             ],
         },
         Rule {
             description: S("VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen"),
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key9,
-                    None,
-                    K::KeypadPlus,
-                    Some(vec![Cmd]),
-                ),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key0,
-                    None,
-                    K::Hyphen,
-                    Some(vec![Cmd]),
-                ),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key9).to_key(K::KeypadPlus, Some(vec![Cmd])).build(),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key0).to_key(K::Hyphen, Some(vec![Cmd])).build(),
             ],
         },
         Rule {
             description: S("VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement"),
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key1,
-                    None,
-                    K::VolumeDecrement,
-                    None,
-                ),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key2,
-                    None,
-                    K::VolumeIncrement,
-                    None,
-                ),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key1).to_key(K::VolumeDecrement, None).build(),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key2).to_key(K::VolumeIncrement, None).build(),
             ],
         },
         Rule {
             description: S("VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement"),
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key3,
-                    None,
-                    K::DisplayBrightnessDecrement,
-                    None,
-                ),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::Key4,
-                    None,
-                    K::DisplayBrightnessIncrement,
-                    None,
-                ),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key3).to_key(K::DisplayBrightnessDecrement, None).build(),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::Key4).to_key(K::DisplayBrightnessIncrement, None).build(),
             ],
         },
         Rule {
@@ -103,13 +55,7 @@ pub fn rules() -> Vec<Rule> {
             ]
                 .into_iter()
                 .map(|(from, to)| {
-                    Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                        VK::Vk2,
-                        from,
-                        Some(FromModifier::Mandatory(vec![Ctrl])),
-                        to,
-                        Some(vec![Cmd, Ctrl, Opt, Shift]),
-                    )
+                    Manipulator::builder().condition(Condition::with_vk2()).from_key_with_modifiers(from, FromModifier::Mandatory(vec![Ctrl])).to_key(to, Some(vec![Cmd, Ctrl, Opt, Shift])).build()
                 })
                 .collect_vec(),
         },
