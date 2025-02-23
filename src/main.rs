@@ -60,7 +60,6 @@ fn main() -> anyhow::Result<()> {
             rules: &rules,
         },
     )?;
-    return Ok(()); // TODO: remove
 
     // 2. copy custom.json to karabiner assets (~/.config/karabiner/assets/complex_modifications/custom.json)
     let mut karabiner_assets_file = std::fs::File::create(

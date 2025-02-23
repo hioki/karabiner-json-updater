@@ -1,4 +1,4 @@
-use crate::karabiner_data::{KeyCode as K, ModifierKey::*, VirtualKey as VK, *};
+use crate::karabiner_data::{KeyCode as K, ModifierKey::*, *};
 use big_s::S;
 use itertools::*;
 
@@ -15,7 +15,7 @@ pub fn rules() -> Vec<Rule> {
             .into_iter()
             .map(|(from, to)| {
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key_with_modifiers(from, FromModifier::Optional(vec![Any]))
                     .to_key(to, None)
                     .build()
@@ -25,7 +25,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+F -> Escape"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key_with_modifiers(K::F, FromModifier::Optional(vec![Any]))
                 .to_key(K::Escape, None)
                 .build()],
@@ -34,12 +34,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::S)
                     .to_key(K::JapaneseKana, None)
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::D)
                     .to_key(K::JapaneseEisuu, None)
                     .build(),
@@ -49,12 +49,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+A -> F10 / VK1+Z -> F7"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::A)
                     .to_key(K::F10, None)
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::Z)
                     .to_key(K::F7, None)
                     .build(),
@@ -64,12 +64,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key_with_modifiers(K::U, FromModifier::Optional(vec![Any]))
                     .to_key(K::LeftArrow, Some(vec![Cmd]))
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key_with_modifiers(K::I, FromModifier::Optional(vec![Any]))
                     .to_key(K::RightArrow, Some(vec![Cmd]))
                     .build(),
@@ -78,7 +78,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+G -> Tab"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key_with_modifiers(K::G, FromModifier::Optional(vec![Any]))
                 .to_key(K::Tab, None)
                 .build()],
@@ -87,12 +87,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::O)
                     .to_key(K::Tab, Some(vec![Ctrl, Shift]))
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::P)
                     .to_key(K::Tab, Some(vec![Ctrl]))
                     .build(),
@@ -101,7 +101,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+Shift+Y -> Cmd+C and remove all newlines"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key_with_modifiers(K::Y, FromModifier::Mandatory(vec![Shift]))
                 .to_key(K::C, Some(vec![Cmd]))
                 .to_command(
@@ -112,7 +112,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+Y -> Cmd+C"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key(K::Y)
                 .to_key(K::C, Some(vec![Cmd]))
                 .build()],
@@ -121,12 +121,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+T -> Cmd+X, VK1+X -> Cmd+Shift+V"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::T)
                     .to_key(K::X, Some(vec![Cmd]))
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::X)
                     .to_key(K::V, Some(vec![Cmd, Shift, Opt]))
                     .build(),
@@ -136,12 +136,12 @@ pub fn rules() -> Vec<Rule> {
             description: S("VK1+C -> Backspace / VK1+E -> Delete"),
             manipulators: vec![
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::C)
                     .to_key(K::DeleteOrBackspace, None)
                     .build(),
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(K::E)
                     .to_key(K::DeleteForward, None)
                     .build(),
@@ -150,7 +150,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+[ -> Cmd+Z"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key_with_modifiers(K::CloseBracket, FromModifier::Optional(vec![Any]))
                 .to_key(K::Z, Some(vec![Cmd]))
                 .build()],
@@ -158,7 +158,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+Colon -> Cmd+H"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key(K::Quote)
                 .to_key(K::H, Some(vec![Cmd]))
                 .build()],
@@ -175,7 +175,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|(key_code, x, y)| {
                     Manipulator::builder()
-                        .condition(Condition::with_virtual_key(VK::Vk1))
+                        .condition(Condition::with_vk1())
                         .from_key_with_modifiers(key_code, FromModifier::Mandatory(vec![Shift]))
                         .to_mouse(MouseKey {
                             x,
@@ -193,7 +193,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|(key_code, x, y)| {
                     Manipulator::builder()
-                        .condition(Condition::with_virtual_key(VK::Vk1))
+                        .condition(Condition::with_vk1())
                         .from_key(key_code)
                         .to_mouse(MouseKey {
                             x,
@@ -214,7 +214,7 @@ pub fn rules() -> Vec<Rule> {
             .into_iter()
             .map(|(from_key, pointing_button)| {
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key_with_modifiers(from_key, FromModifier::Optional(vec![Any]))
                     .to_click(pointing_button)
                     .build()
@@ -231,7 +231,7 @@ pub fn rules() -> Vec<Rule> {
             .into_iter()
             .map(|(key_code, vertical_wheel)| {
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key(key_code)
                     .to_mouse(MouseKey {
                         x: None,
@@ -261,7 +261,7 @@ pub fn rules() -> Vec<Rule> {
             .into_iter()
             .map(|(from, to)| {
                 Manipulator::builder()
-                    .condition(Condition::with_virtual_key(VK::Vk1))
+                    .condition(Condition::with_vk1())
                     .from_key_with_modifiers(from, FromModifier::Optional(vec![Any]))
                     .to_key(to, None)
                     .build()
@@ -271,7 +271,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key(K::B)
                 .to_key(K::M, Some(vec![Ctrl, Opt, Cmd, Shift]))
                 .build()],
@@ -279,7 +279,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK1+Backslash -> Cmd+Opt+D (Hide the Dock)"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::with_virtual_key(VK::Vk1))
+                .condition(Condition::with_vk1())
                 .from_key(K::International3)
                 .to_key(K::D, Some(vec![Cmd, Opt]))
                 .build()],

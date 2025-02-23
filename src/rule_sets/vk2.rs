@@ -1,4 +1,4 @@
-use crate::karabiner_data::{KeyCode as K, ModifierKey::*, VirtualKey as VK, *};
+use crate::karabiner_data::{KeyCode as K, ModifierKey::*, *};
 use big_s::S;
 use itertools::*;
 

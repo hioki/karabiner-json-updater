@@ -338,28 +338,6 @@ impl Manipulator {
     pub fn builder() -> ManipulatorInitBuilder {
         ManipulatorInitBuilder::default()
     }
-
-    pub fn new_for_key_to_key_mapping_with_single_virtual_key(
-        virtual_key: VirtualKey,
-        from: KeyCode,
-        from_modifiers: Option<FromModifier>,
-        to: KeyCode,
-        to_modifiers: Option<Vec<ModifierKey>>,
-    ) -> Manipulator {
-        ManipulatorInit {
-            conditions: Some(vec![Condition::with_virtual_key(virtual_key)]),
-            from: From {
-                key_code: from,
-                modifiers: from_modifiers,
-            },
-            to: vec![To::Key {
-                key_code: to,
-                modifiers: to_modifiers,
-            }],
-            ..Default::default()
-        }
-        .init()
-    }
 }
 
 #[derive(Debug, Serialize, Default)]
