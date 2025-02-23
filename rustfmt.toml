@@ -1,1 +1,3 @@
-imports_granularity = "Crate"
+edition = "2021"
+imports_granularity = "One"
+format_macro_matchers = true
