@@ -62,7 +62,6 @@ impl Condition {
         Self::with_virtual_key(VirtualKey::Vk2)
     }
 
-    #[allow(dead_code)]
     pub fn with_vk3() -> Condition {
         Self::with_virtual_key(VirtualKey::Vk3)
     }
@@ -76,29 +75,6 @@ impl Condition {
             r#type: ConditionType::VariableIf,
             name: virtual_key,
             value: VirtualKeyValue::On,
-        }
-    }
-}
-
-pub struct FromInit {
-    pub key_code: KeyCode,
-    pub modifiers: Option<FromModifier>,
-}
-
-impl Default for FromInit {
-    fn default() -> Self {
-        Self {
-            key_code: KeyCode::Escape,
-            modifiers: None,
-        }
-    }
-}
-
-impl FromInit {
-    pub fn init(self) -> From {
-        From {
-            key_code: self.key_code,
-            modifiers: self.modifiers,
         }
     }
 }
@@ -122,23 +98,6 @@ pub enum FromModifier {
 pub struct SetVariable {
     pub name: VirtualKey,
     pub value: VirtualKeyValue,
-}
-
-#[derive(Default)]
-pub struct MouseKeyInit {
-    pub x: Option<i32>,
-    pub y: Option<i32>,
-    pub vertical_wheel: Option<i32>,
-}
-
-impl MouseKeyInit {
-    pub fn init(self) -> MouseKey {
-        MouseKey {
-            x: self.x,
-            y: self.y,
-            vertical_wheel: self.vertical_wheel,
-        }
-    }
 }
 
 #[derive(Debug, Serialize)]
@@ -182,42 +141,6 @@ pub enum PointingButton {
     Button2,
 }
 
-pub struct ManipulatorInit {
-    pub conditions: Option<Vec<Condition>>,
-    pub from: From,
-    pub to: Vec<To>,
-    pub to_after_key_up: Option<Vec<ToAfterKeyUp>>,
-    pub to_if_alone: Option<Vec<ToIfAlone>>,
-}
-
-impl Default for ManipulatorInit {
-    fn default() -> Self {
-        Self {
-            conditions: None,
-            from: From {
-                key_code: KeyCode::Escape,
-                modifiers: None,
-            },
-            to: vec![],
-            to_after_key_up: None,
-            to_if_alone: None,
-        }
-    }
-}
-
-impl ManipulatorInit {
-    pub fn init(self) -> Manipulator {
-        Manipulator {
-            r#type: Default::default(),
-            conditions: self.conditions,
-            from: self.from,
-            to: self.to,
-            to_after_key_up: self.to_after_key_up,
-            to_if_alone: self.to_if_alone,
-        }
-    }
-}
-
 #[derive(Debug, Serialize)]
 pub struct Manipulator {
     pub r#type: ManipulatorType,
@@ -235,6 +158,12 @@ pub struct Manipulator {
 
     #[serde(skip_serializing_if = "Option::is_none")]
     pub to_if_alone: Option<Vec<ToIfAlone>>,
+}
+
+impl Manipulator {
+    pub fn builder() -> ManipulatorInitBuilder {
+        ManipulatorInitBuilder::default()
+    }
 }
 
 #[derive(Default)]
@@ -324,12 +253,6 @@ impl ManipulatorInitBuilder {
             to_after_key_up: self.to_after_key_up,
             to_if_alone: self.to_if_alone,
         }
-    }
-}
-
-impl Manipulator {
-    pub fn builder() -> ManipulatorInitBuilder {
-        ManipulatorInitBuilder::default()
     }
 }
 
