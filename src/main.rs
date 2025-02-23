@@ -1,15 +1,10 @@
 pub mod karabiner_data;
 pub mod rule_sets;
 
-use std::io::{Seek as _, Write as _};
+const CUSTOM_JSON_FILENAME: &str = "custom.json";
 
-const CUSTOM_FILENAME: &str = "custom.json";
-
-fn main() -> anyhow::Result<()> {
-    let home_dir = std::env::var("HOME")
-        .map(std::path::PathBuf::from)
-        .expect("HOME environment variable must be set");
-    let rules = vec![
+fn gather_all_rules() -> Vec<karabiner_data::Rule> {
+    vec![
         rule_sets::virtual_key::rules(),
         rule_sets::iterm2::rules(),
         rule_sets::vscode::rules(),
@@ -28,18 +23,30 @@ fn main() -> anyhow::Result<()> {
     ]
     .into_iter()
     .flatten()
-    .collect::<Vec<karabiner_data::Rule>>();
+    .collect::<Vec<karabiner_data::Rule>>()
+}
+
+fn main() -> anyhow::Result<()> {
+    use std::io::{Seek as _, Write as _};
+
     // https://karabiner-elements.pqrs.org/docs/json/location/
-    let config_dir = home_dir.join(".config/karabiner");
+    let config_dir = std::env::var("HOME")
+        .map(std::path::PathBuf::from)
+        .expect("HOME environment variable must be set")
+        .join(".config/karabiner");
     if !config_dir.is_dir() {
         panic!("{:?} must be created via Karabiner-Elements", config_dir);
     }
-    let mut current_file = std::fs::OpenOptions::new()
+
+    let rules = gather_all_rules();
+
+    // 1. write custom.json
+    let mut custom_json_file = std::fs::OpenOptions::new()
         .write(true)
         .create(true)
         .truncate(true)
         .read(true)
-        .open(CUSTOM_FILENAME)?;
+        .open(CUSTOM_JSON_FILENAME)?;
     // https://karabiner-elements.pqrs.org/docs/json/root-data-structure/#custom-json-file-in-configkarabinerassetscomplex_modifications
     #[derive(Debug, serde::Serialize)]
     struct CustomRules<'a> {
@@ -47,23 +54,27 @@ fn main() -> anyhow::Result<()> {
         pub rules: &'a Vec<karabiner_data::Rule>,
     }
     serde_json::to_writer_pretty(
-        &current_file,
+        &custom_json_file,
         &CustomRules {
             title: "Personal rules",
             rules: &rules,
         },
     )?;
-    let mut config_file = std::fs::File::create(
+
+    // 2. copy custom.json to karabiner assets (~/.config/karabiner/assets/complex_modifications/custom.json)
+    let mut karabiner_assets_file = std::fs::File::create(
         config_dir
             .join("assets/complex_modifications")
-            .join(CUSTOM_FILENAME),
+            .join(CUSTOM_JSON_FILENAME),
     )?;
-    current_file.seek(std::io::SeekFrom::Start(0))?;
-    std::io::copy(&mut current_file, &mut config_file)?;
+    custom_json_file.seek(std::io::SeekFrom::Start(0))?;
+    std::io::copy(&mut custom_json_file, &mut karabiner_assets_file)?;
+
+    // 3. update karabiner.json (~/.config/karabiner/karabiner.json)
     let karabiner_json_path = config_dir.join("karabiner.json");
-    let mut config: serde_json::Value =
+    let mut karabiner_json: serde_json::Value =
         serde_json::from_reader(&std::fs::File::open(&karabiner_json_path)?)?;
-    config["profiles"]
+    karabiner_json["profiles"]
         .as_array_mut()
         .unwrap()
         .get_mut(0)
@@ -71,8 +82,8 @@ fn main() -> anyhow::Result<()> {
         .as_object_mut()
         .unwrap()
         .insert("rules".to_string(), serde_json::json!(&rules));
-    let buf = serde_json::to_vec_pretty(&config)?;
+    let karabiner_json_data = serde_json::to_vec_pretty(&karabiner_json)?;
     let mut f = std::fs::File::create(karabiner_json_path)?;
-    let _written = f.write(&buf)?;
+    let _written = f.write(&karabiner_json_data)?;
     Ok(())
 }
