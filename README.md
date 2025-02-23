@@ -15,7 +15,7 @@ $ cargo run
 My import link:
 
 ```
-karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/hioki/karabiner-json-updater/main/custom.json
+karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/hioki/karaconf/main/custom.json
 ```
 
 [^1]: For example, `~/.config/karabiner/assets/complex_modifications/custom.json` or `~/.config/karabiner/karabiner.json. For details`, see: https://karabiner-elements.pqrs.org/docs/json/location/
