@@ -1,5 +1,4 @@
 use serde::Serialize;
-use serde_repr::Serialize_repr;
 
 #[derive(Debug, Serialize, Clone)]
 pub enum BundleIdentifier {
@@ -35,7 +34,7 @@ pub enum Condition {
     WithVirtualKey {
         r#type: ConditionType,
         name: VirtualKey,
-        value: VirtualKeyValue,
+        value: u8,
     },
 }
 
@@ -74,7 +73,7 @@ impl Condition {
         Condition::WithVirtualKey {
             r#type: ConditionType::VariableIf,
             name: virtual_key,
-            value: VirtualKeyValue::On,
+            value: 1,
         }
     }
 }
@@ -97,7 +96,7 @@ pub enum FromModifier {
 #[derive(Debug, Serialize)]
 pub struct SetVariable {
     pub name: VirtualKey,
-    pub value: VirtualKeyValue,
+    pub value: u8,
 }
 
 #[derive(Debug, Serialize)]
@@ -290,13 +289,6 @@ pub enum VirtualKey {
     Vk2,
     Vk3,
     Vk4,
-}
-
-#[derive(Serialize_repr, Debug, Clone)]
-#[repr(u8)]
-pub enum VirtualKeyValue {
-    On = 1,
-    Off = 0,
 }
 
 #[derive(Debug, Serialize)]

@@ -3,29 +3,6 @@ pub mod rule_sets;
 
 const CUSTOM_JSON_FILENAME: &str = "custom.json";
 
-fn gather_all_rules() -> Vec<karabiner_data::Rule> {
-    vec![
-        rule_sets::virtual_key::rules(),
-        rule_sets::iterm2::rules(),
-        rule_sets::vscode::rules(),
-        rule_sets::dynalist::rules(),
-        rule_sets::slack::rules(),
-        rule_sets::google_chrome::rules(),
-        rule_sets::notion::rules(),
-        rule_sets::chatgpt::rules(),
-        rule_sets::vk1::rules(),
-        rule_sets::vk2::rules(),
-        rule_sets::open_apps::rules(),
-        rule_sets::vk3::rules(),
-        rule_sets::semicolon::rules(),
-        rule_sets::singlequote::rules(),
-        rule_sets::capslock::rules(),
-    ]
-    .into_iter()
-    .flatten()
-    .collect::<Vec<karabiner_data::Rule>>()
-}
-
 fn main() -> anyhow::Result<()> {
     use std::io::{Seek as _, Write as _};
 
@@ -38,7 +15,29 @@ fn main() -> anyhow::Result<()> {
         panic!("{:?} must be created via Karabiner-Elements", config_dir);
     }
 
-    let rules = gather_all_rules();
+    let rules = vec![karabiner_data::Rule {
+        description: "Personal rules".to_string(),
+        manipulators: vec![
+            rule_sets::virtual_key::manipulators(),
+            rule_sets::iterm2::manipulators(),
+            rule_sets::vscode::manipulators(),
+            rule_sets::dynalist::manipulators(),
+            rule_sets::slack::manipulators(),
+            rule_sets::google_chrome::manipulators(),
+            rule_sets::notion::manipulators(),
+            rule_sets::chatgpt::manipulators(),
+            rule_sets::vk1::manipulators(),
+            rule_sets::vk2::manipulators(),
+            rule_sets::open_apps::manipulators(),
+            rule_sets::vk3::manipulators(),
+            rule_sets::semicolon::manipulators(),
+            rule_sets::singlequote::manipulators(),
+            rule_sets::capslock::manipulators(),
+        ]
+        .into_iter()
+        .flatten()
+        .collect::<Vec<karabiner_data::Manipulator>>(),
+    }];
 
     // 1. write custom.json
     let mut custom_json_file = std::fs::OpenOptions::new()

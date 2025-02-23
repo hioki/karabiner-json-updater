@@ -2,7 +2,7 @@
   "title": "Personal rules",
   "rules": [
     {
-      "description": "Virtual Keys",
+      "description": "Personal rules",
       "manipulators": [
         {
           "type": "basic",
@@ -217,12 +217,7 @@
               "key_code": "tab"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Substitute TMUX prefix with VK4 on iTerm2",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -519,12 +514,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Avoid Cmd+W in iTerm",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -548,12 +538,7 @@
               "key_code": "vk_none"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+O -> Ctrl+T Ctrl+P / VK1+P -> Ctrl+T Ctrl+N",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -619,12 +604,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK2+A -> Ctrl+T Ctrl+P / VK2+S -> Ctrl+T Ctrl+N",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -690,12 +670,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+W -> <ESC>:w<CR>",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -728,12 +703,7 @@
               "key_code": "return_or_enter"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+Q -> <ESC>:q<CR>",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -766,12 +736,7 @@
               "key_code": "return_or_enter"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+Z -> Enter tmux copy-mode",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -804,12 +769,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+U -> Shift+0 / VK1+I -> shift+4",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -863,12 +823,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[iTerm2] VK1+Semicolon -> Ctrl+F",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -895,12 +850,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK4 on VSCode",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1410,12 +1360,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+J -> Cmd+S (Save All)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1442,12 +1387,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK1+W -> Cmd+S (Save All)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1474,12 +1414,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+M -> Opt+Cmd+K (Bookmarks: Toggle)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1507,12 +1442,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+U -> Shift+F12 (Go To Reference)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1539,12 +1469,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+N -> Opt+F8 (次の問題へ移動)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1571,12 +1496,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+. -> Cmd+. (クイック修正)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1603,12 +1523,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+T -> Cmd+T (全体シンボル検索)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1635,12 +1550,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[VSCode] VK4+P -> Cmd+Shift+M (問題を開く)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1668,12 +1578,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK1+U/I -> Ctrl+A/E",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1727,12 +1632,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK4+E -> Toggle file pane",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1760,12 +1660,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK4+F -> Open file finder",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1792,12 +1687,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK2+9/0 -> Cmd+Shift+Hyphen/Cmd+Hyphen",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1852,12 +1742,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK4+J/K -> Cmd+DownArrow/Cmd+UpArrow",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1911,12 +1796,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Dynalist] VK4+H/L -> Shift+Tab/Tab",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -1967,12 +1847,7 @@
               "key_code": "tab"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Slack",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2251,12 +2126,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[GoogleChrome] VK4+M -> Cmd+Shift+M (Switch profile)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2284,12 +2154,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[GoogleChrome] VK4+N -> Cmd+Shift+M,Down,Down,Down,Enter (Toggle profile)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2329,12 +2194,7 @@
               "key_code": "return_or_enter"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK2+9 -> Cmd+Shift+;",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2362,12 +2222,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+E -> Cmd+Yen",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2394,12 +2249,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+F -> Cmd+P",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2426,12 +2276,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+H -> Cmd+[",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2458,12 +2303,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+L -> Cmd+]",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2490,12 +2330,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+U -> Cmd+Shift+U",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2523,12 +2358,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK2+9 -> Cmd+^",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2555,12 +2385,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK2+0 -> Cmd+Hyphen",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2587,12 +2412,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[Notion] VK4+N/P -> Ctrl+Shift+J/K",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2648,12 +2468,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "[ChatGPT] VK4+E -> Cmd+Ctrl+S",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2681,12 +2496,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+{H/J/K/L} -> {Left/Down/Up/Right}Arrow",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2778,12 +2588,7 @@
               "key_code": "right_arrow"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+F -> Escape",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2806,12 +2611,7 @@
               "key_code": "escape"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+S -> JapaneseKana / VK1+D -> JapaneseEisuu",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2847,12 +2647,7 @@
               "key_code": "japanese_eisuu"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+A -> F10 / VK1+Z -> F7",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2888,12 +2683,7 @@
               "key_code": "f7"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+U -> Cmd+LeftArrow / VK1+I -> Cmd+RightArrow",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2945,12 +2735,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+G -> Tab",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -2973,12 +2758,7 @@
               "key_code": "tab"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+O -> Ctrl+Shift+Tab / VK1+P -> Ctrl+Tab",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3021,12 +2801,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Shift+Y -> Cmd+C and remove all newlines",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3055,12 +2830,7 @@
               "shell_command": "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | sed 's/  */ /g' | pbcopy"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Y -> Cmd+C",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3081,12 +2851,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+T -> Cmd+X, VK1+X -> Cmd+Shift+V",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3130,12 +2895,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+C -> Backspace / VK1+E -> Delete",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3171,12 +2931,7 @@
               "key_code": "delete_forward"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+[ -> Cmd+Z",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3202,12 +2957,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Colon -> Cmd+H",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3228,12 +2978,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+{N,M,Comma,Period} -> Mouse{Left,Down,Up,Right}",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3413,12 +3158,7 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Slash -> LeftClick / VK1+Underscore -> RightClick",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3464,12 +3204,7 @@
               "pointing_button": "button2"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+@ -> ScrollUp / VK1+] -> ScrollDown",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3529,12 +3264,7 @@
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+{1,2,3,4,5,6,7,8,9,0,-,^} -> F{1,2,3,4,5,6,7,8,9,10,11,12}",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3810,12 +3540,7 @@
               "key_code": "f12"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+B -> Ctrl+Opt+Cmd+Shift+M (Maximize window size with ShiftIt)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3839,12 +3564,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK1+Backslash -> Cmd+Opt+D (Hide the Dock)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3866,12 +3586,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3914,12 +3629,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+S -> Ctrl+Tab / VK2+A -> Ctrl+Shift+Tab",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -3962,12 +3672,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+9 -> Cmd+KeypadPlus / VK2+0 -> Cmd+Hyphen",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -4009,12 +3714,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+1 -> VolumeDecrement / VK2+2 -> VolumeIncrement",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -4050,12 +3750,7 @@
               "key_code": "volume_increment"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+3 -> BrightnessDecrement / VK2+4 -> BrightnessIncrement",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -4091,12 +3786,7 @@
               "key_code": "display_brightness_increment"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK2+Ctrl+{H,O,N,P,U,I,M,Comma,Period} -> Cmd+Ctrl+Opt+Shift+{Left,Right,Down,Up,1,2,3,4,N} (ShiftIt)",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -4386,12 +4076,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Open apps",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -4841,12 +4526,7 @@
               "shell_command": "open 'https://s2.kingtime.jp/independent/recorder2/personal/'"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "VK3+{A,S,D,F,G,H,J,K,L,Semicolon,Quote} -> {1,2,3,4,5,6,7,8,9,0,-}",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "conditions": [
@@ -5099,12 +4779,7 @@
               "key_code": "hyphen"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Semicolon -> Enter",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -5151,12 +4826,7 @@
               "key_code": "return_or_enter"
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Ctrl+Colon -> SingleQuote",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
@@ -5175,12 +4845,7 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "description": "Disable CapsLock",
-      "manipulators": [
+        },
         {
           "type": "basic",
           "from": {
