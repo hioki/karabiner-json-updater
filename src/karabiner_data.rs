@@ -175,15 +175,6 @@ pub enum To {
     },
 }
 
-impl To {
-    pub fn new_tmux_prefix_key() -> To {
-        To::Key {
-            key_code: KeyCode::T,
-            modifiers: Some(vec![ModifierKey::Ctrl]),
-        }
-    }
-}
-
 #[derive(Debug, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum PointingButton {
@@ -346,26 +337,6 @@ impl ManipulatorInitBuilder {
 impl Manipulator {
     pub fn builder() -> ManipulatorInitBuilder {
         ManipulatorInitBuilder::default()
-    }
-
-    pub fn new_for_key_to_key_mapping(
-        from: KeyCode,
-        from_modifiers: Option<FromModifier>,
-        to: KeyCode,
-        to_modifiers: Option<Vec<ModifierKey>>,
-    ) -> Manipulator {
-        ManipulatorInit {
-            from: From {
-                key_code: from,
-                modifiers: from_modifiers,
-            },
-            to: vec![To::Key {
-                key_code: to,
-                modifiers: to_modifiers,
-            }],
-            ..Default::default()
-        }
-        .init()
     }
 
     pub fn new_for_key_to_key_mapping_with_single_virtual_key(

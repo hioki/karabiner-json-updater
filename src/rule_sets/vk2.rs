@@ -7,20 +7,8 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("VK2+F -> Cmd+Tab / VK2+D -> Cmd+Shift+Tab"),
             manipulators: vec![
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::F,
-                    None,
-                    K::Tab,
-                    Some(vec![Cmd]),
-                ),
-                Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                    VK::Vk2,
-                    K::D,
-                    None,
-                    K::Tab,
-                    Some(vec![Cmd, Shift]),
-                ),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::F).to_key(K::Tab, Some(vec![Cmd])).build(),
+                Manipulator::builder().condition(Condition::with_vk2()).from_key(K::D).to_key(K::Tab, Some(vec![Cmd,Shift])).build(),
             ],
         },
         Rule {
