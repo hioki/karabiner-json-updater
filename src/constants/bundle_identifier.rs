@@ -10,8 +10,6 @@ pub enum BundleIdentifier {
     CLion,
     #[serde(rename = "io.dynalist")]
     Dynalist, // https://help.dynalist.io/article/91-keyboard-shortcut-reference
-    #[serde(rename = "com.github.atom")]
-    Atom,
     #[serde(rename = "com.tinyspeck.slackmacgap")]
     Slack,
     #[serde(rename = "com.google.Chrome")]
