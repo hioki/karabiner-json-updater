@@ -1,21 +1,21 @@
-[Karabiner-Elements](https://karabiner-elements.pqrs.org/) の設定ファイル[^1]を更新するツールです。
+This is a tool for updating the [Karabiner-Elements](https://karabiner-elements.pqrs.org/) configuration file[^1].
 
-`Karabiner-Elements` の設定を Rust で書くことができます。
+You can write `Karabiner-Elements` configuration in Rust.
 
-### 使い方
+### Usage
 
-以下を実行すると、本レポジトリの現在のコードの内容に従って `Karabiner-Elements` の設定ファイルを更新します。
+Run the following command to update the `Karabiner-Elements` configuration file based on the current code in this repository:
 
 ```shell
 $ cargo run
 ```
 
-### その他
+### Others
 
-私の設定のインポート用リンク:
+My import link:
 
 ```
 karabiner://karabiner/assets/complex_modifications/import?url=https://raw.githubusercontent.com/hioki/karabiner-json-updater/main/custom.json
 ```
 
-[^1]: `~/.config/karabiner/assets/complex_modifications/custom.json` や `~/.config/karabiner/karabiner.json` など。詳細: https://karabiner-elements.pqrs.org/docs/json/location/
+[^1]: For example, `~/.config/karabiner/assets/complex_modifications/custom.json` or `~/.config/karabiner/karabiner.json. For details`, see: https://karabiner-elements.pqrs.org/docs/json/location/
