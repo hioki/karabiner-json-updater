@@ -17,11 +17,13 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .build()
         })
         .collect(),
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key_with_modifiers(K::F, FromModifier::Optional(vec![Any]))
-            .to_key(K::Escape, None)
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key_with_modifiers(K::F, FromModifier::Optional(vec![Any]))
+                .to_key(K::Escape, None)
+                .build(),
+        ],
         vec![
             Manipulator::builder()
                 .condition(Condition::with_vk1())
@@ -58,11 +60,13 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .to_key(K::RightArrow, Some(vec![Cmd]))
                 .build(),
         ],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key_with_modifiers(K::G, FromModifier::Optional(vec![Any]))
-            .to_key(K::Tab, None)
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key_with_modifiers(K::G, FromModifier::Optional(vec![Any]))
+                .to_key(K::Tab, None)
+                .build(),
+        ],
         vec![
             Manipulator::builder()
                 .condition(Condition::with_vk1())
@@ -75,19 +79,23 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .to_key(K::Tab, Some(vec![Ctrl]))
                 .build(),
         ],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key_with_modifiers(K::Y, FromModifier::Mandatory(vec![Shift]))
-            .to_key(K::C, Some(vec![Cmd]))
-            .to_command(
-                "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | sed 's/  */ /g' | pbcopy",
-            )
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key(K::Y)
-            .to_key(K::C, Some(vec![Cmd]))
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key_with_modifiers(K::Y, FromModifier::Mandatory(vec![Shift]))
+                .to_key(K::C, Some(vec![Cmd]))
+                .to_command(
+                    "export LC_ALL=en_US.UTF-8; pbpaste | tr -d '\n' | sed 's/  */ /g' | pbcopy",
+                )
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key(K::Y)
+                .to_key(K::C, Some(vec![Cmd]))
+                .build(),
+        ],
         vec![
             Manipulator::builder()
                 .condition(Condition::with_vk1())
@@ -112,16 +120,20 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .to_key(K::DeleteForward, None)
                 .build(),
         ],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key_with_modifiers(K::CloseBracket, FromModifier::Optional(vec![Any]))
-            .to_key(K::Z, Some(vec![Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key(K::Quote)
-            .to_key(K::H, Some(vec![Cmd]))
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key_with_modifiers(K::CloseBracket, FromModifier::Optional(vec![Any]))
+                .to_key(K::Z, Some(vec![Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key(K::Quote)
+                .to_key(K::H, Some(vec![Cmd]))
+                .build(),
+        ],
         {
             let shift_mappings = vec![
                 (K::N, Some(-1536), None),
@@ -215,16 +227,20 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .build()
         })
         .collect(),
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key(K::B)
-            .to_key(K::M, Some(vec![Ctrl, Opt, Cmd, Shift]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::with_vk1())
-            .from_key(K::International3)
-            .to_key(K::D, Some(vec![Cmd, Opt]))
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key(K::B)
+                .to_key(K::M, Some(vec![Ctrl, Opt, Cmd, Shift]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::with_vk1())
+                .from_key(K::International3)
+                .to_key(K::D, Some(vec![Cmd, Opt]))
+                .build(),
+        ],
     ]
     .into_iter()
     .flatten()

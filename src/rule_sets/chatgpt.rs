@@ -5,9 +5,11 @@ pub fn manipulators() -> Vec<Manipulator> {
         Condition::on_app(BundleIdentifier::ChatGPT),
         Condition::with_vk4(),
     ];
-    vec![Manipulator::builder()
-        .conditions(vk4_conditions.clone())
-        .from_key(K::E)
-        .to_key(K::S, Some(vec![Cmd, Ctrl]))
-        .build()]
+    vec![
+        Manipulator::builder()
+            .conditions(vk4_conditions.clone())
+            .from_key(K::E)
+            .to_key(K::S, Some(vec![Cmd, Ctrl]))
+            .build(),
+    ]
 }

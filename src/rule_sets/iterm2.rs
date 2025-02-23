@@ -25,11 +25,13 @@ pub fn manipulators() -> Vec<Manipulator> {
                     .build()
             })
             .collect(),
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::ITerm2))
-            .from_key_with_modifiers(K::W, FromModifier::Mandatory(vec![Cmd]))
-            .to_key(K::VkNone, None)
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::ITerm2))
+                .from_key_with_modifiers(K::W, FromModifier::Mandatory(vec![Cmd]))
+                .to_key(K::VkNone, None)
+                .build(),
+        ],
         vec![(K::O, K::P), (K::P, K::N)]
             .into_iter()
             .map(|(from, to)| {
@@ -86,11 +88,13 @@ pub fn manipulators() -> Vec<Manipulator> {
                     .build()
             })
             .collect(),
-        vec![Manipulator::builder()
-            .conditions(vk1_conditions.clone())
-            .from_key(K::Semicolon)
-            .to_key(K::F, Some(vec![Ctrl]))
-            .build()],
+        vec![
+            Manipulator::builder()
+                .conditions(vk1_conditions.clone())
+                .from_key(K::Semicolon)
+                .to_key(K::F, Some(vec![Ctrl]))
+                .build(),
+        ],
     ]
     .into_iter()
     .flatten()

@@ -31,54 +31,70 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .build()
         })
         .collect(),
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::J)
-            .to_key(K::S, Some(vec![Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk1())
-            .from_key(K::W)
-            .to_key(K::S, Some(vec![Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::M)
-            .to_key(K::K, Some(vec![Opt, Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::U)
-            .to_key(K::F12, Some(vec![Shift]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::N)
-            .to_key(K::F8, Some(vec![Opt]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::Period)
-            .to_key(K::Period, Some(vec![Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::T)
-            .to_key(K::T, Some(vec![Cmd]))
-            .build()],
-        vec![Manipulator::builder()
-            .condition(Condition::on_app(BundleIdentifier::VSCode))
-            .condition(Condition::with_vk4())
-            .from_key(K::P)
-            .to_key(K::M, Some(vec![Cmd, Shift]))
-            .build()],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::J)
+                .to_key(K::S, Some(vec![Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk1())
+                .from_key(K::W)
+                .to_key(K::S, Some(vec![Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::M)
+                .to_key(K::K, Some(vec![Opt, Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::U)
+                .to_key(K::F12, Some(vec![Shift]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::N)
+                .to_key(K::F8, Some(vec![Opt]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::Period)
+                .to_key(K::Period, Some(vec![Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::T)
+                .to_key(K::T, Some(vec![Cmd]))
+                .build(),
+        ],
+        vec![
+            Manipulator::builder()
+                .condition(Condition::on_app(BundleIdentifier::VSCode))
+                .condition(Condition::with_vk4())
+                .from_key(K::P)
+                .to_key(K::M, Some(vec![Cmd, Shift]))
+                .build(),
+        ],
     ]
     .into_iter()
     .flatten()
