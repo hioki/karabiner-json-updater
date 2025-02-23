@@ -20,13 +20,11 @@ pub fn rules() -> Vec<Rule> {
         ]
         .into_iter()
         .map(|(from, to)| {
-            Manipulator::new_for_key_to_key_mapping_with_single_virtual_key(
-                VK::Vk3,
-                from,
-                Some(FromModifier::Optional(vec![Any])),
-                to,
-                None,
-            )
+            Manipulator::builder()
+                .condition(Condition::with_vk3())
+                .from_key_with_modifiers(from, FromModifier::Optional(vec![Any]))
+                .to_key(to, None)
+                .build()
         })
         .collect_vec(),
     }]
