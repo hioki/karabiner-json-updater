@@ -1,4 +1,4 @@
-use crate::config::{
+use crate::constants::{
     condition::Condition,
     from::{From, FromModifier},
     key_code::KeyCode,

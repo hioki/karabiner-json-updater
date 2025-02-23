@@ -1,7 +1,7 @@
-mod config;
+mod constants;
 mod util;
 
-use crate::config::{
+use crate::constants::{
     bundle_identifier::BundleIdentifier,
     condition::Condition,
     from::{From, FromInit, FromModifier},

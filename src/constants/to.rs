@@ -1,4 +1,4 @@
-use crate::config::{
+use crate::constants::{
     key_code::KeyCode, modifier_key::ModifierKey, mouse_key::MouseKey, set_variable::SetVariable,
 };
 use serde::Serialize;

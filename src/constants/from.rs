@@ -1,4 +1,4 @@
-use crate::config::{key_code::KeyCode, modifier_key::ModifierKey};
+use crate::constants::{key_code::KeyCode, modifier_key::ModifierKey};
 use serde::Serialize;
 
 pub struct FromInit {
