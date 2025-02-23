@@ -3,6 +3,18 @@ use big_s::S;
 use itertools::*;
 
 pub fn rules() -> Vec<Rule> {
+    let vk1_conditions = vec![
+        Condition::on_app(BundleIdentifier::ITerm2),
+        Condition::with_vk1(),
+    ];
+    let vk2_conditions = vec![
+        Condition::on_app(BundleIdentifier::ITerm2),
+        Condition::with_vk2(),
+    ];
+    let vk4_conditions = vec![
+        Condition::on_app(BundleIdentifier::ITerm2),
+        Condition::with_vk4(),
+    ];
     vec![
         Rule {
             description: S("Substitute TMUX prefix with VK4 on iTerm2"),
@@ -10,8 +22,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|key_code| {
                     Manipulator::builder()
-                        .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                        .condition(Condition::with_vk4())
+                        .conditions(vk4_conditions.clone())
                         .from_key(key_code.clone())
                         .to_key(KeyCode::T, Some(vec![ModifierKey::Ctrl]))
                         .to_key(key_code, Some(vec![Ctrl]))
@@ -33,8 +44,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|(from, to)| {
                     Manipulator::builder()
-                        .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                        .condition(Condition::with_vk1())
+                        .conditions(vk1_conditions.clone())
                         .from_key(from)
                         .to_key(KeyCode::T, Some(vec![Ctrl]))
                         .to_key(to, Some(vec![Ctrl]))
@@ -48,8 +58,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|(from, to)| {
                     Manipulator::builder()
-                        .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                        .condition(Condition::with_vk2())
+                        .conditions(vk2_conditions.clone())
                         .from_key(from)
                         .to_key(KeyCode::T, Some(vec![Ctrl]))
                         .to_key(to, Some(vec![Ctrl]))
@@ -60,8 +69,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("[iTerm2] VK1+W -> <ESC>:w<CR>"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                .condition(Condition::with_vk1())
+                .conditions(vk1_conditions.clone())
                 .from_key(K::W)
                 .to_key(K::Escape, None)
                 .to_key(K::Quote, None)
@@ -72,8 +80,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("[iTerm2] VK1+Q -> <ESC>:q<CR>"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                .condition(Condition::with_vk1())
+                .conditions(vk1_conditions.clone())
                 .from_key(K::Q)
                 .to_key(K::Escape, None)
                 .to_key(K::Quote, None)
@@ -84,8 +91,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("[iTerm2] VK1+Z -> Enter tmux copy-mode"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                .condition(Condition::with_vk1())
+                .conditions(vk1_conditions.clone())
                 .from_key(K::Z)
                 .to_key(KeyCode::T, Some(vec![Ctrl]))
                 .to_key(KeyCode::CloseBracket, Some(vec![Ctrl]))
@@ -97,8 +103,7 @@ pub fn rules() -> Vec<Rule> {
                 .into_iter()
                 .map(|(from, to)| {
                     Manipulator::builder()
-                        .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                        .condition(Condition::with_vk1())
+                        .conditions(vk1_conditions.clone())
                         .from_key(from)
                         .to_key(to, Some(vec![Shift]))
                         .build()
@@ -108,8 +113,7 @@ pub fn rules() -> Vec<Rule> {
         Rule {
             description: S("[iTerm2] VK1+Semicolon -> Ctrl+F"),
             manipulators: vec![Manipulator::builder()
-                .condition(Condition::on_app(BundleIdentifier::ITerm2))
-                .condition(Condition::with_vk1())
+                .conditions(vk1_conditions.clone())
                 .from_key(K::Semicolon)
                 .to_key(K::F, Some(vec![Ctrl]))
                 .build()],

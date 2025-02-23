@@ -3,6 +3,10 @@ use big_s::S;
 use itertools::*;
 
 pub fn rules() -> Vec<Rule> {
+    let vk4_conditions = vec![
+        Condition::on_app(BundleIdentifier::Slack),
+        Condition::with_vk4(),
+    ];
     vec![Rule {
         description: S("Slack"),
         manipulators: vec![
@@ -20,8 +24,7 @@ pub fn rules() -> Vec<Rule> {
         .into_iter()
         .map(|(from, to, modifiers)| {
             Manipulator::builder()
-                .condition(Condition::on_app(BundleIdentifier::Slack))
-                .condition(Condition::with_vk4())
+                .conditions(vk4_conditions.clone())
                 .from_key(from)
                 .to_key(to, Some(modifiers))
                 .build()

@@ -25,7 +25,7 @@ pub struct Rule {
     pub manipulators: Vec<Manipulator>,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 #[serde(untagged)]
 pub enum Condition {
     OnApplication {
@@ -39,7 +39,7 @@ pub enum Condition {
     },
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Clone, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum ConditionType {
     FrontmostApplicationIf,
@@ -181,6 +181,11 @@ impl ManipulatorInitBuilder {
         self
     }
 
+    pub fn conditions(mut self, conditions: Vec<Condition>) -> Self {
+        self.conditions = Some(conditions);
+        self
+    }
+
     pub fn from_key(mut self, key_code: KeyCode) -> Self {
         self.from = Some(From {
             key_code,
@@ -287,7 +292,7 @@ pub enum VirtualKey {
     Vk4,
 }
 
-#[derive(Serialize_repr, Debug)]
+#[derive(Serialize_repr, Debug, Clone)]
 #[repr(u8)]
 pub enum VirtualKeyValue {
     On = 1,
