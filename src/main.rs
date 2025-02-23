@@ -3,6 +3,8 @@ pub mod rule_sets;
 
 use std::io::{Seek as _, Write as _};
 
+const CUSTOM_FILENAME: &str = "custom.json";
+
 fn main() -> anyhow::Result<()> {
     let home_dir = std::env::var("HOME")
         .map(std::path::PathBuf::from)
@@ -27,7 +29,6 @@ fn main() -> anyhow::Result<()> {
     .into_iter()
     .flatten()
     .collect::<Vec<karabiner_data::Rule>>();
-    let custom_filename = "custom.json";
     // https://karabiner-elements.pqrs.org/docs/json/location/
     let config_dir = home_dir.join(".config/karabiner");
     if !config_dir.is_dir() {
@@ -38,7 +39,7 @@ fn main() -> anyhow::Result<()> {
         .create(true)
         .truncate(true)
         .read(true)
-        .open(custom_filename)?;
+        .open(CUSTOM_FILENAME)?;
     // https://karabiner-elements.pqrs.org/docs/json/root-data-structure/#custom-json-file-in-configkarabinerassetscomplex_modifications
     #[derive(Debug, serde::Serialize)]
     struct CustomRules<'a> {
@@ -55,7 +56,7 @@ fn main() -> anyhow::Result<()> {
     let mut config_file = std::fs::File::create(
         config_dir
             .join("assets/complex_modifications")
-            .join(custom_filename),
+            .join(CUSTOM_FILENAME),
     )?;
     current_file.seek(std::io::SeekFrom::Start(0))?;
     std::io::copy(&mut current_file, &mut config_file)?;
