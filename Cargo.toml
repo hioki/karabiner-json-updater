@@ -1,5 +1,5 @@
 [package]
-name = "karabiner-json-updater"
+name = "karaconf"
 version = "0.1.0"
 authors = ["Daichi Hioki <hioki.daichi@gmail.com>"]
 edition = "2024"
