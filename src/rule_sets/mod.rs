@@ -1,0 +1,15 @@
+pub mod capslock;
+pub mod chatgpt;
+pub mod dynalist;
+pub mod google_chrome;
+pub mod iterm2;
+pub mod notion;
+pub mod open_apps;
+pub mod semicolon;
+pub mod singlequote;
+pub mod slack;
+pub mod virtual_key;
+pub mod vk1;
+pub mod vk2;
+pub mod vk3;
+pub mod vscode;
