@@ -19,7 +19,12 @@ pub struct ConfigUpdater {
 }
 
 impl ConfigUpdater {
-    pub fn new(config_dir: PathBuf, rules: Vec<Rule>) -> Self {
+    pub fn new(home_dir: PathBuf, rules: Vec<Rule>) -> Self {
+        // https://karabiner-elements.pqrs.org/docs/json/location/
+        let config_dir = home_dir.join(".config/karabiner");
+        if !config_dir.is_dir() {
+            panic!("{:?} must be created via Karabiner-Elements", config_dir);
+        }
         Self { config_dir, rules }
     }
 

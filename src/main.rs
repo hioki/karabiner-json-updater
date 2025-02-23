@@ -1,5 +1,6 @@
 mod config;
 mod config_updater;
+mod util;
 
 use crate::{
     config::{
@@ -22,14 +23,7 @@ use big_s::S;
 use itertools::Itertools;
 
 fn main() -> anyhow::Result<()> {
-    // https://karabiner-elements.pqrs.org/docs/json/location/
-    let config_dir = std::env::var("HOME")
-        .map(std::path::PathBuf::from)
-        .expect("HOME environment variable must be set")
-        .join(".config/karabiner");
-    if !config_dir.is_dir() {
-        anyhow::bail!("{:?} must be created via Karabiner-Elements", config_dir);
-    }
+    let home_dir = util::get_home_dir();
     let rules = vec![
         rules_virtual_keys(),
         rules_iterm2(),
@@ -53,9 +47,8 @@ fn main() -> anyhow::Result<()> {
     ]
     .into_iter()
     .flatten()
-    .collect();
-    let config_updater = ConfigUpdater::new(config_dir, rules);
-    config_updater.update()
+    .collect::<Vec<Rule>>();
+    ConfigUpdater::new(home_dir, rules).update()
 }
 
 fn rules_virtual_keys() -> Vec<Rule> {
