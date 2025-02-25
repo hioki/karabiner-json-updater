@@ -1,11 +1,11 @@
 pub mod karabiner_data;
 pub mod rule_sets;
 
+use std::io::{Seek as _, Write as _};
+
 const CUSTOM_JSON_FILENAME: &str = "custom.json";
 
 fn main() -> anyhow::Result<()> {
-    use std::io::{Seek as _, Write as _};
-
     // https://karabiner-elements.pqrs.org/docs/json/location/
     let config_dir = std::env::var("HOME")
         .map(std::path::PathBuf::from)
