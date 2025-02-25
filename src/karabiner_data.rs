@@ -18,6 +18,13 @@ pub enum BundleIdentifier {
     ChatGPT,
 }
 
+// https://karabiner-elements.pqrs.org/docs/json/root-data-structure/#custom-json-file-in-configkarabinerassetscomplex_modifications
+#[derive(Debug, serde::Serialize)]
+pub struct ComplexModifications<'a> {
+    pub title: &'a str,
+    pub rules: &'a Vec<Rule>,
+}
+
 #[derive(Debug, Serialize)]
 pub struct Rule {
     pub description: String,

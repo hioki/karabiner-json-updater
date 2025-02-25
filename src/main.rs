@@ -46,15 +46,9 @@ fn main() -> anyhow::Result<()> {
         .truncate(true)
         .read(true)
         .open(CUSTOM_JSON_FILENAME)?;
-    // https://karabiner-elements.pqrs.org/docs/json/root-data-structure/#custom-json-file-in-configkarabinerassetscomplex_modifications
-    #[derive(Debug, serde::Serialize)]
-    struct ComplexModifications<'a> {
-        pub title: &'a str,
-        pub rules: &'a Vec<karabiner_data::Rule>,
-    }
     serde_json::to_writer_pretty(
         &custom_json_file,
-        &ComplexModifications {
+        &karabiner_data::ComplexModifications {
             title: "Personal rules",
             rules: &rules,
         },
