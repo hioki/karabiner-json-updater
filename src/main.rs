@@ -6,15 +6,6 @@ use std::io::{Seek as _, Write as _};
 const CUSTOM_JSON_FILENAME: &str = "custom.json";
 
 fn main() -> anyhow::Result<()> {
-    // https://karabiner-elements.pqrs.org/docs/json/location/
-    let config_dir = std::env::var("HOME")
-        .map(std::path::PathBuf::from)
-        .expect("HOME environment variable must be set")
-        .join(".config/karabiner");
-    if !config_dir.is_dir() {
-        panic!("{:?} must be created via Karabiner-Elements", config_dir);
-    }
-
     let rules = vec![karabiner_data::Rule {
         description: "Personal rules".to_string(),
         manipulators: vec![
@@ -42,6 +33,15 @@ fn main() -> anyhow::Result<()> {
         title: "Personal rules",
         rules: &rules,
     };
+
+    // https://karabiner-elements.pqrs.org/docs/json/location/
+    let config_dir = std::env::var("HOME")
+        .map(std::path::PathBuf::from)
+        .expect("HOME environment variable must be set")
+        .join(".config/karabiner");
+    if !config_dir.is_dir() {
+        panic!("{:?} must be created via Karabiner-Elements", config_dir);
+    }
 
     // 1. write custom.json
     let mut custom_json_file = std::fs::OpenOptions::new()
