@@ -38,6 +38,10 @@ fn main() -> anyhow::Result<()> {
         .flatten()
         .collect::<Vec<karabiner_data::Manipulator>>(),
     }];
+    let complex_modifications = karabiner_data::ComplexModifications {
+        title: "Personal rules",
+        rules: &rules,
+    };
 
     // 1. write custom.json
     let mut custom_json_file = std::fs::OpenOptions::new()
@@ -46,13 +50,7 @@ fn main() -> anyhow::Result<()> {
         .truncate(true)
         .read(true)
         .open(CUSTOM_JSON_FILENAME)?;
-    serde_json::to_writer_pretty(
-        &custom_json_file,
-        &karabiner_data::ComplexModifications {
-            title: "Personal rules",
-            rules: &rules,
-        },
-    )?;
+    serde_json::to_writer_pretty(&custom_json_file, &complex_modifications)?;
 
     // 2. copy custom.json to karabiner assets (~/.config/karabiner/assets/complex_modifications/custom.json)
     let mut karabiner_assets_file = std::fs::File::create(
