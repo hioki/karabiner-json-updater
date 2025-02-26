@@ -20,6 +20,7 @@ pub fn manipulators() -> Vec<Manipulator> {
             K::Key9,          // 表示の拡大
             K::Key0,          // 表示の縮小
             K::ReturnOrEnter, // workbench.action.tasks.reRunTask
+            K::J,             // Toggle Copilot Edits
         ]
         .into_iter()
         .map(|key_code| {
