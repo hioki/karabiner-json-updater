@@ -37,7 +37,7 @@ fn main() -> anyhow::Result<()> {
     // https://karabiner-elements.pqrs.org/docs/json/location/
     let config_dir = std::env::var("HOME")
         .map(std::path::PathBuf::from)
-        .expect("HOME environment variable must be set")
+        .map_err(|e| anyhow::anyhow!("HOME environment variable is not set: {}", e))?
         .join(".config/karabiner");
     if !config_dir.is_dir() {
         anyhow::bail!("{:?} must be created via Karabiner-Elements", config_dir);
