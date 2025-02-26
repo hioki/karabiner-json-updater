@@ -67,11 +67,11 @@ fn main() -> anyhow::Result<()> {
         serde_json::from_reader(&std::fs::File::open(&karabiner_json_path)?)?;
     karabiner_json["profiles"]
         .as_array_mut()
-        .unwrap()
+        .ok_or_else(|| anyhow::anyhow!("Invalid karabiner.json format: profiles is not an array"))?
         .get_mut(0)
-        .unwrap()["complex_modifications"]
+        .ok_or_else(|| anyhow::anyhow!("No profile exists in karabiner.json"))?["complex_modifications"]
         .as_object_mut()
-        .unwrap()
+        .ok_or_else(|| anyhow::anyhow!("complex_modifications is not an object"))?
         .insert("rules".to_string(), serde_json::json!(&rules));
     let karabiner_json_data = serde_json::to_vec_pretty(&karabiner_json)?;
     std::fs::write(karabiner_json_path, karabiner_json_data)?;
