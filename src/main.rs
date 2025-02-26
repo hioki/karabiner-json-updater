@@ -40,7 +40,7 @@ fn main() -> anyhow::Result<()> {
         .expect("HOME environment variable must be set")
         .join(".config/karabiner");
     if !config_dir.is_dir() {
-        panic!("{:?} must be created via Karabiner-Elements", config_dir);
+        anyhow::bail!("{:?} must be created via Karabiner-Elements", config_dir);
     }
 
     // 1. write custom.json
