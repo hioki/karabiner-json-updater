@@ -1,7 +1,7 @@
 pub mod karabiner_data;
 pub mod rule_sets;
 
-use std::io::{Seek as _, Write as _};
+use std::io::Seek as _;
 
 const CUSTOM_JSON_FILENAME: &str = "custom.json";
 
@@ -74,7 +74,6 @@ fn main() -> anyhow::Result<()> {
         .unwrap()
         .insert("rules".to_string(), serde_json::json!(&rules));
     let karabiner_json_data = serde_json::to_vec_pretty(&karabiner_json)?;
-    let mut f = std::fs::File::create(karabiner_json_path)?;
-    let _written = f.write(&karabiner_json_data)?;
+    std::fs::write(karabiner_json_path, karabiner_json_data)?;
     Ok(())
 }
