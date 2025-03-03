@@ -71,12 +71,6 @@ pub fn manipulators() -> Vec<Manipulator> {
                 .to_key(K::Q, None)
                 .to_key(K::ReturnOrEnter, None)
                 .build(),
-            Manipulator::builder()
-                .conditions(vk1_conditions.clone())
-                .from_key(K::Z)
-                .to_key(KeyCode::T, Some(vec![Ctrl]))
-                .to_key(KeyCode::CloseBracket, Some(vec![Ctrl]))
-                .build(),
         ],
         vec![(K::U, K::Key0), (K::I, K::Key4)]
             .into_iter()
