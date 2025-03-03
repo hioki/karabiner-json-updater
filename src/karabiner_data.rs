@@ -160,6 +160,9 @@ pub struct Manipulator {
     pub to: Vec<To>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
+    pub to_delayed_action: Option<ToDelayedAction>,
+
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub to_after_key_up: Option<Vec<ToAfterKeyUp>>,
 
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -177,6 +180,7 @@ pub struct ManipulatorInitBuilder {
     conditions: Option<Vec<Condition>>,
     from: Option<From>,
     to: Vec<To>,
+    to_delayed_action: Option<ToDelayedAction>,
     to_after_key_up: Option<Vec<ToAfterKeyUp>>,
     to_if_alone: Option<Vec<ToIfAlone>>,
 }
@@ -212,6 +216,22 @@ impl ManipulatorInitBuilder {
         self.to.push(To::Key {
             key_code,
             modifiers,
+        });
+        self
+    }
+
+    pub fn to_delayed_action(
+        mut self,
+        key_code: KeyCode,
+        modifiers: Option<Vec<ModifierKey>>,
+        delay_milliseconds: u32,
+    ) -> Self {
+        self.to_delayed_action = Some(ToDelayedAction {
+            to_if_invoked: vec![To::Key {
+                key_code,
+                modifiers,
+            }],
+            delay_milliseconds,
         });
         self
     }
@@ -261,6 +281,7 @@ impl ManipulatorInitBuilder {
                 modifiers: None,
             }),
             to: self.to,
+            to_delayed_action: self.to_delayed_action,
             to_after_key_up: self.to_after_key_up,
             to_if_alone: self.to_if_alone,
         }
@@ -277,6 +298,7 @@ pub enum ManipulatorType {
 #[derive(Debug, Serialize)]
 pub struct ToDelayedAction {
     pub to_if_invoked: Vec<To>,
+    pub delay_milliseconds: u32,
 }
 
 #[derive(Debug, Serialize)]
